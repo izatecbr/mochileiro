@@ -77,6 +77,10 @@ export const useGlobalStore = defineStore("database", {
     normalizeId(id, isString) {
       return isString ? String(id) : Number(id);
     },
+    enriquecerClassificacoes(arrIds) {
+      if (!Array.isArray(arrIds)) return [];
+      return arrIds.map((id) => this.getClassificacaoById(id)).filter(Boolean);
+    },
 
     getPaisById(id) {
       return this.paises.find((p) => p.id === id);
@@ -143,20 +147,14 @@ export const useGlobalStore = defineStore("database", {
 
       const localizacaoObject = this.getLocalizacaoById(usuario.localizacao);
 
-      // Se usuário tiver classificações, mapear para objetos
-      let classificacoesObjects = [];
-      if (Array.isArray(usuario.classificacoes)) {
-        classificacoesObjects = usuario.classificacoes
-          .map((classId) => this.getClassificacaoById(classId))
-          .filter(Boolean); // remove undefined
-      }
+      const enriched = { ...usuario, localizacaoObject, enriquecido: true };
 
-      const enriched = {
-        ...usuario,
-        localizacaoObject,
-        classificacoesObjects,
-        enriquecido: true,
-      };
+      // Adiciona classificações enriquecidas, se existirem
+      if (Array.isArray(usuario.classificacoes)) {
+        enriched.classificacoesObjects = this.enriquecerClassificacoes(
+          usuario.classificacoes
+        );
+      }
 
       const index = this.usuarios.findIndex((u) => u.id === id);
       if (index !== -1) this.usuarios[index] = enriched;
