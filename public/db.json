@@ -237,7 +237,7 @@
     }
   ],
   "categorias":[
-    {"id":10,"legenda":"Transporte","categorias":[{"id":101,"legenda":"Aéreo"},{"id":102,"legenda":"Rodoviário"},{"id":103,"legenda":"Táxi"},{"id":104,"legenda":"Transfer"},{"id":105,"legenda":"Uber/99"},{"id":105,"legenda":"Locação"}]},
+    {"id":10,"legenda":"Transporte","categorias":[{"id":101,"legenda":"Aéreo"},{"id":102,"legenda":"Rodoviário"},{"id":103,"legenda":"Táxi"},{"id":104,"legenda":"Transfer"},{"id":105,"legenda":"Uber/99"},{"id":106,"legenda":"Locação"}]},
     {"id":11,"legenda":"Hospedagem","categorias":[{"id":111,"legenda":"Hotel"},{"id":112,"legenda":"Hostel"},{"id":113,"legenda":"Pousada"},{"id":114,"legenda":"Airbnb"}]}
   ],   
   "produtos": [

@@ -13,6 +13,8 @@ const getByIdMap = {
   estados: (id) => store.getEstadoById(id),
   cidades: (id) => store.getCidadeById(id),
   usuarios: (id) => store.getUsuarioById(id),
+  categorias: (id) => store.getCategoriaById(id),
+  classificacoes: (id) => store.getClassificacaoById(id),
   localizacoes: (id) => store.getLocalizacaoById(id),
   produtos: (id) => store.getProdutoById(id),
   atividades: (id) => store.getAtividadeById(id),
@@ -56,6 +58,8 @@ async function verDetalhes(obj) {
         <option value="cidades">Cidades</option>
         <option value="localizacoes">Localizações</option>
         <option value="usuarios">Usuários</option>
+        <option value="categorias">Categorias</option>
+        <option value="classificacoes">classificações</option>
         <option value="produtos">Produtos</option>
         <option value="atividades">Atividades</option>
         <option value="aventuras">Aventuras</option>

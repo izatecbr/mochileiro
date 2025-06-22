@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-const STORE_VERSION = import.meta.env.PUBLIC_STORE_VERSION || "v1";
+const STORE_VERSION = import.meta.env.PUBLIC_STORE_VERSION || "v2";
 export const useGlobalStore = defineStore("database", {
   persist: true,
   state: () => ({
@@ -9,6 +9,8 @@ export const useGlobalStore = defineStore("database", {
     estados: [],
     cidades: [],
     usuarios: [],
+    categorias: [],
+    classificacoes: [],
     produtos: [],
     localizacoes: [],
     atividades: [],
@@ -51,12 +53,25 @@ export const useGlobalStore = defineStore("database", {
       this.paises = data.paises;
       this.estados = data.estados;
       this.cidades = data.cidades;
+      this.categorias = data.categorias;
       this.produtos = data.produtos;
       this.localizacoes = data.localizacoes;
       this.usuarios = data.usuarios;
       this.atividades = data.atividades;
       this.aventuras = data.aventuras;
       this.experiencias = data.experiencias;
+      if (data.categorias) {
+        this.classificacoes = data.categorias.flatMap((pai) =>
+          pai.categorias.map((filha) => ({
+            id: filha.id,
+            legenda: filha.legenda,
+            categoria: {
+              id: pai.id,
+              legenda: pai.legenda,
+            },
+          }))
+        );
+      }
     },
     // Função privada dentro do contexto da store
     normalizeId(id, isString) {
@@ -133,7 +148,12 @@ export const useGlobalStore = defineStore("database", {
       if (index !== -1) this.usuarios[index] = enriched;
       return enriched;
     },
-
+    getCategoriaById(id) {
+      return this.categorias.find((e) => e.id === id);
+    },
+    getClassificacaoById(id) {
+      return this.classificacoes.find((e) => e.id === id);
+    },
     getProdutoById(id) {
       const produto = this.produtos.find((p) => p.id === id);
       if (!produto) return null;
