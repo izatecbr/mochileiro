@@ -59,7 +59,7 @@ async function verDetalhes(obj) {
         <option value="localizacoes">Localizações</option>
         <option value="usuarios">Usuários</option>
         <option value="categorias">Categorias</option>
-        <option value="classificacoes">classificações</option>
+        <option value="classificacoes">Classificações</option>
         <option value="produtos">Produtos</option>
         <option value="atividades">Atividades</option>
         <option value="aventuras">Aventuras</option>

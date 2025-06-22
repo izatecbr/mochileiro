@@ -143,7 +143,21 @@ export const useGlobalStore = defineStore("database", {
 
       const localizacaoObject = this.getLocalizacaoById(usuario.localizacao);
 
-      const enriched = { ...usuario, localizacaoObject, enriquecido: true };
+      // Se usuário tiver classificações, mapear para objetos
+      let classificacoesObjects = [];
+      if (Array.isArray(usuario.classificacoes)) {
+        classificacoesObjects = usuario.classificacoes
+          .map((classId) => this.getClassificacaoById(classId))
+          .filter(Boolean); // remove undefined
+      }
+
+      const enriched = {
+        ...usuario,
+        localizacaoObject,
+        classificacoesObjects,
+        enriquecido: true,
+      };
+
       const index = this.usuarios.findIndex((u) => u.id === id);
       if (index !== -1) this.usuarios[index] = enriched;
       return enriched;
