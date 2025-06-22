@@ -242,7 +242,7 @@
     }
   ],
   "categorias":[
-    {"id":10,"legenda":"Transporte","categorias":[{"id":101,"legenda":"Aéreo"},{"id":102,"legenda":"Rodoviário"},{"id":103,"legenda":"Táxi"},{"id":104,"legenda":"Transfer"},{"id":105,"legenda":"Uber/99"},{"id":106,"legenda":"Locação"}]},
+    {"id":10,"legenda":"Transporte","categorias":[{"id":101,"legenda":"Vôo Nacional"},{"id":102,"legenda":"Rodoviário"},{"id":103,"legenda":"Táxi"},{"id":104,"legenda":"Transfer"},{"id":105,"legenda":"Uber/99"},{"id":106,"legenda":"Locação"},{"id":107,"legenda":"Vôo Internacional"}]},
     {"id":11,"legenda":"Hospedagem","categorias":[{"id":111,"legenda":"Hotel"},{"id":112,"legenda":"Hostel"},{"id":113,"legenda":"Pousada"},{"id":114,"legenda":"Airbnb"}]},
     {"id":12,"legenda":"Alimentação","categorias":[{"id":121,"legenda":"Restaurante"},{"id":122,"legenda":"Lanchonete"},{"id":123,"legenda":"Café"},{"id":124,"legenda":"Delivery"},{"id":125,"legenda":"Supermercado"}]},
     {"id":13,"legenda":"Nômade Digital","categorias":[{"id":131,"legenda":"Trabalho Remoto"},{"id":132,"legenda":"Aventureiro"},{"id":133,"legenda":"Experiências Culturais"},{"id":134,"legenda":"Conexões com Locais"}]},
@@ -257,6 +257,7 @@
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hotel para 06 dias.",
       "anuncio": true,
       "parceiro": 2,
+      "classificacoes": [107],
       "valor": {"quantia": 4070.62,"preco": "R$ 4.070,62","moeda": "BRL","formaPagamento": "R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 5x sem juros no cartão de crédito"}
     },
     {
@@ -266,6 +267,7 @@
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hostel para 06 dias.",
       "anuncio": true,
       "parceiro": 2,
+      "classificacoes": [107],
       "valor": {"quantia": 2267.62, "preco": "R$ 2.267,62","moeda": "BRL","formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"}
     },
     {
@@ -275,6 +277,7 @@
       "descricao": "Passagem aerea Teresina - PI à Guarulhos - SP, voô direto (3h)",
       "anuncio": false,
       "parceiro": 5,
+      "classificacoes": [101],
       "valor": {"quantia": 927.49, "preco": "R$ 927,49","moeda": "BRL","formaPagamento": "R$ R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"}
     }
   ],
@@ -288,6 +291,7 @@
       "anfitriao": 2,
       "destino":4,
       "escolhida": false,
+       "classificacoes": [107],
       "valor": {"quantia": 4070.62,"preco": "R$ 4.070,62","moeda": "BRL","formaPagamento": "R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 5x sem juros no cartão de crédito"}
     },
      {
@@ -299,6 +303,7 @@
       "anfitriao": 2,
       "destino":4,
       "escolhida": true,
+      "classificacoes": [107],
       "valor": {"quantia": 2267.62, "preco": "R$ 2.267,62","moeda": "BRL","formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"},
       "sugestoes":[1]
     },
@@ -311,7 +316,8 @@
       "anfitriao": 2,
       "destino":4,
       "escolhida": true,
-      "valor": {"quantia": 2267.62, "preco": "R$ 2.267,62","moeda": "BRL","formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"}
+       "classificacoes": [101],
+      "valor": {"quantia": 927.49, "preco": "R$ 927,49","moeda": "BRL","formaPagamento": "R$ R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"}
     }
   ],
   "aventuras": [
@@ -325,7 +331,8 @@
       "descricao":"A FlyMates nos envia um anúncio de viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem para 06 dias no valor de R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 3x sem juros no cartão de crédito. Devido o valor, eu solicitei uma nova proposta alterando a hospedagem de hotel para um hostel.",
       "autor": 1,
       "anfitriao": 2,
-      "atividades":[1, 2]
+      "atividades":[1, 2],
+       "classificacoes": [107]
     },
     {
       "id": 2,
@@ -337,7 +344,8 @@
       "descricao":"Dois dias antes da viagem para Santiago, embarcamos no vôo com destino a São Paulo para aproveitar essa maravilhosa cidade",
       "autor": 1,
       "anfitriao": 2,
-      "atividades":[3]
+      "atividades":[3],
+       "classificacoes": [101]
     }
   ],
   "experiencias": [
@@ -347,6 +355,7 @@
         "dia": "2025-07-11",
         "hora": "08:00"
       },
+      "classificacoes": [107,131,132,133,144,141],
       "duracao": "7 dias",
       "legenda": "Férias de Inverno no Chile",
       "descricao": "Durante nossa jornada ao Chile, tivemos diversas aventuras incríveis nas quais você poderá acompanhar o que rolou diariamente",
