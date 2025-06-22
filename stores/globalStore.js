@@ -17,16 +17,18 @@ export const useGlobalStore = defineStore("database", {
   }),
   actions: {
     async carregarStore() {
-      console.log('import.meta.env.NUXT_PUBLIC_STORE_VERSION',import.meta.env.NUXT_PUBLIC_STORE_VERSION)
-      const savedVersion = localStorage.getItem('global_store_version')
-      alert(savedVersion)
-  if (savedVersion !== STORE_VERSION) {
-    this.$reset()
-    localStorage.setItem('global_store_version', STORE_VERSION)
-    this.novaVersao = true  // <-- sinaliza que tem nova versão
-  } else {
-    this.novaVersao = false
-  }
+      console.log(
+        "import.meta.env.NUXT_PUBLIC_STORE_VERSION",
+        import.meta.env.NUXT_PUBLIC_STORE_VERSION
+      );
+      const savedVersion = localStorage.getItem("global_store_version");
+      if (savedVersion !== STORE_VERSION) {
+        this.$reset();
+        localStorage.setItem("global_store_version", STORE_VERSION);
+        this.novaVersao = true; // <-- sinaliza que tem nova versão
+      } else {
+        this.novaVersao = false;
+      }
 
       // Já tem dados? Evita o fetch
       if (
