@@ -151,7 +151,7 @@ export const useGlobalStore = defineStore("database", {
 
       // Adiciona classificações enriquecidas, se existirem
       if (Array.isArray(usuario.classificacoes)) {
-        enriched.classificacoesObjects = this.enriquecerClassificacoes(
+        enriched.classificacoesList = this.enriquecerClassificacoes(
           usuario.classificacoes
         );
       }
@@ -177,7 +177,7 @@ export const useGlobalStore = defineStore("database", {
 
       // Enriquecer classificações se existirem
       if (Array.isArray(produto.classificacoes)) {
-        enriched.classificacoesObjects = this.enriquecerClassificacoes(produto.classificacoes)
+        enriched.classificacoesList = this.enriquecerClassificacoes(produto.classificacoes)
       }
       const index = this.produtos.findIndex((p) => p.id === id);
       if (index !== -1) this.produtos[index] = enriched;
@@ -198,6 +198,13 @@ export const useGlobalStore = defineStore("database", {
         produtoObject,
         enriquecido: true,
       };
+
+      // Adiciona classificações enriquecidas, se existirem
+      if (Array.isArray(atividade.classificacoes)) {
+        enriched.classificacoesList = this.enriquecerClassificacoes(
+          atividade.classificacoes
+        );
+      }
       const index = this.atividades.findIndex((a) => a.id === id);
       if (index !== -1) this.atividades[index] = enriched;
       return enriched;
@@ -220,6 +227,13 @@ export const useGlobalStore = defineStore("database", {
         atividadesList,
         enriquecido: true,
       };
+
+       // Adiciona classificações enriquecidas, se existirem
+      if (Array.isArray(aventura.classificacoes)) {
+        enriched.classificacoesList = this.enriquecerClassificacoes(
+          aventura.classificacoes
+        );
+      }
       const index = this.aventuras.findIndex((a) => a.id === id);
       if (index !== -1) this.aventuras[index] = enriched;
       return enriched;
@@ -244,6 +258,13 @@ export const useGlobalStore = defineStore("database", {
         aventurasList,
         enriquecido: true,
       };
+
+      // Adiciona classificações enriquecidas, se existirem
+      if (Array.isArray(experiencia.classificacoes)) {
+        enriched.classificacoesList = this.enriquecerClassificacoes(
+          experiencia.classificacoes
+        );
+      }
       const index = this.experiencias.findIndex((e) => e.id === id);
       if (index !== -1) this.experiencias[index] = enriched;
       return enriched;
