@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-const STORE_VERSION = import.meta.env.PUBLIC_STORE_VERSION || "v2";
+const STORE_VERSION = import.meta.env.PUBLIC_STORE_VERSION || "v3";
 export const useGlobalStore = defineStore("database", {
   persist: true,
   state: () => ({
@@ -174,6 +174,11 @@ export const useGlobalStore = defineStore("database", {
       const parceiroObject = this.getUsuarioById(produto.parceiro);
 
       const enriched = { ...produto, parceiroObject, enriquecido: true };
+
+      // Enriquecer classificações se existirem
+      if (Array.isArray(produto.classificacoes)) {
+        enriched.classificacoesObjects = this.enriquecerClassificacoes(produto.classificacoes)
+      }
       const index = this.produtos.findIndex((p) => p.id === id);
       if (index !== -1) this.produtos[index] = enriched;
       return enriched;

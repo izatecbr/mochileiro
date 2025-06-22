@@ -158,7 +158,7 @@
       },
       "aniversario": "1990-01-01",
       "foto": "https://supabase/foto-gleyson.jpg",
-      "classificacoes": [111, 145]
+      "classificacoes": [101, 111]
     },
     {
       "id": 2,
@@ -178,7 +178,7 @@
       },
       "aniversario": "1990-01-01",
       "foto": "https://supabase/foto-flymates.jpg",
-      "classificacoes": [111, 145]
+      "classificacoes": [101, 111]
     },
     {
       "id": 3,
