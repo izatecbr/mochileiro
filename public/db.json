@@ -83,6 +83,16 @@
     { "id": "CL001", "legenda": "Santiago", "gid": 0, "estado": "", "pais": "CL" }
   ]
 ,
+"categorias":[
+    {"id":10,"legenda":"Transporte","categorias":[{"id":101,"legenda":"Vôo Nacional"},{"id":102,"legenda":"Rodoviário"},{"id":103,"legenda":"Táxi"},{"id":104,"legenda":"Transfer"},{"id":105,"legenda":"Uber/99"},{"id":106,"legenda":"Locação"},{"id":107,"legenda":"Vôo Internacional"}]},
+    {"id":11,"legenda":"Hospedagem","categorias":[{"id":111,"legenda":"Hotel"},{"id":112,"legenda":"Hostel"},{"id":113,"legenda":"Pousada"},{"id":114,"legenda":"Airbnb"}]},
+    {"id":12,"legenda":"Alimentação","categorias":[{"id":121,"legenda":"Restaurante"},{"id":122,"legenda":"Lanchonete"},{"id":123,"legenda":"Café"},{"id":124,"legenda":"Delivery"},{"id":125,"legenda":"Supermercado"}]},
+    {"id":13,"legenda":"Nômade Digital","categorias":[{"id":131,"legenda":"Trabalho Remoto"},{"id":132,"legenda":"Aventureiro"},{"id":133,"legenda":"Experiências Culturais"},{"id":134,"legenda":"Conexões com Locais"}]},
+    {"id":14,"legenda":"Férias de Inverno","categorias":[{"id":141,"legenda":"Esqui"},{"id":142,"legenda":"Snowboard"},{"id":143,"legenda":"Estação de Montanha"},{"id":144,"legenda":"Passeios na Neve"},{"id":145,"legenda":"Hotéis com Lareira"},{"id":146,"legenda":"Aluguel de Roupas de Neve"}]},
+    {"id":15,"legenda":"Shopping","categorias":[{"id":151,"legenda":"Roupas e Acessórios"},{"id":152,"legenda":"Eletrônicos"},{"id":153,"legenda":"Artesanato"},{"id":154,"legenda":"Souvenirs"},{"id":155,"legenda":"Calçados"},{"id":156,"legenda":"Roupas de Frio"},{"id":157,"legenda":"Equipamentos para Passeios"}]},
+    {"id":16,"legenda":"Férias de Verão","categorias":[{"id":161,"legenda":"Praias"},{"id":162,"legenda":"Passeios de Barco"},{"id":163,"legenda":"Esportes Aquáticos"},{"id":164,"legenda":"Piscinas e Resorts"},{"id":165,"legenda":"Parques Aquáticos"},{"id":166,"legenda":"Hospedagens à Beira-Mar"},{"id":167,"legenda":"Aluguel de Equipamentos de Praia"}]}
+
+  ],   
  "localizacoes": [
     {
       "id": 1,
@@ -90,7 +100,8 @@
       "endereco": "Cidade de Santiago no Chile",
       "cidade": "CL001",
       "latitude": -33.4489,
-      "longitude": -70.6693
+      "longitude": -70.6693,
+      "classificacoes": [141,142, 143,144,145,146]
     },
     {
       "id": 2,
@@ -98,7 +109,8 @@
       "endereco": "Ruas das marias 123",
       "cidade": "BR025",
       "latitude": -33.4489,
-      "longitude": -70.6693
+      "longitude": -70.6693,
+      "classificacoes": [101,107, 111,112]
     },
     {
       "id": 3,
@@ -106,7 +118,8 @@
       "endereco": "Ruas das marias 123",
       "cidade": "CL001",
       "latitude": -33.4489,
-      "longitude": -70.6693
+      "longitude": -70.6693,
+      "classificacoes": [111]
     },
     {
       "id": 4,
@@ -114,7 +127,8 @@
       "endereco": "Teresina - PI, Brasil",
       "cidade": "BR018",
       "latitude": -33.4489,
-      "longitude": -70.6693
+      "longitude": -70.6693,
+      "classificacoes": [164,165]
     },
     {
       "id": 5,
@@ -122,7 +136,8 @@
       "endereco": "São Paulo - SP, Brasil",
       "cidade": "BR025",
       "latitude": -33.4489,
-      "longitude": -70.6693
+      "longitude": -70.6693,
+      "classificacoes": [111,112,121,122,123]
     },
     {
       "id": 6,
@@ -130,7 +145,8 @@
       "endereco": "Guarulhos - SP, Brasil",
       "cidade": "BR028",
       "latitude": -33.4489,
-      "longitude": -70.6693
+      "longitude": -70.6693,
+      "classificacoes": [101,107]
     }
 
   ],
@@ -157,8 +173,7 @@
         "passaporte": null
       },
       "aniversario": "1990-01-01",
-      "foto": "https://supabase/foto-gleyson.jpg",
-      "classificacoes": [131,132, 133,134]
+      "foto": "https://supabase/foto-gleyson.jpg"
     },
     {
       "id": 2,
@@ -177,8 +192,7 @@
         "passaporte": null
       },
       "aniversario": "1990-01-01",
-      "foto": "https://supabase/foto-flymates.jpg",
-      "classificacoes": [101, 111]
+      "foto": "https://supabase/foto-flymates.jpg"
     },
     {
       "id": 3,
@@ -197,8 +211,7 @@
         "passaporte": null
       },
       "aniversario": "1990-01-01",
-      "foto": "https://supabase/foto-hotel.jpg",
-      "classificacoes": [111, 145]
+      "foto": "https://supabase/foto-hotel.jpg"
     },
     {
       "id": 4,
@@ -217,8 +230,7 @@
         "passaporte": null
       },
       "aniversario": "1990-01-01",
-      "foto": "https://supabase/foto-hotel.jpg",
-      "classificacoes": [111, 145]
+      "foto": "https://supabase/foto-hotel.jpg"
     },
     {
       "id": 5,
@@ -237,18 +249,10 @@
         "passaporte": null
       },
       "aniversario": "1990-01-01",
-      "foto": "https://supabase/foto-hotel.jpg",
-      "classificacoes": [111, 145]
+      "foto": "https://supabase/foto-hotel.jpg"
     }
   ],
-  "categorias":[
-    {"id":10,"legenda":"Transporte","categorias":[{"id":101,"legenda":"Vôo Nacional"},{"id":102,"legenda":"Rodoviário"},{"id":103,"legenda":"Táxi"},{"id":104,"legenda":"Transfer"},{"id":105,"legenda":"Uber/99"},{"id":106,"legenda":"Locação"},{"id":107,"legenda":"Vôo Internacional"}]},
-    {"id":11,"legenda":"Hospedagem","categorias":[{"id":111,"legenda":"Hotel"},{"id":112,"legenda":"Hostel"},{"id":113,"legenda":"Pousada"},{"id":114,"legenda":"Airbnb"}]},
-    {"id":12,"legenda":"Alimentação","categorias":[{"id":121,"legenda":"Restaurante"},{"id":122,"legenda":"Lanchonete"},{"id":123,"legenda":"Café"},{"id":124,"legenda":"Delivery"},{"id":125,"legenda":"Supermercado"}]},
-    {"id":13,"legenda":"Nômade Digital","categorias":[{"id":131,"legenda":"Trabalho Remoto"},{"id":132,"legenda":"Aventureiro"},{"id":133,"legenda":"Experiências Culturais"},{"id":134,"legenda":"Conexões com Locais"}]},
-    {"id":14,"legenda":"Férias de Inverno","categorias":[{"id":141,"legenda":"Esqui"},{"id":142,"legenda":"Snowboard"},{"id":143,"legenda":"Estação de Montanha"},{"id":144,"legenda":"Passeios na Neve"},{"id":145,"legenda":"Hotéis com Lareira"},{"id":146,"legenda":"Aluguel de Roupas de Neve"}]},
-    {"id":15,"legenda":"Shopping","categorias":[{"id":151,"legenda":"Roupas e Acessórios"},{"id":152,"legenda":"Eletrônicos"},{"id":153,"legenda":"Artesanato"},{"id":154,"legenda":"Souvenirs"},{"id":155,"legenda":"Calçados"},{"id":156,"legenda":"Roupas de Frio"},{"id":157,"legenda":"Equipamentos para Passeios"}]}
-  ],   
+  
   "produtos": [
     {
       "id": 1,
