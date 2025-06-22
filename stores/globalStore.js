@@ -136,6 +136,13 @@ export const useGlobalStore = defineStore("database", {
       const cidadeObject = this.getCidadeById(localizacao.cidade);
 
       const enriched = { ...localizacao, cidadeObject, enriquecido: true };
+
+      // Adiciona classificações enriquecidas, se existirem
+      if (Array.isArray(localizacao.classificacoes)) {
+        enriched.classificacoesList = this.enriquecerClassificacoes(
+          localizacao.classificacoes
+        );
+      }
       const index = this.localizacoes.findIndex((l) => l.id === id);
       if (index !== -1) this.localizacoes[index] = enriched;
       return enriched;
