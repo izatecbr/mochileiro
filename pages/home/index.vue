@@ -1,6 +1,6 @@
 <template>
   <main>
-    Home asda
+    Home asda asd s
   </main>
 </template>
 
