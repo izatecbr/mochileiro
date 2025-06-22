@@ -370,7 +370,6 @@
         "preco": "$ 12000.00",
         "moeda":  "CLP"
       },
-      "categorias": ["Chile", "Viagem pelo mundo", "Esqui","Aventura na neve"],
       "autor": 1,
       "aventuras": [1,2]
     }

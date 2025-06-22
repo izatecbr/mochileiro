@@ -19,9 +19,9 @@
       </p>
 
       <p class="experiencia__categorias">
-        <strong>Categorias:</strong>
-        <span v-for="(cat, i) in objeto?.categorias" :key="i">
-          {{ cat }}<span v-if="i < objeto?.categorias.length - 1">, </span>
+        <strong>Classificações:</strong>
+        <span v-for="(cat, i) in objeto?.classificacoesList" :key="i">
+          {{ cat.legenda }}<span v-if="i < objeto?.classificacoesList.length - 1">, </span>
         </span>
       </p>
     </header>
