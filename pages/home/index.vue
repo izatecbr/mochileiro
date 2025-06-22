@@ -1,26 +1,37 @@
 <template>
   <main>
-    Home asda asd s
+    <Header3 />
+    <Hero3 />
+    <BrandsTwo />
+    <DestinationsThree />
+    <TourSlider2 />
+    <TrendingDestinations />
+    <TestimonialsTwo />
+    <FeaturesFour />
+    <BannerFive />
+    <ArticlesTwo />
+    <LinksList />
+    <BannerSix />
+    <FooterThree />
   </main>
 </template>
 
 <script setup>
 useSeoMeta({
-  title: "Home-1 || ViaTour - Travel & Tour Nuxtjs Template",
+  title: "Home-3 || ViaTour - Travel & Tour Nuxtjs Template",
   description: "ViaTour - Travel & Tour Nuxtjs Template",
 });
-/*
-import ArticlesThree from "@/components/homes/articles/ArticlesThree";
-import Banner from "@/components/homes/banners/Banner";
-import BannerOne from "@/components/homes/banners/BannerOne";
-import DestinationsOne from "@/components/homes/destinations/DestinationsOne";
-import FeaturesOne from "@/components/homes/features/FeaturesOne";
-import Hero1 from "@/components/homes/heros/Hero1";
-import TestimonialOne from "@/components/homes/testimonials/TestimonialOne";
-import TourTypeOne from "@/components/homes/tourTypes/TourTypeOne";
-import Tour1 from "@/components/homes/tours/Tour1";
-import TourSlderOne from "@/components/homes/tours/TourSlderOne";
-import FooterOne from "@/components/layout/footers/FooterOne";
-import Header1 from "~/components/layout/header/Header1.vue";
-*/
+import ArticlesTwo from "@/components/homes/articles/ArticlesTwo";
+import BannerFive from "@/components/homes/banners/BannerFive";
+import BannerSix from "@/components/homes/banners/BannerSix";
+import BrandsTwo from "@/components/homes/brands/BrandsTwo";
+import DestinationsThree from "@/components/homes/destinations/DestinationsThree";
+import TrendingDestinations from "@/components/homes/destinations/TrendingDestinations";
+import FeaturesFour from "@/components/homes/features/FeaturesFour";
+import LinksList from "@/components/homes/others/LinksList";
+import TestimonialsTwo from "@/components/homes/testimonials/TestimonialsTwo";
+import TourSlider2 from "@/components/homes/tours/TourSlider2";
+import Hero3 from "@/components/homes/heros/Hero3";
+import FooterThree from "@/components/layout/footers/FooterThree";
+import Header3 from "@/components/layout/header/Header3";
 </script>
