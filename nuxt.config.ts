@@ -2,5 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-   modules: ['@pinia/nuxt'],
+   modules: ['@pinia/nuxt','@nuxt/image'],
+   image: {
+    quality: 80,
+  },
+  server: {
+    port: 3000, // muda a porta padrão de 3000 para 3001
+    host: '0.0.0.0' // opcional: permite acesso externo
+  }
 })
