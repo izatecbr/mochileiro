@@ -1,7 +1,5 @@
 <script setup>
 import { ref, watch } from 'vue'
-import { useGlobalStore } from '@/stores/globalStore'
-
 const store = useGlobalStore()
 
 const colecaoSelecionada = ref('')
