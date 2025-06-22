@@ -158,7 +158,7 @@
       },
       "aniversario": "1990-01-01",
       "foto": "https://supabase/foto-gleyson.jpg",
-      "classificacoes": [101, 111]
+      "classificacoes": [131,132, 133,134]
     },
     {
       "id": 2,
@@ -245,6 +245,7 @@
     {"id":10,"legenda":"Transporte","categorias":[{"id":101,"legenda":"Aéreo"},{"id":102,"legenda":"Rodoviário"},{"id":103,"legenda":"Táxi"},{"id":104,"legenda":"Transfer"},{"id":105,"legenda":"Uber/99"},{"id":106,"legenda":"Locação"}]},
     {"id":11,"legenda":"Hospedagem","categorias":[{"id":111,"legenda":"Hotel"},{"id":112,"legenda":"Hostel"},{"id":113,"legenda":"Pousada"},{"id":114,"legenda":"Airbnb"}]},
     {"id":12,"legenda":"Alimentação","categorias":[{"id":121,"legenda":"Restaurante"},{"id":122,"legenda":"Lanchonete"},{"id":123,"legenda":"Café"},{"id":124,"legenda":"Delivery"},{"id":125,"legenda":"Supermercado"}]},
+    {"id":13,"legenda":"Nômade Digital","categorias":[{"id":131,"legenda":"Trabalho Remoto"},{"id":132,"legenda":"Aventureiro"},{"id":133,"legenda":"Experiências Culturais"},{"id":134,"legenda":"Conexões com Locais"}]},
     {"id":14,"legenda":"Férias de Inverno","categorias":[{"id":141,"legenda":"Esqui"},{"id":142,"legenda":"Snowboard"},{"id":143,"legenda":"Estação de Montanha"},{"id":144,"legenda":"Passeios na Neve"},{"id":145,"legenda":"Hotéis com Lareira"},{"id":146,"legenda":"Aluguel de Roupas de Neve"}]},
     {"id":15,"legenda":"Shopping","categorias":[{"id":151,"legenda":"Roupas e Acessórios"},{"id":152,"legenda":"Eletrônicos"},{"id":153,"legenda":"Artesanato"},{"id":154,"legenda":"Souvenirs"},{"id":155,"legenda":"Calçados"},{"id":156,"legenda":"Roupas de Frio"},{"id":157,"legenda":"Equipamentos para Passeios"}]}
   ],   
