@@ -7,10 +7,8 @@
     <Atividades />
     <TrendingDestinations />
     <TestimonialsTwo />
-    <FeaturesFour />
     <BannerFive />
     <ArticlesTwo />
-    <LinksList />
     <BannerSix />
     <FooterThree />
   </main>
