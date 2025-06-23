@@ -79,4 +79,9 @@ JOAO
 Se quiser, posso te ajudar a melhorar a estratégia de preload dos dados no Nuxt também (useAsyncData, middleware, etc). Só falar!
 
 
-Home: Onde Cidades - Pais
+Home: 
+Onde: Cidades - Pais - com atributo destino=true
+Quando: Meses
+Categoria: Categorias Pai em ordem alfabetica (ver se o action do pinia retorna assim)
+
+Destinos: Serão Localizacoes com atributo destino=true

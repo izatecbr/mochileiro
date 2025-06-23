@@ -1,4 +1,18 @@
 {
+  "meses": [
+    { "id": "JAN", "legenda": "Janeiro" },
+    { "id": "FEV", "legenda": "Fevereiro" },
+    { "id": "MAR", "legenda": "Março" },
+    { "id": "ABR", "legenda": "Abril" },
+    { "id": "MAI", "legenda": "Maio" },
+    { "id": "JUN", "legenda": "Junho" },
+    { "id": "JUL", "legenda": "Julho" },
+    { "id": "AGO", "legenda": "Agosto" },
+    { "id": "SET", "legenda": "Setembro" },
+    { "id": "OUT", "legenda": "Outubro" },
+    { "id": "NOV", "legenda": "Novembro" },
+    { "id": "DEZ", "legenda": "Dezembro" }
+  ],
   "continentes":[
   { "id": "AF", "nome": "África", "codigoUN": "002" },
   { "id": "NA", "nome": "América do Norte", "codigoUN": "003" },
@@ -101,7 +115,8 @@
       "cidade": "CL001",
       "latitude": -33.4489,
       "longitude": -70.6693,
-      "classificacoes": [141,142, 143,144,145,146]
+      "classificacoes": [141,142, 143,144,145,146],
+      "destino": true
     },
     {
       "id": 2,
@@ -110,7 +125,8 @@
       "cidade": "BR025",
       "latitude": -33.4489,
       "longitude": -70.6693,
-      "classificacoes": [101,107, 111,112]
+      "classificacoes": [101,107, 111,112],
+      "destino": false
     },
     {
       "id": 3,
@@ -119,7 +135,8 @@
       "cidade": "CL001",
       "latitude": -33.4489,
       "longitude": -70.6693,
-      "classificacoes": [111]
+      "classificacoes": [111],
+      "destino": true
     },
     {
       "id": 4,
@@ -128,7 +145,8 @@
       "cidade": "BR018",
       "latitude": -33.4489,
       "longitude": -70.6693,
-      "classificacoes": [164,165]
+      "classificacoes": [164,165],
+      "destino": true
     },
     {
       "id": 5,
@@ -137,7 +155,8 @@
       "cidade": "BR025",
       "latitude": -33.4489,
       "longitude": -70.6693,
-      "classificacoes": [111,112,121,122,123]
+      "classificacoes": [111,112,121,122,123],
+      "destino": true
     },
     {
       "id": 6,
@@ -146,7 +165,8 @@
       "cidade": "BR028",
       "latitude": -33.4489,
       "longitude": -70.6693,
-      "classificacoes": [101,107]
+      "classificacoes": [101,107],
+      "destino": true
     }
 
   ],

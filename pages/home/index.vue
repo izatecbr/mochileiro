@@ -2,8 +2,9 @@
   <main>
     <Header3 />
     <Hero3 />
-    <DestinationsThree />
-    <TourSlider2 />
+    <Experiencias />
+    <Aventuras />
+    <Atividades />
     <TrendingDestinations />
     <TestimonialsTwo />
     <FeaturesFour />
@@ -23,13 +24,13 @@ useSeoMeta({
 import ArticlesTwo from "@/components/homes/articles/ArticlesTwo";
 import BannerFive from "@/components/homes/banners/BannerFive";
 import BannerSix from "@/components/homes/banners/BannerSix";
-import BrandsTwo from "@/components/homes/brands/BrandsTwo";
-import DestinationsThree from "@/components/homes/destinations/DestinationsThree";
 import TrendingDestinations from "@/components/homes/destinations/TrendingDestinations";
 import FeaturesFour from "@/components/homes/features/FeaturesFour";
 import LinksList from "@/components/homes/others/LinksList";
 import TestimonialsTwo from "@/components/homes/testimonials/TestimonialsTwo";
-import TourSlider2 from "@/components/homes/tours/TourSlider2";
+import Experiencias from "@/components/homes/anuncios/Experiencias.vue";
+import Aventuras from "@/components/homes/anuncios/Aventuras.vue";
+import Atividades from "@/components/homes/anuncios/Atividades.vue";
 import Hero3 from "@/components/homes/heros/Hero3";
 import FooterThree from "@/components/layout/footers/FooterThree";
 import Header3 from "@/components/layout/header/Header3";
