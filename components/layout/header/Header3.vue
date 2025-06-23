@@ -38,13 +38,11 @@
       </div>
 
       <div class="header__right">
-        <div class="ml-30">
-          <Currency />
-        </div>
 
-        <nuxt-link to="/help-center" class="ml-20"> Help </nuxt-link>
 
-        <nuxt-link to="/register" class="ml-30"> Sign up </nuxt-link>
+        <nuxt-link to="/help-center" class="ml-20"> Contato </nuxt-link>
+
+        <nuxt-link to="/register" class="ml-30"> Ajuda </nuxt-link>
 
         <nuxt-link
           to="/login"
