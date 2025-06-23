@@ -105,7 +105,6 @@
     {"id":14,"legenda":"Férias de Inverno","categorias":[{"id":141,"legenda":"Esqui"},{"id":142,"legenda":"Snowboard"},{"id":143,"legenda":"Estação de Montanha"},{"id":144,"legenda":"Passeios na Neve"},{"id":145,"legenda":"Hotéis com Lareira"},{"id":146,"legenda":"Aluguel de Roupas de Neve"}]},
     {"id":15,"legenda":"Shopping","categorias":[{"id":151,"legenda":"Roupas e Acessórios"},{"id":152,"legenda":"Eletrônicos"},{"id":153,"legenda":"Artesanato"},{"id":154,"legenda":"Souvenirs"},{"id":155,"legenda":"Calçados"},{"id":156,"legenda":"Roupas de Frio"},{"id":157,"legenda":"Equipamentos para Passeios"}]},
     {"id":16,"legenda":"Férias de Verão","categorias":[{"id":161,"legenda":"Praias"},{"id":162,"legenda":"Passeios de Barco"},{"id":163,"legenda":"Esportes Aquáticos"},{"id":164,"legenda":"Piscinas e Resorts"},{"id":165,"legenda":"Parques Aquáticos"},{"id":166,"legenda":"Hospedagens à Beira-Mar"},{"id":167,"legenda":"Aluguel de Equipamentos de Praia"}]}
-
   ],   
  "localizacoes": [
     {

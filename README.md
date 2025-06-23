@@ -85,3 +85,121 @@ Quando: Meses
 Categoria: Categorias Pai em ordem alfabetica (ver se o action do pinia retorna assim)
 
 Destinos: Serão Localizacoes com atributo destino=true
+
+Interesses: As categorias e nela abrir as categorias filhas criando uma arvore de rotas para exibir as localizações que terão relação com os usuarios do anuncios
+
+
+Boa! Esse cenário é clássico em apps com conteúdo categorizado — e tem algumas formas boas de organizar, dependendo de como você quer estruturar as URLs e componentes. Vou te dar uma sugestão baseada em **separação por categoria**, mas com **uso inteligente de rotas dinâmicas**.
+
+---
+
+## ✅ Cenário: destinos com `id` e `categoria`
+
+Exemplo de um objeto `destino`:
+
+```js
+{
+  id: 'paris-torre-eiffel',
+  categoria: 'ponto-turistico'
+}
+```
+
+Categorias possíveis:
+
+* `cidade`
+* `hotel`
+* `restaurante`
+* `ponto-turistico`
+
+---
+
+## 📁 Estrutura de rotas sugerida
+
+```bash
+pages/
+└── destinos/
+    └── [categoria]/
+        └── [id].vue
+```
+
+### Resultado:
+
+* `/destinos/cidade/rio-de-janeiro`
+* `/destinos/hotel/hilton-copacabana`
+* `/destinos/restaurante/fogo-de-chao`
+* `/destinos/ponto-turistico/cristo-redentor`
+
+---
+
+### ✅ Como acessar os dados na página `[id].vue`:
+
+#### Nuxt 3 (Composition API):
+
+```ts
+const route = useRoute()
+
+const categoria = route.params.categoria
+const id = route.params.id
+
+// Buscar dados baseado na categoria + id
+```
+
+#### Nuxt 2 (Options API):
+
+```js
+export default {
+  async asyncData({ params }) {
+    const { categoria, id } = params
+    // Busca de dados baseada em categoria + id
+  }
+}
+```
+
+---
+
+## 🧠 Variações e melhorias
+
+### 1. 📦 Reaproveitamento de componentes
+
+Você pode criar um componente genérico (`DestinoDetalhe.vue`) e usá-lo dentro de `[id].vue`, adaptando o layout com base na `categoria`.
+
+### 2. 🛣️ URLs mais amigáveis (opcional)
+
+Se quiser algo como `/cidade/rio-de-janeiro`, é só mover `[categoria]` para o topo:
+
+```
+pages/
+└── [categoria]/
+    └── [id].vue
+```
+
+A URL fica:
+
+* `/cidade/rio-de-janeiro`
+* `/hotel/hilton-copacabana`
+
+Mesma lógica, só muda o path.
+
+---
+
+## 🔄 Alternativa: um arquivo por categoria (se tiver layouts diferentes)
+
+Se cada tipo de destino tem uma estrutura completamente diferente (componentes, layout, etc), pode fazer:
+
+```bash
+pages/
+└── cidade/
+    └── [id].vue
+└── hotel/
+    └── [id].vue
+└── restaurante/
+    └── [id].vue
+└── ponto-turistico/
+    └── [id].vue
+```
+
+Isso permite separação mais clara, e ainda assim usa rota dinâmica (`[id].vue`) em cada categoria.
+
+---
+
+Se quiser, posso gerar esse esqueleto de projeto Nuxt 3 com base nisso pra você testar. Quer?

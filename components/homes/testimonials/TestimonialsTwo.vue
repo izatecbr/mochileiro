@@ -4,7 +4,7 @@
       <div class="row justify-center text-center">
         <div class="col-auto">
           <h2 data-aos="fade-up" data-aos-delay="" class="text-30">
-            Customer Reviews
+            Depoimentos
           </h2>
         </div>
       </div>
