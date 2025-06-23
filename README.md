@@ -77,3 +77,6 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 JOAO
 
 Se quiser, posso te ajudar a melhorar a estratégia de preload dos dados no Nuxt também (useAsyncData, middleware, etc). Só falar!
+
+
+Home: Onde Cidades - Pais

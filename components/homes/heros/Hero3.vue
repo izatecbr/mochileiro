@@ -23,7 +23,7 @@
           <h1 class="hero__title" data-aos="fade-up" data-aos-delay="300">
             Viva em todos
             <br class="md:d-none" />
-             Os Lugares
+             os Lugares
             <br class="md:d-none" />
             mochileiro.tec
             <nuxt-img
@@ -52,7 +52,7 @@
                       <i class="text-20 icon-pin"></i>
                     </div>
                     <div class="searchFormItem__content">
-                      <h5>Where</h5>
+                      <h5>Onde</h5>
                       <div class="js-select-control-chosen">
                         {{ location ? location : "Search destinations" }}
                       </div>
@@ -78,7 +78,7 @@
                       <i class="text-20 icon-calendar"></i>
                     </div>
                     <div class="searchFormItem__content">
-                      <h5>When</h5>
+                      <h5>Quando</h5>
                       <div>
                         <span class="js-first-date">
                           <Calender :active="currentActiveDD === 'calender'" />
@@ -100,7 +100,7 @@
                       <i class="text-20 icon-flag"></i>
                     </div>
                     <div class="searchFormItem__content">
-                      <h5>Tour Type</h5>
+                      <h5>Aventura</h5>
                       <div class="js-select-control-chosen">
                         {{ tourType ? tourType : "All tour" }}
                       </div>

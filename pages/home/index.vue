@@ -2,7 +2,6 @@
   <main>
     <Header3 />
     <Hero3 />
-    <BrandsTwo />
     <DestinationsThree />
     <TourSlider2 />
     <TrendingDestinations />
