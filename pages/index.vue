@@ -8,4 +8,6 @@ useSeoMeta({
   title: "Home-1 || ViaTour - Travel & Tour Nuxtjs Template",
   description: "ViaTour - Travel & Tour Nuxtjs Template",
 });
+
+
 </script>
