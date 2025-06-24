@@ -314,7 +314,7 @@
       "anfitriao": 2,
       "destino":4,
       "escolhida": false,
-       "classificacoes": [107],
+      "classificacoes": [107],
       "valor": {"quantia": 4070.62,"preco": "R$ 4.070,62","moeda": "BRL","formaPagamento": "R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 5x sem juros no cartão de crédito"}
     },
      {
@@ -339,7 +339,7 @@
       "anfitriao": 2,
       "destino":4,
       "escolhida": true,
-       "classificacoes": [101],
+      "classificacoes": [101],
       "valor": {"quantia": 927.49, "preco": "R$ 927,49","moeda": "BRL","formaPagamento": "R$ R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"}
     }
   ],
@@ -355,7 +355,7 @@
       "autor": 1,
       "anfitriao": 2,
       "atividades":[1, 2],
-       "classificacoes": [107]
+      "classificacoes": [107]
     },
     {
       "id": 2,
