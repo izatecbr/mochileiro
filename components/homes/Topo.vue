@@ -25,8 +25,6 @@
             <br class="md:d-none" />
              os Lugares
             <br class="md:d-none" />
-            do Mundo
-            <br class="md:d-none" />
             mochileiro.tec
             <nuxt-img
               width="214"
