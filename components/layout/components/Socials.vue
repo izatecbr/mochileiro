@@ -9,9 +9,7 @@
 
 <script setup>
 const socialMediaLinks = [
-  { id: 1, class: "icon-facebook", href: "#" },
-  { id: 2, class: "icon-twitter", href: "#" },
-  { id: 3, class: "icon-instagram", href: "#" },
-  { id: 4, class: "icon-linkedin", href: "#" },
+  { id: 1, class: "icon-instagram", href: "https://www.instagram.com/glysns/profilecard/?igsh=NDJ5bjNwM2c5MjJ3" },
+  { id: 2, class: "icon-linkedin", href: "https://www.linkedin.com/in/glysns/" },
 ];
 </script>

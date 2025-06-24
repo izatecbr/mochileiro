@@ -16,15 +16,13 @@
 
 <script setup>
 useSeoMeta({
-  title: "Home-3 || ViaTour - Travel & Tour Nuxtjs Template",
-  description: "ViaTour - Travel & Tour Nuxtjs Template",
+  title: "Mochileiro.tec",
+  description: "Viva em todos os lugares",
 });
 import ArticlesTwo from "@/components/homes/articles/ArticlesTwo";
 import BannerFive from "@/components/homes/banners/BannerFive";
 import BannerSix from "@/components/homes/banners/BannerSix";
 import TrendingDestinations from "@/components/homes/destinations/TrendingDestinations";
-import FeaturesFour from "@/components/homes/features/FeaturesFour";
-import LinksList from "@/components/homes/others/LinksList";
 import TestimonialsTwo from "@/components/homes/testimonials/TestimonialsTwo";
 import Experiencias from "@/components/homes/anuncios/Experiencias.vue";
 import Aventuras from "@/components/homes/anuncios/Aventuras.vue";
