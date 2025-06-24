@@ -19,7 +19,7 @@
           <nuxt-img
             width="167"
             height="32"
-            src="/img/general/logo-1.svg"
+            src="/img/logo/logo-3.png"
             alt="logo icon"
           />
         </nuxt-link>
@@ -60,12 +60,11 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from "vue";
+import { onBeforeUnmount, onMounted, ref } from "vue";
 
-import Currency from "../components/Currency.vue";
-import MobileMenu from "../components/MobileMenu.vue";
 import { useRouter } from "vue-router";
 import Menu from "../components/Menu.vue";
+import MobileMenu from "../components/MobileMenu.vue";
 
 const addClass = ref(false);
 const mobileMenuOpen = ref(false);
