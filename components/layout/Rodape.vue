@@ -76,7 +76,6 @@
 </template>
 
 <script setup>
-import Paymentcards from "../components/Paymentcards";
-import FooterLinks from "../components/FooterLinks";
-import Socials from "../components/Socials";
+import FooterLinks from "./components/FooterLinks";
+import Socials from "./components/Socials";
 </script>

@@ -25,6 +25,8 @@
             <br class="md:d-none" />
              os Lugares
             <br class="md:d-none" />
+            do Mundo
+            <br class="md:d-none" />
             mochileiro.tec
             <nuxt-img
               width="214"
@@ -159,9 +161,9 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 
-import Location from "@/components/common/dropdownSearch/Location.vue";
-import TourType from "@/components/common/dropdownSearch/TourType.vue";
-import Calender from "@/components/common/dropdownSearch/Calender.vue";
+import Location from "~/components/common/dropdownSearch/Location.vue";
+import TourType from "~/components/common/dropdownSearch/TourType.vue";
+import Calender from "~/components/common/dropdownSearch/Calender.vue";
 
 import { useRouter } from "vue-router";
 const router = useRouter();

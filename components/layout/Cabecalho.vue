@@ -63,8 +63,8 @@
 import { onBeforeUnmount, onMounted, ref } from "vue";
 
 import { useRouter } from "vue-router";
-import Menu from "../components/Menu.vue";
-import MobileMenu from "../components/MobileMenu.vue";
+import Menu from "./components/Menu.vue";
+import MobileMenu from "./components/MobileMenu.vue";
 
 const addClass = ref(false);
 const mobileMenuOpen = ref(false);
