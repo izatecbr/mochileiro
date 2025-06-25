@@ -6,9 +6,8 @@
       </div> -->
       <div class="roadmap__icon"></div>
       <div class="roadmap__wrap">
-        <div class="roadmap__title">{{ elm.legenda }}</div>
+        <div class="roadmap__title">{{ elm.legenda }} - {{ Utils.formatDateToBR(elm.data.dia) }}</div>
         <span class="text-13" >{{ elm.descricao }}</span>
-        <div v-if="elm.data" class="roadmap__content">{{ Utils.formatDateToBR(elm.data.dia) }}</div>
       </div>
     </div>
   </div>

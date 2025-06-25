@@ -2,14 +2,9 @@
   <div class="row y-gap-20 justify-between items-end">
     <div class="col-auto">
       <div class="row x-gap-10 y-gap-10 items-center">
-        <div class="col-auto">
-          <button class="button -accent-1 text-14 py-5 px-15 bg-accent-1-05 text-accent-1 rounded-200">
-            Bestseller
-          </button>
-        </div>
-        <div class="col-auto">
+        <div class="col-auto" v-for="(c, index) in objeto.classificacoesList" :key="index">
           <button class="button -accent-1 text-14 py-5 px-15 bg-light-1 rounded-200">
-            Free cancellation
+            {{ c.legenda }}
           </button>
         </div>
       </div>

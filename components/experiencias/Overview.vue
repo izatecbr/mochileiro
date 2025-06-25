@@ -1,5 +1,5 @@
 <template>
-  <h2 class="text-30">Overview</h2>
+  <h2 class="text-30">Introdução</h2>
   <p class="mt-20">
     {{overview||'-'}}
   </p>
