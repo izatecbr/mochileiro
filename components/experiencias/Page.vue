@@ -18,6 +18,12 @@
 
           <div class="line mt-60 mb-60"></div>
 
+          <h2 class="text-30">Classificações</h2>
+
+          <Included :classificacoes="objeto?.classificacoesList" />
+
+          <div class="line mt-60 mb-60"></div>
+
           <h2 class="text-30">Linha do tempo</h2>
 
           <div class="mt-30 mb-10">
@@ -62,7 +68,11 @@
           <CommentBox /> -->
         </div>
 
-        
+        <div class="col-lg-4">
+          <div class="d-flex justify-end js-pin-content">
+            <Sidebar :valor="objeto?.valor?.preco" :moeda="objeto?.valor?.moeda" />
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -96,7 +106,7 @@ const loadImages = async () => {
   isLoading.value = true;
   try {
     const response = await pexels.fetchImages(props.objeto.localizacaoObject.legenda);
-    images.value =null; //response.photos.map((photo) => photo.src.landscape);
+    images.value = response.photos.map((photo) => photo.src.landscape);
   } catch (error) {
     console.error("Erro ao carregar imagens:", error);
   } finally {
