@@ -1,17 +1,18 @@
 <template>
   <main>
-  <div class="container">
-    <div class="row justify-between py-30 mt-80">
-      <div class="col-auto">
-        <div class="text-14">Home {{ ">" }} Tours {{ ">" }} Phuket</div>
-      </div>
+    <div class="container">
+      <div class="row justify-between py-30 mt-80">
+        <div class="col-auto">
+          <div class="text-14">Home {{ ">" }} Tours {{ ">" }} Phuket</div>
+        </div>
 
-      <div class="col-auto">
-        <div class="text-14">Uma experiência inesquecível</div>
+        <div class="col-auto">
+          <div class="text-14">Uma experiência inesquecível</div>
+        </div>
       </div>
     </div>
-  </div>
-    <article class="experiencia">
+    <ExperienciasPage :tour="tour" />
+    <!--<article class="experiencia">
       <h1>Experiência ID: {{ idExperiencia }}</h1>
 
       <header class="experiencia__cabecalho">
@@ -112,21 +113,22 @@
       <pre class="json-view">
       {{ JSON.stringify(objeto, null, 2) }}
     </pre>
-    </article>
+    </article>-->
   </main>
 </template>
 
 <script setup>
-import { ref, onMounted, computed } from 'vue'
 import { useRoute } from '#imports'
 import { format } from 'date-fns'
 import { ptBR } from 'date-fns/locale'
+import { allTour } from '~/data/tours'
 
 const route = useRoute()
 const store = useGlobalStore()
 const objeto = ref(null)
 const idExperiencia = route.params.id
-
+const id = route.params.id;
+const tour = allTour.find((item) => item.id == id) || allTour[0];
 onMounted(() => {
   objeto.value = store.getExperienciaById(Number(idExperiencia))
 })
@@ -152,4 +154,3 @@ const sugestoesMap = computed(() => {
   return map
 })
 </script>
-
