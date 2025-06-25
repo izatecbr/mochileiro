@@ -82,7 +82,7 @@
         </div>
       </div>
     </div>
-
+<!--
     <h5 class="text-18 fw-500 mb-20 mt-20">Tickets</h5>
 
     <div>
@@ -271,6 +271,7 @@
         }}
       </div>
     </div>
+    -->
 
     <button class="button -md -dark-1 col-12 bg-accent-1 text-white mt-20">
       Book Now
