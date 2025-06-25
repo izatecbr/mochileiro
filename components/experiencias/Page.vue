@@ -18,12 +18,6 @@
 
           <div class="line mt-60 mb-60"></div>
 
-          <h2 class="text-30">Classificações</h2>
-
-          <Included :classificacoes="objeto?.classificacoesList" />
-
-          <div class="line mt-60 mb-60"></div>
-
           <h2 class="text-30">Linha do tempo</h2>
 
           <div class="mt-30 mb-10">
