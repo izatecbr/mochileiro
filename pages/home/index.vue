@@ -1,6 +1,7 @@
 <template>
   <main>
     <Topo />
+    <Banner />
     <Depoimentos />
     <Rodape />
   </main>
@@ -14,4 +15,5 @@ useSeoMeta({
 import Depoimentos from "@/components/homes/Depoimentos";
 import Topo from "@/components/homes/Topo";
 import Rodape from "@/components/layout/Rodape";
+import Banner from "@/components/homes/Banner";
 </script>

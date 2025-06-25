@@ -1,7 +1,7 @@
 <template>
-  <Home1 />
+  <Home />
 </template>
 
 <script setup>
-import Home1 from "./home/index.vue";
+import Home from "./home/index.vue";
 </script>
