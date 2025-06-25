@@ -70,7 +70,7 @@
 
         <div class="col-lg-4">
           <div class="d-flex justify-end js-pin-content">
-            <Sidebar />
+            <Sidebar :valor="objeto.valor.preco" :moeda="objeto.valor.moeda" />
           </div>
         </div>
       </div>
@@ -95,6 +95,10 @@ const { pexels } = $http;
 const props = defineProps(["objeto"]);
 const images = ref([]);
 const isLoading = ref(false);
+
+onMounted(()=>{
+  console.log("Props objeto:", props.objeto);
+})
 
 const loadImages = async () => {
   if (!props?.objeto?.localizacaoObject?.legenda) return;

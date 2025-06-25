@@ -1,17 +1,15 @@
 <template>
   <div class="tourSingleSidebar">
     <div class="d-flex items-center">
-      <div>From</div>
-      <div class="text-20 fw-500 ml-10">$1,200</div>
+      <div>Valor</div>
+      <div class="text-20 fw-500 ml-10">{{ moeda ?? '$' }} {{ valor ?? '' }} </div>
     </div>
 
     <div class="searchForm -type-1 -sidebar mt-20">
       <div class="searchForm__form">
         <div class="searchFormItem js-select-control js-form-dd js-calendar">
           <div class="searchFormItem__button">
-            <div
-              class="searchFormItem__icon size-50 rounded-12 bg-light-1 flex-center"
-            >
+            <div class="searchFormItem__icon size-50 rounded-12 bg-light-1 flex-center">
               <i class="text-20 icon-calendar"></i>
             </div>
             <div class="searchFormItem__content">
@@ -30,17 +28,12 @@
         </div>
 
         <div class="searchFormItem js-select-control js-form-dd">
-          <div
-            class="searchFormItem__button"
-            @click="
-              () => {
-                activeTimeDD = !activeTimeDD;
-              }
-            "
-          >
-            <div
-              class="searchFormItem__icon size-50 rounded-12 bg-light-1 flex-center"
-            >
+          <div class="searchFormItem__button" @click="
+            () => {
+              activeTimeDD = !activeTimeDD;
+            }
+          ">
+            <div class="searchFormItem__icon size-50 rounded-12 bg-light-1 flex-center">
               <i class="text-20 icon-clock"></i>
             </div>
             <div class="searchFormItem__content">
@@ -54,24 +47,16 @@
             </div>
           </div>
 
-          <div
-            :class="`searchFormItemDropdown -tour-type ${
-              activeTimeDD ? 'is-active' : ''
-            }`"
-          >
+          <div :class="`searchFormItemDropdown -tour-type ${activeTimeDD ? 'is-active' : ''
+            }`">
             <div class="searchFormItemDropdown__container">
               <div class="searchFormItemDropdown__list sroll-bar-1">
-                <div
-                  v-for="(elm, i) in times"
-                  :key="i"
-                  @click="
-                    () => {
-                      selectedTime = selectedTime == elm ? '' : elm;
-                      activeTimeDD = false;
-                    }
-                  "
-                  class="searchFormItemDropdown__item"
-                >
+                <div v-for="(elm, i) in times" :key="i" @click="
+                  () => {
+                    selectedTime = selectedTime == elm ? '' : elm;
+                    activeTimeDD = false;
+                  }
+                " class="searchFormItemDropdown__item">
                   <button class="js-select-control-button">
                     <span class="js-select-control-choice">{{ elm }}</span>
                   </button>
@@ -82,7 +67,7 @@
         </div>
       </div>
     </div>
-<!--
+    <!--
     <h5 class="text-18 fw-500 mb-20 mt-20">Tickets</h5>
 
     <div>
@@ -286,6 +271,8 @@ import { ref, watchEffect } from "vue";
 import Calender from "../common/dropdownSearch/Calender";
 
 import { times } from "@/data/tourSingleContent";
+
+const props = defineProps(['valor', 'moeda'])
 
 const prices = {
   adultPrice: 94,
