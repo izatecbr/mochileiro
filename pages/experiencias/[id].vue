@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row justify-between py-30 mt-80">
         <div class="col-auto">
-          <div class="text-14">Home {{ ">" }} Tours {{ ">" }} Phuket</div>
+          <div class="text-14">Mochileiro {{ ">" }} Experiências</div>
         </div>
 
         <div class="col-auto">

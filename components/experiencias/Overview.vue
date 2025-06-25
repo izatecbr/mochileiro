@@ -4,7 +4,7 @@
     {{overview||'-'}}
   </p>
 
-  <h3 class="text-20 fw-500 mt-20">Atividades</h3>
+  <h3 class="text-20 fw-500 mt-20">Aventuras</h3>
   <ul v-for="aventura in aventuras" :key="aventura.id" class="ulList mt-20">
     <h4 class="text-18 fw-500">{{aventura.legenda}}</h4>
     <li v-for="atividade in aventura.atividadesList"  >

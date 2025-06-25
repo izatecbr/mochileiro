@@ -2,7 +2,7 @@
   <div class="row y-gap-20 justify-between items-end">
     <div class="col-auto">
       <div class="row x-gap-10 y-gap-10 items-center">
-        <div class="col-auto" v-for="(c, index) in objeto.classificacoesList" :key="index">
+        <div class="col-auto" v-for="(c, index) in objeto?.classificacoesList" :key="index">
           <button class="button -accent-1 text-14 py-5 px-15 bg-light-1 rounded-200">
             {{ c.legenda }}
           </button>
@@ -35,7 +35,7 @@
         <div class="col-auto">
           <div class="d-flex items-center">
             <i class="icon-reservation text-16 mr-5"></i>
-            30K+ booked
+            30K+ adquirido
           </div>
         </div>
       </div>
@@ -45,12 +45,12 @@
       <div class="d-flex x-gap-30 y-gap-10">
         <a href="#" class="d-flex items-center">
           <i class="icon-share flex-center text-16 mr-10"></i>
-          Share
+          Indicar
         </a>
 
         <a href="#" class="d-flex items-center">
           <i class="icon-heart flex-center text-16 mr-10"></i>
-          Wishlist
+          Adorei
         </a>
       </div>
     </div>
