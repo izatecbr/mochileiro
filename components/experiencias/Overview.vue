@@ -5,20 +5,17 @@
   </p>
 
   <h3 class="text-20 fw-500 mt-20">Atividades</h3>
-  <ul v-if="atividades" class="ulList mt-20">
-    <li v-for="atividade in atividades" :key="atividade.id">
-      <NuxtLink :to="`/atividades/${atividade.id}`">
-      {{ atividade?.legenda }} - {{ atividade?.duracao }}
+  <ul v-for="aventura in aventuras" :key="aventura.id" class="ulList mt-20">
+    <h4 class="text-18 fw-500">{{aventura.legenda}}</h4>
+    <li v-for="atividade in aventura.atividadesList"  >
+      <NuxtLink style=" text-decoration: underline;" class=""  :to="`/atividades/${atividade.id}`">
+       {{ atividade.legenda }}  {{ atividade?.duracao ? `- (${atividade.duracao})` : '' }}
       </NuxtLink>
     </li>
   </ul>
 </template>
 
 <script setup>
-const props = defineProps(['overview', 'atividades'])
+const props = defineProps(['overview', 'aventuras'])
 
-onBeforeMount(()=>{
-  console.log(props.atividades)
-  console.log(props.overview)
-})
 </script>

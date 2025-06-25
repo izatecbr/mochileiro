@@ -2,7 +2,7 @@
   <section class="pt-30">
     <div class="container">
       <Main :objeto="objeto" />
-      <Galeria />
+      <Galeria :images="images" />
     </div>
   </section>
 
@@ -14,7 +14,7 @@
             <OthersInformation :duracao="objeto?.duracao" />
           </div>
 
-          <Overview :overview="objeto?.descricao" :atividades="objeto?.aventurasList" />
+          <Overview :overview="objeto?.descricao" :aventuras="objeto?.aventurasList" />
 
           <div class="line mt-60 mb-60"></div>
 
@@ -23,7 +23,7 @@
           <div class="mt-30 mb-10">
             <RoadMap :aventuras="objeto?.aventurasList" />
           </div>
-           <div class="mt-60 mb-60"></div>
+          <div class="mt-60 mb-60"></div>
 
           <!--<h2 class="text-30 mt-60 mb-30">Tour Map</h2>
           <div class="mapTourSingle">
@@ -36,7 +36,7 @@
 
          <DateCalender />-->
 
-         <!-- <div class="line mt-60 mb-60"></div>
+          <!-- <div class="line mt-60 mb-60"></div>
 
           <h2 class="text-30">FAQ</h2>
 
@@ -44,7 +44,7 @@
             <Faq />
           </div> -->
 
-         <!-- <div class="line mt-60 mb-60"></div>
+          <!-- <div class="line mt-60 mb-60"></div>
 
           <h2 class="text-30">Customer Reviews</h2>
 
@@ -64,7 +64,7 @@
 
         <div class="col-lg-4">
           <div class="d-flex justify-end js-pin-content">
-            <Sidebar />
+            <Sidebar :valor="objeto.valor.preco" :moeda="objeto.valor.moeda" />
           </div>
         </div>
       </div>
@@ -73,6 +73,7 @@
 </template>
 
 <script setup>
+import { ref, watch } from "vue";
 import Galeria from "./galeria/Galeria.vue";
 import Included from "./Included";
 import Main from "./Main.vue";
@@ -81,17 +82,38 @@ import Overview from "./Overview";
 import RoadMap from "./RoadMap";
 import Sidebar from "./Sidebar.vue";
 
-const store = useGlobalStore()
+const store = useGlobalStore();
+const { $http } = useNuxtApp();
+const { pexels } = $http;
+
 const props = defineProps(["objeto"]);
+const images = ref([]);
+const isLoading = ref(false);
 
-
-onMounted(() => {
-   console.log("objeto", props?.objeto)
-   console.log('ou')
-  // console.log("store", store)
-  // console.log("store objeto", store.objeto)
-  // console.log("store objeto aventurasList", store.objeto?.aventurasList)
-  // console.log("store objeto aventurasList length", store.objeto?.aventurasList?.length)
+onMounted(()=>{
+  console.log("Props objeto:", props.objeto);
 })
 
+const loadImages = async () => {
+  if (!props?.objeto?.localizacaoObject?.legenda) return;
+  
+  isLoading.value = true;
+  try {
+    const response = await pexels.fetchImages(props.objeto.localizacaoObject.legenda);
+    images.value = response.photos.map((photo) => photo.src.landscape);
+  } catch (error) {
+    console.error("Erro ao carregar imagens:", error);
+  } finally {
+    isLoading.value = false;
+  }
+};
+
+watch(
+  () => props?.objeto?.localizacaoObject?.legenda,
+  (newLegenda) => {
+    if (newLegenda) loadImages();
+  },
+  { immediate: true }
+);
 </script>
+

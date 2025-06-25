@@ -1,3 +1,30 @@
+<script setup>
+import { ref } from "vue";
+
+const props = defineProps(["images", "activeLightBox"]);
+const emits = defineEmits(["setActiveLightBox"]);
+
+const currentSlideIndex = ref(0);
+
+const prevSlide = () => {
+  currentSlideIndex.value =
+    currentSlideIndex.value === 0
+      ? props.images.length - 1
+      : currentSlideIndex.value - 1;
+};
+
+const nextSlide = () => {
+  currentSlideIndex.value =
+    currentSlideIndex.value === props.images.length - 1
+      ? 0
+      : currentSlideIndex.value + 1;
+};
+
+const setActiveLightBoxFunc = (value) => {
+  emits("setActiveLightBox", value);
+};
+</script>
+
 <template>
   <div
     id="myModal"
@@ -27,13 +54,8 @@
           :width="850"
           :height="510"
           :src="elm.image"
-          style="
-            height: 100%;
-            width: 100%;
-            object-fit: contain;
-            margin: auto auto;
-          "
-          alt="image"
+          style="height: 100%; width: 100%; object-fit: contain; margin: auto;"
+          alt="Image"
         />
       </div>
 
@@ -42,32 +64,3 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { ref } from "vue";
-const currentSlideIndex = ref(1);
-
-const props = defineProps(["images", "activeLightBox"]);
-const emits = defineEmits(["setActiveLightBox"]);
-
-const prevSlide = () => {
-  currentSlideIndex.value =
-    currentSlideIndex.value === 0
-      ? props.images.length - 1
-      : currentSlideIndex.value - 1;
-};
-
-const nextSlide = () => {
-  currentSlideIndex.value =
-    currentSlideIndex.value === props.images.length - 1
-      ? 0
-      : currentSlideIndex.value + 1;
-};
-const setActiveLightBoxFunc = (value) => {
-  emits("setActiveLightBox", value);
-};
-</script>
-
-<style scoped>
-/* Add your styles here */
-</style>
