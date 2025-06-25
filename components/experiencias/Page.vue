@@ -62,11 +62,7 @@
           <CommentBox /> -->
         </div>
 
-        <div class="col-lg-4">
-          <div class="d-flex justify-end js-pin-content">
-            <Sidebar :valor="objeto.valor.preco" :moeda="objeto.valor.moeda" />
-          </div>
-        </div>
+        
       </div>
     </div>
   </section>
@@ -100,7 +96,7 @@ const loadImages = async () => {
   isLoading.value = true;
   try {
     const response = await pexels.fetchImages(props.objeto.localizacaoObject.legenda);
-    images.value = response.photos.map((photo) => photo.src.landscape);
+    images.value =null; //response.photos.map((photo) => photo.src.landscape);
   } catch (error) {
     console.error("Erro ao carregar imagens:", error);
   } finally {
