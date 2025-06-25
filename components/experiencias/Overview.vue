@@ -1,27 +1,24 @@
 <template>
-  <h2 class="text-30">Tour Overview</h2>
+  <h2 class="text-30">Overview</h2>
   <p class="mt-20">
-    The Phi Phi archipelago is a must-visit while in Phuket, and this speedboat
-    trip whisks you around the islands in one day. Swim over the coral reefs of
-    Pileh Lagoon, have lunch at Phi Phi Leh, snorkel at Bamboo Island, and visit
-    Monkey Beach and Maya Bay, immortalized in "The Beach." Boat transfers,
-    snacks, buffet lunch, snorkeling equipment, and Phuket hotel pickup and
-    drop-off all included.
+    {{overview||'-'}}
   </p>
 
-  <h3 class="text-20 fw-500 mt-20">Tour Highlights</h3>
-  <ul class="ulList mt-20">
-    <li>
-      Experience the thrill of a speedboat to the stunning Phi Phi Islands
+  <h3 class="text-20 fw-500 mt-20">Atividades</h3>
+  <ul v-if="atividades" class="ulList mt-20">
+    <li v-for="atividade in atividades" :key="atividade.id">
+      <NuxtLink :to="`/atividades/${atividade.id}`">
+      {{ atividade?.legenda }} - {{ atividade?.duracao }}
+      </NuxtLink>
     </li>
-    <li>Be amazed by the variety of marine life in the archepelago</li>
-    <li>
-      Enjoy relaxing in paradise with white sand beaches and azure turquoise
-      water
-    </li>
-    <li>Feel the comfort of a tour limited to 35 passengers</li>
-    <li>Catch a glimpse of the wild monkeys around Monkey Beach</li>
   </ul>
 </template>
 
-<script setup></script>
+<script setup>
+const props = defineProps(['overview', 'atividades'])
+
+onBeforeMount(()=>{
+  console.log(props.atividades)
+  console.log(props.overview)
+})
+</script>

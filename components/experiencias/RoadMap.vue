@@ -1,22 +1,26 @@
 <template>
   <div class="roadmap">
-    <div v-for="(elm, i) in roadmapData" :key="i" class="roadmap__item">
-      <div v-if="elm.icon" class="roadmap__iconBig">
+    <div v-for="(elm, i) in aventuras" :key="i" class="roadmap__item">
+      <!-- <div v-if="elm.icon" class="roadmap__iconBig">
         <i :class="elm.icon"></i>
-      </div>
-      <div v-else class="roadmap__icon"></div>
+      </div> -->
+      <div class="roadmap__icon"></div>
       <div class="roadmap__wrap">
-        <div class="roadmap__title">{{ elm.title }}</div>
-        <div v-if="elm.content" class="roadmap__content">{{ elm.content }}</div>
+        <div class="roadmap__title">{{ elm.legenda }}</div>
+        <span class="text-13" >{{ elm.descricao }}</span>
+        <div v-if="elm.data" class="roadmap__content">{{ Utils.formatDateToBR(elm.data.dia) }}</div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { roadmapData } from "@/data/tourSingleContent";
+import Utils from '~/utils/Index';
+
+
+const props = defineProps(['aventuras'])
 </script>
 
 <style scoped>
-/* Add your component-specific styles here */
+
 </style>

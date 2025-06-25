@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-    <ExperienciasPage :tour="tour" />
+    <ExperienciasPage :objeto="objeto" />
     <!--<article class="experiencia">
       <h1>Experiência ID: {{ idExperiencia }}</h1>
 

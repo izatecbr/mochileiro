@@ -1,7 +1,7 @@
 <template>
   <section class="pt-30">
     <div class="container">
-      <Main :tour="tour" />
+      <Main :objeto="objeto" />
       <Galeria />
     </div>
   </section>
@@ -11,51 +11,52 @@
       <div class="row y-gap-30 justify-between">
         <div class="col-lg-8">
           <div class="row y-gap-20 justify-between items-center layout-pb-md">
-            <OthersInformation />
+            <OthersInformation :duracao="objeto?.duracao" />
           </div>
 
-          <Overview />
+          <Overview :overview="objeto?.descricao" :atividades="objeto?.aventurasList" />
 
           <div class="line mt-60 mb-60"></div>
 
-          <h2 class="text-30">What's included</h2>
+          <h2 class="text-30">Classificações</h2>
 
-          <Included />
+          <Included :classificacoes="objeto?.classificacoesList" />
 
           <div class="line mt-60 mb-60"></div>
 
-          <h2 class="text-30">Itinerary</h2>
+          <h2 class="text-30">Linha do tempo</h2>
 
-          <div class="mt-30">
-            <RoadMap />
+          <div class="mt-30 mb-10">
+            <RoadMap :aventuras="objeto?.aventurasList" />
           </div>
+           <div class="mt-60 mb-60"></div>
 
           <!--<h2 class="text-30 mt-60 mb-30">Tour Map</h2>
           <div class="mapTourSingle">
             <Map />
           </div> -->
 
-          <div class="line mt-60 mb-60"></div>
+          <!-- <div class="line mt-60 mb-60"></div>
 
           <h2 class="text-30">Availability Calendar</h2>
 
-          <DateCalender />
+         <DateCalender />-->
 
-          <div class="line mt-60 mb-60"></div>
+         <!-- <div class="line mt-60 mb-60"></div>
 
           <h2 class="text-30">FAQ</h2>
 
           <div class="accordion -simple row y-gap-20 mt-30 js-accordion">
             <Faq />
-          </div>
+          </div> -->
 
-          <div class="line mt-60 mb-60"></div>
+         <!-- <div class="line mt-60 mb-60"></div>
 
           <h2 class="text-30">Customer Reviews</h2>
 
-          <div class="mt-30">
+         <div class="mt-30">
             <Rating />
-          </div>
+          </div>-->
 
           <!--<Reviews /> -->
 
@@ -78,16 +79,25 @@
 </template>
 
 <script setup>
-import DateCalender from "./DateCalender";
-import Faq from "./Faq";
 import Galeria from "./galeria/Galeria.vue";
 import Included from "./Included";
 import Main from "./Main.vue";
 import OthersInformation from "./OthersInformation";
 import Overview from "./Overview";
-import Rating from "./Rating";
 import RoadMap from "./RoadMap";
 import Sidebar from "./Sidebar.vue";
 
-const props = defineProps(["tour"]);
+const store = useGlobalStore()
+const props = defineProps(["objeto"]);
+
+
+onMounted(() => {
+   console.log("objeto", props?.objeto)
+   console.log('ou')
+  // console.log("store", store)
+  // console.log("store objeto", store.objeto)
+  // console.log("store objeto aventurasList", store.objeto?.aventurasList)
+  // console.log("store objeto aventurasList length", store.objeto?.aventurasList?.length)
+})
+
 </script>
