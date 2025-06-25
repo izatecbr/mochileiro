@@ -32,9 +32,9 @@
           <i class="icon-search text-18"></i>
         </button>
 
-        <button @click="() => pageNavigate('/login')" class="d-flex ml-20">
+        <!-- <button @click="() => pageNavigate('/login')" class="d-flex ml-20">
           <i class="icon-person text-18"></i>
-        </button>
+        </button> -->
       </div>
 
       <div class="header__right">
@@ -44,12 +44,12 @@
 
         <nuxt-link to="/register" class="ml-30"> Ajuda </nuxt-link>
 
-        <nuxt-link
+        <!--<nuxt-link
           to="/login"
           class="button -sm -outline-dark-1 rounded-200 text-dark-1 ml-30"
         >
           Log in
-        </nuxt-link>
+        </nuxt-link> -->
       </div>
     </div>
   </header>
