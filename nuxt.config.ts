@@ -10,6 +10,8 @@ export default defineNuxtConfig({
   },
   image: {
     quality: 80,
+    domains: ['images.pexels.com'], 
+    provider: 'ipx',
   },
   css: [
     '~/public/css/style.css',
