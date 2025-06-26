@@ -5,6 +5,8 @@
       <div class="roadmap__wrap">
         <div class="roadmap__title">{{ elm.legenda }} - {{ Utils.formatDateToBR(elm.data.dia) }}</div>
         <span class="text-13" >{{ elm.descricao }}</span>
+        <br>
+        <span class="text-13" >{{ elm.valor }}</span>
       </div>
     </div>
   </div>

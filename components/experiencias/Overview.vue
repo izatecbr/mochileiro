@@ -17,6 +17,8 @@
       <NuxtLink style=" text-decoration: underline;" class=""  :to="`/atividades/${atividade.id}`">
        {{ atividade.legenda }}  {{ atividade?.duracao ? `- (${atividade.duracao})` : '' }}
       </NuxtLink>
+      <br>
+      <span class="text-13" >{{ atividade?.valor }}</span>
     </li>
   </ul>
 </template>
