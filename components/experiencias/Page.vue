@@ -25,6 +25,11 @@
           </div>
           <div class="mt-60 mb-60"></div>
 
+
+          <pre v-if="objeto" class="json-view">
+        {{ JSON.stringify(objeto?.aventurasList, null, 2) }}
+      </pre>
+
           <!--<h2 class="text-30 mt-60 mb-30">Tour Map</h2>
           <div class="mapTourSingle">
             <Map />
