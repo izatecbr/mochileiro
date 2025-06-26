@@ -192,7 +192,8 @@
         "passaporte": null
       },
       "aniversario": "1990-01-01",
-      "foto": "https://supabase/foto-gleyson.jpg"
+      "foto": "https://supabase/foto-gleyson.jpg",
+      "email": "gleyson@iza.tec.br"
     },
     {
       "id": 2,
@@ -211,7 +212,8 @@
         "passaporte": null
       },
       "aniversario": "1990-01-01",
-      "foto": "https://supabase/foto-flymates.jpg"
+      "foto": "https://supabase/foto-flymates.jpg",
+      "email": "flymates.com.br"
     },
     {
       "id": 3,
@@ -230,7 +232,8 @@
         "passaporte": null
       },
       "aniversario": "1990-01-01",
-      "foto": "https://supabase/foto-hotel.jpg"
+      "foto": "https://supabase/foto-hotel.jpg",
+      "email": "hotel.com.br"
     },
     {
       "id": 4,
@@ -249,7 +252,8 @@
         "passaporte": null
       },
       "aniversario": "1990-01-01",
-      "foto": "https://supabase/foto-hotel.jpg"
+      "foto": "https://supabase/foto-hotel.jpg",
+      "email": "bemtur.com.br"
     },
     {
       "id": 5,
@@ -268,7 +272,8 @@
         "passaporte": null
       },
       "aniversario": "1990-01-01",
-      "foto": "https://supabase/foto-hotel.jpg"
+      "foto": "https://supabase/foto-hotel.jpg",
+      "email": "gol.com.br"
     }
   ],
   
@@ -355,7 +360,8 @@
       "autor": 1,
       "anfitriao": 2,
       "atividades":[1, 2],
-      "classificacoes": [107]
+      "classificacoes": [107],
+      "valor": {"quantia": 2267.62, "preco": "R$ 2.267,62","moeda": "BRL","formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"}
     },
     {
       "id": 2,
@@ -368,7 +374,8 @@
       "autor": 1,
       "anfitriao": 2,
       "atividades":[3],
-       "classificacoes": [101]
+      "classificacoes": [101],
+      "valor": {"quantia": 927.49, "preco": "R$ 927,49","moeda": "BRL","formaPagamento": "R$ R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"}
     }
   ],
   "experiencias": [
