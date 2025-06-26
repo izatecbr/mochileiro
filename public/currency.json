@@ -1,0 +1,14 @@
+{
+    "USD": {
+        "flag": "🇺🇸",
+        "currency": "Dollar"
+    },
+    "CLP": {
+        "flag": "🇨🇱",
+        "currency": "Chilean Peso"
+    },
+    "BRL": {
+        "flag": "🇧🇷",
+        "currency": "Real"
+    }
+}
