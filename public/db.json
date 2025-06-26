@@ -214,7 +214,8 @@
       "aniversario": "1990-01-01",
       "foto": "https://supabase/foto-flymates.jpg",
       "email": "contato@flymates.com.br",
-      "site": "https://flymates.com.br/"
+      "site": "https://flymates.com.br/",
+      "instagram": "www.instragram"
     },
     {
       "id": 3,
@@ -317,10 +318,10 @@
       "legenda": "Passagem aerea São Paulo / Santiago Chile + Hotel 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hotel para 06 dias.",
       "produto": 1,
-      "anfitriao": 2,
       "destino":4,
       "escolhida": false,
       "classificacoes": [107],
+      "anfitriao": 2,
       "valor": {"quantia": 4070.62,"preco": "R$ 4.070,62","moeda": "BRL","formaPagamento": "R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 5x sem juros no cartão de crédito"}
     },
      {
@@ -329,12 +330,12 @@
       "legenda": "Passagem aerea São Paulo / Santiago Chile + Hostel 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hostel para 06 dias.",
       "produto": 2,
-      "anfitriao": 2,
       "destino":4,
       "escolhida": true,
       "classificacoes": [107],
+      "sugestoes":[1],
+      "anfitriao": 2,
       "valor": {"quantia": 2267.62, "preco": "R$ 2.267,62","moeda": "BRL","formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"},
-      "sugestoes":[1]
     },
     {
       "id": 3,
@@ -359,9 +360,9 @@
       "legenda": "Proposta de pacote de viagens enviada pela FlyMates",
       "descricao":"A FlyMates nos envia um anúncio de viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem para 06 dias no valor de R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 3x sem juros no cartão de crédito. Devido o valor, eu solicitei uma nova proposta alterando a hospedagem de hotel para um hostel, ficando um total de R$ 2.392,70 em 5x no cartão de crédito",
       "autor": 1,
-      "anfitriao": 2,
       "atividades":[1, 2],
       "classificacoes": [107],
+      "anfitriao": 2,
       "valor": {"quantia": 2267.62, "preco": "R$ 2.267,62","moeda": "BRL","formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"}
     },
     {
@@ -373,9 +374,9 @@
       "legenda": "Vôo de Teresina/PI para Guarulhos/SP",
       "descricao":"Dois dias antes da viagem para Santiago, embarcamos no vôo com destino a São Paulo para aproveitar essa maravilhosa cidade",
       "autor": 1,
-      "anfitriao": 2,
       "atividades":[3],
       "classificacoes": [101],
+      "anfitriao": 2,
       "valor": {"quantia": 927.49, "preco": "R$ 927,49","moeda": "BRL","formaPagamento": "R$ R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"}
     }
   ],
