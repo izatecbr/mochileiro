@@ -1,112 +1,780 @@
 {
   "meses": [
-    { "id": "JAN", "legenda": "Janeiro" },
-    { "id": "FEV", "legenda": "Fevereiro" },
-    { "id": "MAR", "legenda": "Março" },
-    { "id": "ABR", "legenda": "Abril" },
-    { "id": "MAI", "legenda": "Maio" },
-    { "id": "JUN", "legenda": "Junho" },
-    { "id": "JUL", "legenda": "Julho" },
-    { "id": "AGO", "legenda": "Agosto" },
-    { "id": "SET", "legenda": "Setembro" },
-    { "id": "OUT", "legenda": "Outubro" },
-    { "id": "NOV", "legenda": "Novembro" },
-    { "id": "DEZ", "legenda": "Dezembro" }
+    {
+      "id": "JAN",
+      "legenda": "Janeiro"
+    },
+    {
+      "id": "FEV",
+      "legenda": "Fevereiro"
+    },
+    {
+      "id": "MAR",
+      "legenda": "Março"
+    },
+    {
+      "id": "ABR",
+      "legenda": "Abril"
+    },
+    {
+      "id": "MAI",
+      "legenda": "Maio"
+    },
+    {
+      "id": "JUN",
+      "legenda": "Junho"
+    },
+    {
+      "id": "JUL",
+      "legenda": "Julho"
+    },
+    {
+      "id": "AGO",
+      "legenda": "Agosto"
+    },
+    {
+      "id": "SET",
+      "legenda": "Setembro"
+    },
+    {
+      "id": "OUT",
+      "legenda": "Outubro"
+    },
+    {
+      "id": "NOV",
+      "legenda": "Novembro"
+    },
+    {
+      "id": "DEZ",
+      "legenda": "Dezembro"
+    }
   ],
-  "continentes":[
-  { "id": "AF", "nome": "África", "codigoUN": "002" },
-  { "id": "NA", "nome": "América do Norte", "codigoUN": "003" },
-  { "id": "SA", "nome": "América do Sul", "codigoUN": "005" },
-  { "id": "AN", "nome": "Antártida", "codigoUN": "010" },
-  { "id": "AS", "nome": "Ásia", "codigoUN": "142" },
-  { "id": "EU", "nome": "Europa", "codigoUN": "150" },
-  { "id": "OC", "nome": "Oceania", "codigoUN": "009" }
+  "continentes": [
+    {
+      "id": "AF",
+      "nome": "África",
+      "codigoUN": "002"
+    },
+    {
+      "id": "NA",
+      "nome": "América do Norte",
+      "codigoUN": "003"
+    },
+    {
+      "id": "SA",
+      "nome": "América do Sul",
+      "codigoUN": "005"
+    },
+    {
+      "id": "AN",
+      "nome": "Antártida",
+      "codigoUN": "010"
+    },
+    {
+      "id": "AS",
+      "nome": "Ásia",
+      "codigoUN": "142"
+    },
+    {
+      "id": "EU",
+      "nome": "Europa",
+      "codigoUN": "150"
+    },
+    {
+      "id": "OC",
+      "nome": "Oceania",
+      "codigoUN": "009"
+    }
   ],
   "paises": [
-    { "id": "AR", "codigo": "032", "id3": "ARG", "legenda": "Argentina", "continente":"SA" },
-    { "id": "BO", "codigo": "068", "id3": "BOL", "legenda": "Bolívia","continente":"SA" },
-    { "id": "BR", "codigo": "076", "id3": "BRA", "legenda": "Brasil","continente":"SA" },
-    { "id": "CL", "codigo": "152", "id3": "CHL", "legenda": "Chile","continente":"SA" },
-    { "id": "CO", "codigo": "170", "id3": "COL", "legenda": "Colômbia","continente":"SA" },
-    { "id": "EC", "codigo": "218", "id3": "ECU", "legenda": "Equador","continente":"SA" },
-    { "id": "GY", "codigo": "328", "id3": "GUY", "legenda": "Guiana","continente":"SA" },
-    { "id": "PY", "codigo": "600", "id3": "PRY", "legenda": "Paraguai","continente":"SA" },
-    { "id": "PE", "codigo": "604", "id3": "PER", "legenda": "Peru","continente":"SA" },
-    { "id": "SR", "codigo": "740", "id3": "SUR", "legenda": "Suriname","continente":"SA" },
-    { "id": "UY", "codigo": "858", "id3": "URY", "legenda": "Uruguai","continente":"SA" },
-    { "id": "VE", "codigo": "862", "id3": "VEN", "legenda": "Venezuela","continente":"SA" }
+    {
+      "id": "AR",
+      "codigo": "032",
+      "id3": "ARG",
+      "legenda": "Argentina",
+      "continente": "SA"
+    },
+    {
+      "id": "BO",
+      "codigo": "068",
+      "id3": "BOL",
+      "legenda": "Bolívia",
+      "continente": "SA"
+    },
+    {
+      "id": "BR",
+      "codigo": "076",
+      "id3": "BRA",
+      "legenda": "Brasil",
+      "continente": "SA"
+    },
+    {
+      "id": "CL",
+      "codigo": "152",
+      "id3": "CHL",
+      "legenda": "Chile",
+      "continente": "SA"
+    },
+    {
+      "id": "CO",
+      "codigo": "170",
+      "id3": "COL",
+      "legenda": "Colômbia",
+      "continente": "SA"
+    },
+    {
+      "id": "EC",
+      "codigo": "218",
+      "id3": "ECU",
+      "legenda": "Equador",
+      "continente": "SA"
+    },
+    {
+      "id": "GY",
+      "codigo": "328",
+      "id3": "GUY",
+      "legenda": "Guiana",
+      "continente": "SA"
+    },
+    {
+      "id": "PY",
+      "codigo": "600",
+      "id3": "PRY",
+      "legenda": "Paraguai",
+      "continente": "SA"
+    },
+    {
+      "id": "PE",
+      "codigo": "604",
+      "id3": "PER",
+      "legenda": "Peru",
+      "continente": "SA"
+    },
+    {
+      "id": "SR",
+      "codigo": "740",
+      "id3": "SUR",
+      "legenda": "Suriname",
+      "continente": "SA"
+    },
+    {
+      "id": "UY",
+      "codigo": "858",
+      "id3": "URY",
+      "legenda": "Uruguai",
+      "continente": "SA"
+    },
+    {
+      "id": "VE",
+      "codigo": "862",
+      "id3": "VEN",
+      "legenda": "Venezuela",
+      "continente": "SA"
+    }
   ],
   "estados": [
-    { "id": "BR11", "sigla": "RO", "legenda": "Rondônia", "pais": "BR" },
-    { "id": "BR12", "sigla": "AC", "legenda": "Acre", "pais": "BR" },
-    { "id": "BR13", "sigla": "AM", "legenda": "Amazonas", "pais": "BR" },
-    { "id": "BR14", "sigla": "RR", "legenda": "Roraima", "pais": "BR" },
-    { "id": "BR15", "sigla": "PA", "legenda": "Pará", "pais": "BR" },
-    { "id": "BR16", "sigla": "AP", "legenda": "Amapá", "pais": "BR" },
-    { "id": "BR17", "sigla": "TO", "legenda": "Tocantins", "pais": "BR" },
-    { "id": "BR21", "sigla": "MA", "legenda": "Maranhão", "pais": "BR" },
-    { "id": "BR22", "sigla": "PI", "legenda": "Piauí", "pais": "BR" },
-    { "id": "BR23", "sigla": "CE", "legenda": "Ceará", "pais": "BR" },
-    { "id": "BR24", "sigla": "RN", "legenda": "Rio Grande do Norte", "pais": "BR" },
-    { "id": "BR25", "sigla": "PB", "legenda": "Paraíba", "pais": "BR" },
-    { "id": "BR26", "sigla": "PE", "legenda": "Pernambuco", "pais": "BR" },
-    { "id": "BR27", "sigla": "AL", "legenda": "Alagoas", "pais": "BR" },
-    { "id": "BR28", "sigla": "SE", "legenda": "Sergipe", "pais": "BR" },
-    { "id": "BR29", "sigla": "BA", "legenda": "Bahia", "pais": "BR" },
-    { "id": "BR31", "sigla": "MG", "legenda": "Minas Gerais", "pais": "BR" },
-    { "id": "BR32", "sigla": "ES", "legenda": "Espírito Santo", "pais": "BR" },
-    { "id": "BR33", "sigla": "RJ", "legenda": "Rio de Janeiro", "pais": "BR" },
-    { "id": "BR35", "sigla": "SP", "legenda": "São Paulo", "pais": "BR" },
-    { "id": "BR41", "sigla": "PR", "legenda": "Paraná", "pais": "BR" },
-    { "id": "BR42", "sigla": "SC", "legenda": "Santa Catarina", "pais": "BR" },
-    { "id": "BR43", "sigla": "RS", "legenda": "Rio Grande do Sul", "pais": "BR" },
-    { "id": "BR50", "sigla": "MS", "legenda": "Mato Grosso do Sul", "pais": "BR" },
-    { "id": "BR51", "sigla": "MT", "legenda": "Mato Grosso", "pais": "BR" },
-    { "id": "BR52", "sigla": "GO", "legenda": "Goiás", "pais": "BR" },
-    { "id": "BR53", "sigla": "DF", "legenda": "Distrito Federal", "pais": "BR" }
+    {
+      "id": "BR11",
+      "sigla": "RO",
+      "legenda": "Rondônia",
+      "pais": "BR"
+    },
+    {
+      "id": "BR12",
+      "sigla": "AC",
+      "legenda": "Acre",
+      "pais": "BR"
+    },
+    {
+      "id": "BR13",
+      "sigla": "AM",
+      "legenda": "Amazonas",
+      "pais": "BR"
+    },
+    {
+      "id": "BR14",
+      "sigla": "RR",
+      "legenda": "Roraima",
+      "pais": "BR"
+    },
+    {
+      "id": "BR15",
+      "sigla": "PA",
+      "legenda": "Pará",
+      "pais": "BR"
+    },
+    {
+      "id": "BR16",
+      "sigla": "AP",
+      "legenda": "Amapá",
+      "pais": "BR"
+    },
+    {
+      "id": "BR17",
+      "sigla": "TO",
+      "legenda": "Tocantins",
+      "pais": "BR"
+    },
+    {
+      "id": "BR21",
+      "sigla": "MA",
+      "legenda": "Maranhão",
+      "pais": "BR"
+    },
+    {
+      "id": "BR22",
+      "sigla": "PI",
+      "legenda": "Piauí",
+      "pais": "BR"
+    },
+    {
+      "id": "BR23",
+      "sigla": "CE",
+      "legenda": "Ceará",
+      "pais": "BR"
+    },
+    {
+      "id": "BR24",
+      "sigla": "RN",
+      "legenda": "Rio Grande do Norte",
+      "pais": "BR"
+    },
+    {
+      "id": "BR25",
+      "sigla": "PB",
+      "legenda": "Paraíba",
+      "pais": "BR"
+    },
+    {
+      "id": "BR26",
+      "sigla": "PE",
+      "legenda": "Pernambuco",
+      "pais": "BR"
+    },
+    {
+      "id": "BR27",
+      "sigla": "AL",
+      "legenda": "Alagoas",
+      "pais": "BR"
+    },
+    {
+      "id": "BR28",
+      "sigla": "SE",
+      "legenda": "Sergipe",
+      "pais": "BR"
+    },
+    {
+      "id": "BR29",
+      "sigla": "BA",
+      "legenda": "Bahia",
+      "pais": "BR"
+    },
+    {
+      "id": "BR31",
+      "sigla": "MG",
+      "legenda": "Minas Gerais",
+      "pais": "BR"
+    },
+    {
+      "id": "BR32",
+      "sigla": "ES",
+      "legenda": "Espírito Santo",
+      "pais": "BR"
+    },
+    {
+      "id": "BR33",
+      "sigla": "RJ",
+      "legenda": "Rio de Janeiro",
+      "pais": "BR"
+    },
+    {
+      "id": "BR35",
+      "sigla": "SP",
+      "legenda": "São Paulo",
+      "pais": "BR"
+    },
+    {
+      "id": "BR41",
+      "sigla": "PR",
+      "legenda": "Paraná",
+      "pais": "BR"
+    },
+    {
+      "id": "BR42",
+      "sigla": "SC",
+      "legenda": "Santa Catarina",
+      "pais": "BR"
+    },
+    {
+      "id": "BR43",
+      "sigla": "RS",
+      "legenda": "Rio Grande do Sul",
+      "pais": "BR"
+    },
+    {
+      "id": "BR50",
+      "sigla": "MS",
+      "legenda": "Mato Grosso do Sul",
+      "pais": "BR"
+    },
+    {
+      "id": "BR51",
+      "sigla": "MT",
+      "legenda": "Mato Grosso",
+      "pais": "BR"
+    },
+    {
+      "id": "BR52",
+      "sigla": "GO",
+      "legenda": "Goiás",
+      "pais": "BR"
+    },
+    {
+      "id": "BR53",
+      "sigla": "DF",
+      "legenda": "Distrito Federal",
+      "pais": "BR"
+    }
   ],
   "cidades": [
-    { "id": "BR001", "legenda": "Rio Branco", "gid": 1200401, "estado": "BR12", "pais": "BR","destino": false },
-    { "id": "BR002", "legenda": "Maceió", "gid": 2704302, "estado": "BR27", "pais": "BR","destino": false },
-    { "id": "BR003", "legenda": "Manaus", "gid": 1302603, "estado": "BR13", "pais": "BR","destino": false },
-    { "id": "BR004", "legenda": "Macapá", "gid": 1600303, "estado": "BR16", "pais": "BR","destino": false },
-    { "id": "BR005", "legenda": "Salvador", "gid": 2903201, "estado": "BR29", "pais": "BR","destino": false },
-    { "id": "BR006", "legenda": "Fortaleza", "gid": 2304400, "estado": "BR23", "pais": "BR","destino": false },
-    { "id": "BR007", "legenda": "Brasília", "gid": 5300108, "estado": "BR53", "pais": "BR","destino": false },
-    { "id": "BR008", "legenda": "Vitória", "gid": 3205309, "estado": "BR32", "pais": "BR","destino": false },
-    { "id": "BR009", "legenda": "Goiânia", "gid": 5208707, "estado": "BR52", "pais": "BR","destino": false },
-    { "id": "BR010", "legenda": "São Luís", "gid": 2105302, "estado": "BR21", "pais": "BR","destino": false },
-    { "id": "BR011", "legenda": "Belo Horizonte", "gid": 3106200, "estado": "BR31", "pais": "BR","destino": false },
-    { "id": "BR012", "legenda": "Campo Grande", "gid": 5002704, "estado": "BR50", "pais": "BR","destino": false },
-    { "id": "BR013", "legenda": "Cuiabá", "gid": 5103403, "estado": "BR51", "pais": "BR","destino": false },
-    { "id": "BR014", "legenda": "Belém", "gid": 1501402, "estado": "BR15", "pais": "BR","destino": false },
-    { "id": "BR015", "legenda": "João Pessoa", "gid": 2507507, "estado": "BR25", "pais": "BR","destino": false },
-    { "id": "BR016", "legenda": "Curitiba", "gid": 4106902, "estado": "BR41", "pais": "BR","destino": false },
-    { "id": "BR017", "legenda": "Recife", "gid": 2611606, "estado": "BR26", "pais": "BR","destino": false },
-    { "id": "BR018", "legenda": "Teresina", "gid": 2207702, "estado": "BR22", "pais": "BR","destino": false },
-    { "id": "BR019", "legenda": "Rio de Janeiro", "gid": 3304557, "estado": "BR33", "pais": "BR","destino": false },
-    { "id": "BR020", "legenda": "Natal", "gid": 2408102, "estado": "BR24", "pais": "BR","destino": false },
-    { "id": "BR021", "legenda": "Porto Alegre", "gid": 4305108, "estado": "BR43", "pais": "BR","destino": false },
-    { "id": "BR022", "legenda": "Porto Velho", "gid": 1100205, "estado": "BR11", "pais": "BR","destino": false },
-    { "id": "BR023", "legenda": "Boa Vista", "gid": 1400100, "estado": "BR14", "pais": "BR","destino": false },
-    { "id": "BR024", "legenda": "Florianópolis", "gid": 4205407, "estado": "BR42", "pais": "BR","destino": false },
-    { "id": "BR025", "legenda": "São Paulo", "gid": 3550308, "estado": "BR35", "pais": "BR","destino": true },
-    { "id": "BR026", "legenda": "Aracaju", "gid": 2800308, "estado": "BR28", "pais": "BR","destino": false },
-    { "id": "BR027", "legenda": "Palmas", "gid": 1721000, "estado": "BR17", "pais": "BR","destino": false },
-    { "id": "BR028", "legenda": "Guarulhos", "gid": 3550308, "estado": "BR35", "pais": "BR","destino": false },
-    { "id": "CL001", "legenda": "Santiago", "gid": 0, "estado": "", "pais": "CL","destino": true }
-  ]
-,
-"categorias":[
-    {"id":10,"legenda":"Transporte","categorias":[{"id":101,"legenda":"Vôo Nacional"},{"id":102,"legenda":"Rodoviário"},{"id":103,"legenda":"Táxi"},{"id":104,"legenda":"Transfer"},{"id":105,"legenda":"Uber/99"},{"id":106,"legenda":"Locação"},{"id":107,"legenda":"Vôo Internacional"}]},
-    {"id":11,"legenda":"Hospedagem","categorias":[{"id":111,"legenda":"Hotel"},{"id":112,"legenda":"Hostel"},{"id":113,"legenda":"Pousada"},{"id":114,"legenda":"Airbnb"}]},
-    {"id":12,"legenda":"Alimentação","categorias":[{"id":121,"legenda":"Restaurante"},{"id":122,"legenda":"Lanchonete"},{"id":123,"legenda":"Café"},{"id":124,"legenda":"Delivery"},{"id":125,"legenda":"Supermercado"}]},
-    {"id":13,"legenda":"Nômade Digital","categorias":[{"id":131,"legenda":"Trabalho Remoto"},{"id":132,"legenda":"Aventureiro"},{"id":133,"legenda":"Experiências Culturais"},{"id":134,"legenda":"Conexões com Locais"}]},
-    {"id":14,"legenda":"Férias de Inverno","categorias":[{"id":141,"legenda":"Esqui"},{"id":142,"legenda":"Snowboard"},{"id":143,"legenda":"Estação de Montanha"},{"id":144,"legenda":"Passeios na Neve"},{"id":145,"legenda":"Hotéis com Lareira"},{"id":146,"legenda":"Aluguel de Roupas de Neve"}]},
-    {"id":15,"legenda":"Shopping","categorias":[{"id":151,"legenda":"Roupas e Acessórios"},{"id":152,"legenda":"Eletrônicos"},{"id":153,"legenda":"Artesanato"},{"id":154,"legenda":"Souvenirs"},{"id":155,"legenda":"Calçados"},{"id":156,"legenda":"Roupas de Frio"},{"id":157,"legenda":"Equipamentos para Passeios"}]},
-    {"id":16,"legenda":"Férias de Verão","categorias":[{"id":161,"legenda":"Praias"},{"id":162,"legenda":"Passeios de Barco"},{"id":163,"legenda":"Esportes Aquáticos"},{"id":164,"legenda":"Piscinas e Resorts"},{"id":165,"legenda":"Parques Aquáticos"},{"id":166,"legenda":"Hospedagens à Beira-Mar"},{"id":167,"legenda":"Aluguel de Equipamentos de Praia"}]}
-  ],   
- "localizacoes": [
+    {
+      "id": "BR001",
+      "legenda": "Rio Branco",
+      "gid": 1200401,
+      "estado": "BR12",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR002",
+      "legenda": "Maceió",
+      "gid": 2704302,
+      "estado": "BR27",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR003",
+      "legenda": "Manaus",
+      "gid": 1302603,
+      "estado": "BR13",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR004",
+      "legenda": "Macapá",
+      "gid": 1600303,
+      "estado": "BR16",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR005",
+      "legenda": "Salvador",
+      "gid": 2903201,
+      "estado": "BR29",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR006",
+      "legenda": "Fortaleza",
+      "gid": 2304400,
+      "estado": "BR23",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR007",
+      "legenda": "Brasília",
+      "gid": 5300108,
+      "estado": "BR53",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR008",
+      "legenda": "Vitória",
+      "gid": 3205309,
+      "estado": "BR32",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR009",
+      "legenda": "Goiânia",
+      "gid": 5208707,
+      "estado": "BR52",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR010",
+      "legenda": "São Luís",
+      "gid": 2105302,
+      "estado": "BR21",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR011",
+      "legenda": "Belo Horizonte",
+      "gid": 3106200,
+      "estado": "BR31",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR012",
+      "legenda": "Campo Grande",
+      "gid": 5002704,
+      "estado": "BR50",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR013",
+      "legenda": "Cuiabá",
+      "gid": 5103403,
+      "estado": "BR51",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR014",
+      "legenda": "Belém",
+      "gid": 1501402,
+      "estado": "BR15",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR015",
+      "legenda": "João Pessoa",
+      "gid": 2507507,
+      "estado": "BR25",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR016",
+      "legenda": "Curitiba",
+      "gid": 4106902,
+      "estado": "BR41",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR017",
+      "legenda": "Recife",
+      "gid": 2611606,
+      "estado": "BR26",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR018",
+      "legenda": "Teresina",
+      "gid": 2207702,
+      "estado": "BR22",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR019",
+      "legenda": "Rio de Janeiro",
+      "gid": 3304557,
+      "estado": "BR33",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR020",
+      "legenda": "Natal",
+      "gid": 2408102,
+      "estado": "BR24",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR021",
+      "legenda": "Porto Alegre",
+      "gid": 4305108,
+      "estado": "BR43",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR022",
+      "legenda": "Porto Velho",
+      "gid": 1100205,
+      "estado": "BR11",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR023",
+      "legenda": "Boa Vista",
+      "gid": 1400100,
+      "estado": "BR14",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR024",
+      "legenda": "Florianópolis",
+      "gid": 4205407,
+      "estado": "BR42",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR025",
+      "legenda": "São Paulo",
+      "gid": 3550308,
+      "estado": "BR35",
+      "pais": "BR",
+      "destino": true
+    },
+    {
+      "id": "BR026",
+      "legenda": "Aracaju",
+      "gid": 2800308,
+      "estado": "BR28",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR027",
+      "legenda": "Palmas",
+      "gid": 1721000,
+      "estado": "BR17",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "BR028",
+      "legenda": "Guarulhos",
+      "gid": 3550308,
+      "estado": "BR35",
+      "pais": "BR",
+      "destino": false
+    },
+    {
+      "id": "CL001",
+      "legenda": "Santiago",
+      "gid": 0,
+      "estado": "",
+      "pais": "CL",
+      "destino": true
+    }
+  ],
+  "categorias": [
+    {
+      "id": 10,
+      "legenda": "Transporte",
+      "categorias": [
+        {
+          "id": 101,
+          "legenda": "Vôo Nacional"
+        },
+        {
+          "id": 102,
+          "legenda": "Rodoviário"
+        },
+        {
+          "id": 103,
+          "legenda": "Táxi"
+        },
+        {
+          "id": 104,
+          "legenda": "Transfer"
+        },
+        {
+          "id": 105,
+          "legenda": "Uber/99"
+        },
+        {
+          "id": 106,
+          "legenda": "Locação"
+        },
+        {
+          "id": 107,
+          "legenda": "Vôo Internacional"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "legenda": "Hospedagem",
+      "categorias": [
+        {
+          "id": 111,
+          "legenda": "Hotel"
+        },
+        {
+          "id": 112,
+          "legenda": "Hostel"
+        },
+        {
+          "id": 113,
+          "legenda": "Pousada"
+        },
+        {
+          "id": 114,
+          "legenda": "Airbnb"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "legenda": "Alimentação",
+      "categorias": [
+        {
+          "id": 121,
+          "legenda": "Restaurante"
+        },
+        {
+          "id": 122,
+          "legenda": "Lanchonete"
+        },
+        {
+          "id": 123,
+          "legenda": "Café"
+        },
+        {
+          "id": 124,
+          "legenda": "Delivery"
+        },
+        {
+          "id": 125,
+          "legenda": "Supermercado"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "legenda": "Nômade Digital",
+      "categorias": [
+        {
+          "id": 131,
+          "legenda": "Trabalho Remoto"
+        },
+        {
+          "id": 132,
+          "legenda": "Aventureiro"
+        },
+        {
+          "id": 133,
+          "legenda": "Experiências Culturais"
+        },
+        {
+          "id": 134,
+          "legenda": "Conexões com Locais"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "legenda": "Férias de Inverno",
+      "categorias": [
+        {
+          "id": 141,
+          "legenda": "Esqui"
+        },
+        {
+          "id": 142,
+          "legenda": "Snowboard"
+        },
+        {
+          "id": 143,
+          "legenda": "Estação de Montanha"
+        },
+        {
+          "id": 144,
+          "legenda": "Passeios na Neve"
+        },
+        {
+          "id": 145,
+          "legenda": "Hotéis com Lareira"
+        },
+        {
+          "id": 146,
+          "legenda": "Aluguel de Roupas de Neve"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "legenda": "Shopping",
+      "categorias": [
+        {
+          "id": 151,
+          "legenda": "Roupas e Acessórios"
+        },
+        {
+          "id": 152,
+          "legenda": "Eletrônicos"
+        },
+        {
+          "id": 153,
+          "legenda": "Artesanato"
+        },
+        {
+          "id": 154,
+          "legenda": "Souvenirs"
+        },
+        {
+          "id": 155,
+          "legenda": "Calçados"
+        },
+        {
+          "id": 156,
+          "legenda": "Roupas de Frio"
+        },
+        {
+          "id": 157,
+          "legenda": "Equipamentos para Passeios"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "legenda": "Férias de Verão",
+      "categorias": [
+        {
+          "id": 161,
+          "legenda": "Praias"
+        },
+        {
+          "id": 162,
+          "legenda": "Passeios de Barco"
+        },
+        {
+          "id": 163,
+          "legenda": "Esportes Aquáticos"
+        },
+        {
+          "id": 164,
+          "legenda": "Piscinas e Resorts"
+        },
+        {
+          "id": 165,
+          "legenda": "Parques Aquáticos"
+        },
+        {
+          "id": 166,
+          "legenda": "Hospedagens à Beira-Mar"
+        },
+        {
+          "id": 167,
+          "legenda": "Aluguel de Equipamentos de Praia"
+        }
+      ]
+    }
+  ],
+  "localizacoes": [
     {
       "id": 1,
       "legenda": "Santiago",
@@ -114,7 +782,14 @@
       "cidade": "CL001",
       "latitude": -33.4489,
       "longitude": -70.6693,
-      "classificacoes": [141,142, 143,144,145,146],
+      "classificacoes": [
+        141,
+        142,
+        143,
+        144,
+        145,
+        146
+      ],
       "destino": true
     },
     {
@@ -124,7 +799,12 @@
       "cidade": "BR025",
       "latitude": -33.4489,
       "longitude": -70.6693,
-      "classificacoes": [101,107, 111,112],
+      "classificacoes": [
+        101,
+        107,
+        111,
+        112
+      ],
       "destino": false
     },
     {
@@ -134,7 +814,9 @@
       "cidade": "CL001",
       "latitude": -33.4489,
       "longitude": -70.6693,
-      "classificacoes": [111],
+      "classificacoes": [
+        111
+      ],
       "destino": true
     },
     {
@@ -144,7 +826,10 @@
       "cidade": "BR018",
       "latitude": -33.4489,
       "longitude": -70.6693,
-      "classificacoes": [164,165],
+      "classificacoes": [
+        164,
+        165
+      ],
       "destino": true
     },
     {
@@ -154,7 +839,13 @@
       "cidade": "BR025",
       "latitude": -33.4489,
       "longitude": -70.6693,
-      "classificacoes": [111,112,121,122,123],
+      "classificacoes": [
+        111,
+        112,
+        121,
+        122,
+        123
+      ],
       "destino": true
     },
     {
@@ -164,21 +855,23 @@
       "cidade": "BR028",
       "latitude": -33.4489,
       "longitude": -70.6693,
-      "classificacoes": [101,107],
+      "classificacoes": [
+        101,
+        107
+      ],
       "destino": true
     }
-
   ],
   "usuarios": [
     {
       "id": 1,
       "legenda": "Gleyson Sampaio",
-      "localizacao":4,
+      "localizacao": 4,
       "contato": {
         "instagram": "@glysns",
         "facebook": "facebook.com/glysns",
         "email": "gleyson.s@hotmail.com",
-        "telefone":{
+        "telefone": {
           "ddi": "55",
           "ddd": "11",
           "numero": "958940362",
@@ -199,14 +892,14 @@
       "id": 2,
       "legenda": "FlyMates Travel",
       "localizacao": 2,
-      "telefone":{
-          "ddi": "55",
-          "ddd": "11",
-          "numero": "966212563",
-          "whatsapp": true,
-          "celular": true,
-          "fixo": false
-        },
+      "telefone": {
+        "ddi": "55",
+        "ddd": "11",
+        "numero": "966212563",
+        "whatsapp": true,
+        "celular": true,
+        "fixo": false
+      },
       "documento": {
         "rn": "123.456.789-00",
         "passaporte": null
@@ -221,14 +914,14 @@
       "id": 3,
       "legenda": "Hotel Boutique Casa Conde",
       "localizacao": 1,
-      "telefone":{
-          "ddi": "55",
-          "ddd": "11",
-          "numero": "958940362",
-          "whatsapp": true,
-          "celular": true,
-          "fixo": false
-        },
+      "telefone": {
+        "ddi": "55",
+        "ddd": "11",
+        "numero": "958940362",
+        "whatsapp": true,
+        "celular": true,
+        "fixo": false
+      },
       "documento": {
         "rn": "123.456.789-00",
         "passaporte": null
@@ -241,14 +934,14 @@
       "id": 4,
       "legenda": "Benjamín Turimo",
       "localizacao": 3,
-      "telefone":{
-          "ddi": "55",
-          "ddd": "11",
-          "numero": "958940362",
-          "whatsapp": true,
-          "celular": true,
-          "fixo": false
-        },
+      "telefone": {
+        "ddi": "55",
+        "ddd": "11",
+        "numero": "958940362",
+        "whatsapp": true,
+        "celular": true,
+        "fixo": false
+      },
       "documento": {
         "rn": "123.456.789-00",
         "passaporte": null
@@ -261,14 +954,14 @@
       "id": 5,
       "legenda": "Voe Gol - Passagens Áereas",
       "localizacao": 2,
-      "telefone":{
-          "ddi": "55",
-          "ddd": "11",
-          "numero": "958940362",
-          "whatsapp": true,
-          "celular": true,
-          "fixo": false
-        },
+      "telefone": {
+        "ddi": "55",
+        "ddd": "11",
+        "numero": "958940362",
+        "whatsapp": true,
+        "celular": true,
+        "fixo": false
+      },
       "documento": {
         "rn": "123.456.789-00",
         "passaporte": null
@@ -278,106 +971,192 @@
       "email": "gol.com.br"
     }
   ],
-  
   "produtos": [
     {
       "id": 1,
-      "data": {"dia": "2025-06-10", "hora": "09:00"},
+      "data": {
+        "dia": "2025-06-10",
+        "hora": "09:00"
+      },
       "legenda": "Passagem aerea São Paulo / Santiago Chile + Hotel / 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hotel para 06 dias.",
       "anuncio": true,
       "parceiro": 2,
-      "classificacoes": [107],
-      "valor": {"quantia": 4070.62,"preco": "R$ 4.070,62","moeda": "BRL","formaPagamento": "R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 5x sem juros no cartão de crédito"}
+      "classificacoes": [
+        107
+      ],
+      "valor": {
+        "quantia": 4070.62,
+        "preco": "R$ 4.070,62",
+        "moeda": "BRL",
+        "formaPagamento": "R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 5x sem juros no cartão de crédito"
+      }
     },
     {
       "id": 2,
-      "data": {"dia": "2025-06-10", "hora": "09:00"},
+      "data": {
+        "dia": "2025-06-10",
+        "hora": "09:00"
+      },
       "legenda": "Passagem aerea São Paulo / Santiago Chile + Hostel / 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hostel para 06 dias.",
       "anuncio": true,
       "parceiro": 2,
-      "classificacoes": [107],
-      "valor": {"quantia": 2267.62, "preco": "R$ 2.267,62","moeda": "BRL","formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"}
+      "classificacoes": [
+        107
+      ],
+      "valor": {
+        "quantia": 2267.62,
+        "preco": "R$ 2.267,62",
+        "moeda": "BRL",
+        "formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"
+      }
     },
     {
       "id": 3,
-      "data": {"dia": "2025-06-11", "hora": "15:00"},
+      "data": {
+        "dia": "2025-06-11",
+        "hora": "15:00"
+      },
       "legenda": "Passagem aerea Teresina - PI à Guarulhos - SP, voô direto (3h)",
       "descricao": "Passagem aerea Teresina - PI à Guarulhos - SP, voô direto (3h)",
       "anuncio": false,
       "parceiro": 5,
-      "classificacoes": [101],
-      "valor": {"quantia": 927.49, "preco": "R$ 927,49","moeda": "BRL","formaPagamento": "R$ R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"}
+      "classificacoes": [
+        101
+      ],
+      "valor": {
+        "quantia": 927.49,
+        "preco": "R$ 927,49",
+        "moeda": "BRL",
+        "formaPagamento": "R$ R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"
+      }
     }
   ],
   "atividades": [
     {
       "id": 1,
-      "data": {"dia": "2025-06-10", "hora": "09:00"},
+      "data": {
+        "dia": "2025-06-10",
+        "hora": "09:00"
+      },
       "legenda": "Passagem aerea São Paulo / Santiago Chile + Hotel 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hotel para 06 dias.",
       "produto": 1,
-      "destino":4,
+      "destino": 4,
       "escolhida": false,
-      "classificacoes": [107],
+      "classificacoes": [
+        107
+      ],
       "anfitriao": 2,
-      "valor": {"quantia": 4070.62,"preco": "R$ 4.070,62","moeda": "BRL","formaPagamento": "R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 5x sem juros no cartão de crédito"}
+      "valor": {
+        "quantia": 4070.62,
+        "preco": "R$ 4.070,62",
+        "moeda": "BRL",
+        "formaPagamento": "R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 5x sem juros no cartão de crédito"
+      }
     },
-     {
+    {
       "id": 2,
-      "data": {"dia": "2025-06-10", "hora": "09:00"},
+      "data": {
+        "dia": "2025-06-10",
+        "hora": "09:00"
+      },
       "legenda": "Passagem aerea São Paulo / Santiago Chile + Hostel 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hostel para 06 dias.",
       "produto": 2,
-      "destino":4,
+      "destino": 4,
       "escolhida": true,
-      "classificacoes": [107],
-      "sugestoes":[1],
+      "classificacoes": [
+        107
+      ],
+      "sugestoes": [
+        1
+      ],
       "anfitriao": 2,
-      "valor": {"quantia": 2267.62, "preco": "R$ 2.267,62","moeda": "BRL","formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"}
+      "valor": {
+        "quantia": 2267.62,
+        "preco": "R$ 2.267,62",
+        "moeda": "BRL",
+        "formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"
+      }
     },
     {
       "id": 3,
-      "data": {"dia": "2025-06-11", "hora": "15:00"},
+      "data": {
+        "dia": "2025-06-11",
+        "hora": "15:00"
+      },
       "legenda": "Passagem aerea Teresina - PI à Guarulhos - SP, voô direto, 04:55 às 08:10 (3h)",
       "descricao": "Viagem aérea somente ida saindo de Teresina - PI para Guarulhos - SP",
       "produto": 3,
       "anfitriao": 2,
-      "destino":4,
+      "destino": 4,
       "escolhida": true,
-      "classificacoes": [101],
-      "valor": {"quantia": 927.49, "preco": "R$ 927,49","moeda": "BRL","formaPagamento": "R$ R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"}
+      "classificacoes": [
+        101
+      ],
+      "valor": {
+        "quantia": 927.49,
+        "preco": "R$ 927,49",
+        "moeda": "BRL",
+        "formaPagamento": "R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"
+      }
     }
   ],
   "aventuras": [
     {
       "id": 1,
       "exclusiva": true,
-      "destino":4,
-      "data": {"dia": "2025-06-10", "hora": "09:00"},
+      "destino": 4,
+      "data": {
+        "dia": "2025-06-10",
+        "hora": "09:00"
+      },
       "duracao": "1 dia",
       "legenda": "Proposta de pacote de viagens enviada pela FlyMates",
-      "descricao":"A FlyMates nos envia um anúncio de viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem para 06 dias no valor de R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 3x sem juros no cartão de crédito. Devido o valor, eu solicitei uma nova proposta alterando a hospedagem de hotel para um hostel, ficando um total de R$ 2.392,70 em 5x no cartão de crédito",
+      "descricao": "A FlyMates nos envia um anúncio de viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem para 06 dias no valor de R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 3x sem juros no cartão de crédito. Devido o valor, eu solicitei uma nova proposta alterando a hospedagem de hotel para um hostel, ficando um total de R$ 2.392,70 em 5x no cartão de crédito",
       "autor": 1,
-      "atividades":[1, 2],
-      "classificacoes": [107],
+      "atividades": [
+        1,
+        2
+      ],
+      "classificacoes": [
+        107
+      ],
       "anfitriao": 2,
-      "valor": {"quantia": 2267.62, "preco": "R$ 2.267,62","moeda": "BRL","formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"}
+      "valor": {
+        "quantia": 2267.62,
+        "preco": "R$ 2.267,62",
+        "moeda": "BRL",
+        "formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"
+      }
     },
     {
       "id": 2,
       "exclusiva": true,
-      "destino":6,
-      "data": {"dia": "2025-07-09", "hora": "04:55"},
+      "destino": 6,
+      "data": {
+        "dia": "2025-07-09",
+        "hora": "04:55"
+      },
       "duracao": "3 horas",
       "legenda": "Vôo de Teresina/PI para Guarulhos/SP",
-      "descricao":"Dois dias antes da viagem para Santiago, embarcamos no vôo com destino a São Paulo para aproveitar essa maravilhosa cidade",
+      "descricao": "Dois dias antes da viagem para Santiago, embarcamos no vôo com destino a São Paulo para aproveitar essa maravilhosa cidade",
       "autor": 1,
-      "atividades":[3],
-      "classificacoes": [101],
+      "atividades": [
+        3
+      ],
+      "classificacoes": [
+        101
+      ],
       "anfitriao": 2,
-      "valor": {"quantia": 927.49, "preco": "R$ 927,49","moeda": "BRL","formaPagamento": "R$ R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"}
+      "valor": {
+        "quantia": 927.49,
+        "preco": "R$ 927,49",
+        "moeda": "BRL",
+        "formaPagamento": "R$ R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"
+      }
     }
   ],
   "experiencias": [
@@ -387,19 +1166,29 @@
         "dia": "2025-07-11",
         "hora": "08:00"
       },
-      "classificacoes": [107,131,132,133,144,141],
+      "classificacoes": [
+        107,
+        131,
+        132,
+        133,
+        144,
+        141
+      ],
       "duracao": "7 dias",
       "legenda": "Férias de Inverno no Chile",
       "descricao": "Durante nossa jornada ao Chile, tivemos diversas aventuras incríveis nas quais você poderá acompanhar o que rolou diariamente",
       "localizacao": 1,
-      "destino":4,
+      "destino": 4,
       "valor": {
         "quantia": 1200000,
         "preco": "$ 12000.00",
-        "moeda":  "CLP"
+        "moeda": "CLP"
       },
       "autor": 1,
-      "aventuras": [1,2]
+      "aventuras": [
+        1,
+        2
+      ]
     }
   ]
 }
