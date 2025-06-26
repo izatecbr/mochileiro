@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  modules: ['@pinia/nuxt', '@nuxt/image'],
+  modules: ['@pinia/nuxt', '@nuxt/image', '@nuxt/icon'],
   runtimeConfig: {
     public: {
       pexelsKey: ''
