@@ -22,12 +22,7 @@
             src="/img/logo/logo-3.png"
             alt="logo icon"
           />
-          <img
-              width="167"
-              height="32"
-              src="public/img/logo/logo-3.png"
-              alt="logo icon"
-          />
+
         </nuxt-link>
 
         <Menu />
