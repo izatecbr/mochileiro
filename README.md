@@ -2,6 +2,39 @@
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
+Netlify
+npm run build
+
+npm install -g netlify-cli
+
+netlify dev
+
+🏃 Rodar localmente com Netlify CLI
+Para simular o ambiente Netlify localmente, siga com:
+
+bash
+Copiar
+Editar
+npm install -g netlify-cli
+netlify dev
+Se for a primeira vez, ele vai pedir para logar na conta Netlify (você pode pular isso com netlify dev --offline).
+
+🚀 Alternativa: Rodar o build com Nitro
+Se você quiser apenas testar o servidor local gerado pela .output (sem simular Netlify):
+
+bash
+Copiar
+Editar
+npx nitro preview
+📁 O que tem dentro da .output?
+server/ – Código que roda no backend (SSR/functions)
+
+public/ – Arquivos estáticos
+
+server/index.mjs – Entry point que o Netlify ou outro provedor usa
+
+nitro.json – Metadata do build
+
 ## Setup
 
 Make sure to install dependencies:
