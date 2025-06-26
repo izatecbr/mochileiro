@@ -1,17 +1,17 @@
 <template>
   <section class="cta -type-2">
     <div class="cta__bg">
-      <nuxt-img src="/img/cta/7/bg.png" width="1093" height="600" alt="image" />
+      <img src="/img/cta/7/bg.png" width="1093" height="600" alt="image" />
 
       <div class="cta__image">
-        <nuxt-img src="../../assets/images/santiago.jpg" width="750" height="600" alt="image" />
-        <nuxt-img
+        <img src="../../assets/images/santiago.jpg" width="750" height="600" alt="image" />
+        <img
             src="/img/cta/7/shape.svg"
             width="40"
             height="600"
             alt="image"
         />
-        <nuxt-img
+        <img
             src="/img/cta/7/shape2.svg"
             width="600"
             height="40"
