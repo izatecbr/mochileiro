@@ -213,7 +213,8 @@
       },
       "aniversario": "1990-01-01",
       "foto": "https://supabase/foto-flymates.jpg",
-      "email": "flymates.com.br"
+      "email": "contato@flymates.com.br",
+      "site": "https://flymates.com.br/"
     },
     {
       "id": 3,
