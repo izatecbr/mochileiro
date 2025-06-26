@@ -335,7 +335,7 @@
       "classificacoes": [107],
       "sugestoes":[1],
       "anfitriao": 2,
-      "valor": {"quantia": 2267.62, "preco": "R$ 2.267,62","moeda": "BRL","formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"},
+      "valor": {"quantia": 2267.62, "preco": "R$ 2.267,62","moeda": "BRL","formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"}
     },
     {
       "id": 3,
