@@ -4,7 +4,7 @@
       <nuxt-img src="/img/cta/7/bg.png" width="1093" height="600" alt="image" />
 
       <div class="cta__image">
-        <nuxt-img src="../../public/img/santiago.jpg" width="750" height="600" alt="image" />
+        <nuxt-img src="../../assets/images/santiago.jpg" width="750" height="600" alt="image" />
         <nuxt-img
             src="/img/cta/7/shape.svg"
             width="40"
