@@ -16,11 +16,17 @@
 
       <div class="header__logo">
         <nuxt-link to="/" class="header__logo">
-          <nuxt-img
+          <img
             width="167"
             height="32"
             src="/img/logo/logo-3.png"
             alt="logo icon"
+          />
+          <nuxt-img
+              width="167"
+              height="32"
+              src="public/img/logo/logo-3.png"
+              alt="logo icon"
           />
         </nuxt-link>
 

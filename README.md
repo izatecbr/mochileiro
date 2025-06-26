@@ -35,6 +35,22 @@ server/index.mjs – Entry point que o Netlify ou outro provedor usa
 
 nitro.json – Metadata do build
 
+🔍 Teste Local
+Você pode testar localmente com:
+
+bash
+Copiar
+Editar
+npm run build
+npm run preview
+Ou usar um servidor local para ver se as imagens aparecem:
+
+bash
+Copiar
+Editar
+npx serve .output/public
+
+
 ## Setup
 
 Make sure to install dependencies:
