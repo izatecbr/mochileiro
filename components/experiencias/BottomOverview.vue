@@ -34,7 +34,6 @@ defineProps(['valor', 'anfitriao'])
 
 <style scoped lang="css">
 .valores {
-  font-weight: bold;
   font-size: 0.7rem;
   text-align: start;
 }
@@ -48,23 +47,21 @@ defineProps(['valor', 'anfitriao'])
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0.4rem;
-  border-radius: 12px;
-  border: 1px solid var(--border, #E7E6E6);
-  box-shadow: 0px 10px 40px 0px rgba(0, 0, 0, 0.05);
-  background-color: white;
+  padding: 0.3rem;
+  border-radius: 10px;
+
 }
 
 .anfitriao-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.3rem;
+  gap: 0.1rem;
 }
 
 .anfitriao {
   text-decoration: underline;
-  font-size: 0.9rem;
+  font-size: 0.7rem;
   color: var(--text-color, #333);
 }
 
@@ -76,6 +73,6 @@ defineProps(['valor', 'anfitriao'])
 }
 
 .social-icon {
-  font-size: 1.2rem;
+  font-size: 0.9rem;
 }
 </style>
