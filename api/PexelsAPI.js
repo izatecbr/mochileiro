@@ -12,6 +12,7 @@ export default class PexelsAPI {
       method: 'GET',
       params: {
         query,
+       // locale: 'es-CL',
         per_page,
         size
       },
