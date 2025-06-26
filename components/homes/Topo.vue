@@ -1,7 +1,7 @@
 <template>
   <section class="hero -type-3">
     <div class="hero__bg">
-      <nuxt-img
+      <img
         width="1920"
         height="760"
         src="/img/hero/3/bg.jpg"
@@ -26,7 +26,7 @@
              os Lugares
             <br class="md:d-none" />
             mochileiro.tec
-            <nuxt-img
+            <img
               width="214"
               height="23"
               src="/img/hero/3/brush.svg"
@@ -130,20 +130,20 @@
         <div class="col-xl-7 col-lg-7">
           <div class="hero__image">
             <div>
-              <nuxt-img
+              <img
                 width="340"
                 height="420"
                 src="/img/hero/3/1.png"
                 alt="image"
               />
-              <nuxt-img
+              <img
                 width="340"
                 height="250"
                 src="/img/hero/3/2.png"
                 alt="image"
               />
             </div>
-            <nuxt-img
+            <img
               width="340"
               height="620"
               src="/img/hero/3/3.png"
