@@ -66,7 +66,7 @@
               :class="{ 'is-active': currentSlideIndex === i }"
               class="testimonialsPagination__item"
             >
-              <nuxt-img
+              <img
                 :width="105"
                 :height="106"
                 :src="elm.image"

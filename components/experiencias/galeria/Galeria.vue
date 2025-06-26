@@ -28,7 +28,7 @@ const dummyImages = [
 <template>
   <div class="tourSingleGrid -type-1 mt-30">
     <div class="tourSingleGrid__grid mobile-css-slider-2">
-      <nuxt-img
+      <img
         v-for="(img, index) in _images ?? dummyImages"
         :key="index"
         width="375"

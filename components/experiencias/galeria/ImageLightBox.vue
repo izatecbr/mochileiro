@@ -50,7 +50,7 @@ const setActiveLightBoxFunc = (value) => {
         }"
       >
         <div class="numbertext">{{ i + 1 }} / {{ images.length }}</div>
-        <nuxt-img
+        <img
           :width="850"
           :height="510"
           :src="elm.image"
