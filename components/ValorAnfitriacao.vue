@@ -1,11 +1,7 @@
 <template>
   <div class="card-bottom">
     <div class="anfitriao-container">
-
-    <span class="valores">
-      <span class="emoji">{{ valor?.moeda }}</span>
-      {{ valor?.formaPagamento }}
-    </span>
+      <NuxtLink class="anfitriao" :to="`/perfil/${anfitriao?.id}`">{{ anfitriao?.legenda }}</NuxtLink>
       <div class="container-socials">
         <NuxtLink class="anfitriao" :to="`/anfitriao/${anfitriao?.id}`">{{ anfitriao?.legenda }}</NuxtLink>
         <NuxtLink v-if="anfitriao?.instagram" target="_blank" :to="anfitriao?.instagram">
