@@ -11,12 +11,14 @@
         <p class="label-overview" >{{ atividade.legenda }} {{ atividade?.duracao ? `- (${atividade.duracao})` : '' }}</p>
       </NuxtLink>
  
-      <ExperienciasBottomOverview :valor="atividade?.valor" :anfitriao="atividade?.anfitriaoObject"/>
+      <ExperienciaValorAnfitriacao :valor="atividade?.valor" :anfitriao="atividade?.anfitriaoObject"/>
     </li>
   </ul>
 </template>
 
 <script setup>
+import ExperienciaValorAnfitriacao from "~/components/experiencias/ExperienciaValorAnfitriacao.vue";
+
 const props = defineProps(['overview', 'aventuras'])
 
 </script>

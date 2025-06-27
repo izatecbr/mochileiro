@@ -7,7 +7,7 @@
         <span class="text-13" >{{ elm?.descricao }}</span>
         <br>
         <div v-for="atividade in elm.atividadesList" >
-          <ExperienciasBottomOverview v-if="atividade.escolhida" style="margin-top: 4px;" :valor="atividade?.valor" :anfitriao="atividade?.anfitriaoObject"/>
+          <ExperienciaValorAnfitriacao v-if="atividade.escolhida" style="margin-top: 4px;" :valor="atividade?.valor" :anfitriao="atividade?.anfitriaoObject"/>
         </div>
       </div>
     </div>
@@ -16,6 +16,7 @@
 
 <script setup>
 import Utils from '~/utils/Index';
+import ExperienciaValorAnfitriacao from "~/components/experiencias/ExperienciaValorAnfitriacao.vue";
 const props = defineProps(['aventuras'])
 </script>
 
