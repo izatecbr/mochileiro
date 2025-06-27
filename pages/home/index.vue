@@ -3,9 +3,7 @@
     <HomeTopo />
     <HomeBanner />
     <HomeDepoimentos />
-    <HomeInteresses/>
-
-    <Rodape />
+    <LayoutRodape />
   </main>
 </template>
 
@@ -14,5 +12,4 @@ useSeoMeta({
   title: "Mochileiro.tec",
   description: "Viva em todos os lugares",
 });
-import Rodape from "@/components/layout/Rodape";
 </script>
