@@ -1,8 +1,8 @@
 <template>
   <section class="pt-1">
     <div class="container">
-      <Main :objeto="objeto" />
-      <Galeria :images="images" />
+      <ExperienciaTitulo :objeto="objeto" />
+      <ExperienciaGaleria :images="images" />
     </div>
   </section>
 
@@ -40,8 +40,8 @@
 
 <script setup>
 import { ref, watch } from "vue";
-import Galeria from "./galeria/Galeria.vue";
-import Main from "./Main.vue";
+import ExperienciaGaleria from "./galeria/ExperienciaGaleria";
+import ExperienciaTitulo from "./ExperienciaTitulo";
 import ExperienciaInformacao from "./ExperienciaInformacao";
 import ExperienciaCotacao from "./ExperienciaCotacao";
 import ExperienciaDetalhe from "./ExperienciaDetalhe";
