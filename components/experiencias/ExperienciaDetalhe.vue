@@ -1,8 +1,9 @@
 <template>
+
   <h2 class="text-20">Preços e opções</h2>
   <ul v-for="aventura in aventuras" :key="aventura.id" class="mt-20">
     <h4 class="text-16 fw-500 mt-5">{{ aventura.legenda }}</h4>
-    <div class="line mt-1 mb-1"></div>
+
     <li class="d-flex flex-column mt-1" v-for="atividade in aventura.atividadesList">
       <NuxtLink  class="d-flex  justify-start items-center" :to="`/atividades/${atividade.id}`">
         <i v-if="atividade.escolhida"
@@ -10,14 +11,14 @@
         <i v-else class="icon-cross flex-center text-8 size-16 rounded-full text-red-3 bg-red-4 mr-5"></i>
         <p class="label-overview" >{{ atividade.legenda }} {{ atividade?.duracao ? `- (${atividade.duracao})` : '' }}</p>
       </NuxtLink>
- 
-      <ExperienciaValorAnfitriacao :valor="atividade?.valor" :anfitriao="atividade?.anfitriaoObject"/>
+      <ValorAnfitriacao :valor="atividade?.valor" :anfitriao="atividade?.anfitriaoObject"/>
     </li>
+    <div class="line mt-1 mb-1"></div>
   </ul>
 </template>
 
 <script setup>
-import ExperienciaValorAnfitriacao from "~/components/experiencias/ExperienciaValorAnfitriacao.vue";
+import ValorAnfitriacao from "~/components/ValorAnfitriacao";
 
 const props = defineProps(['overview', 'aventuras'])
 
