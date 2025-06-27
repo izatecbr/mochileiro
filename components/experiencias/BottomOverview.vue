@@ -1,7 +1,7 @@
 <template>
   <div class="card-bottom">
     <div class="anfitriao-container">
-      <NuxtLink class="anfitriao" :to="`/anfitriao/${anfitriao?.id}`">{{ anfitriao?.legenda }}</NuxtLink>
+      <NuxtLink class="anfitriao" :to="`/perfil/${anfitriao?.id}`">{{ anfitriao?.legenda }}</NuxtLink>
       <div class="container-socials">
         <NuxtLink v-if="anfitriao?.site" :to="anfitriao?.site" target="_blank">
           <Icon class="social-icon" name="mdi:web" />
