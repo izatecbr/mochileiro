@@ -1,8 +1,8 @@
 <!-- src/views/Home.vue -->
 <template>
   <section class="hero -type-3">
-  <div class="grid-container">
-    <DBView v-for="n in 6" :key="n" />
+  <div >
+    <DBView v-for="n in 1" :key="n" />
   </div>
     </section>/
 </template>

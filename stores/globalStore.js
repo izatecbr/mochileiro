@@ -1,5 +1,7 @@
 import { defineStore } from "pinia";
+
 const STORE_VERSION = import.meta.env.PUBLIC_STORE_VERSION || "v3";
+
 export const useGlobalStore = defineStore("database", {
   persist: true,
   state: () => ({
@@ -19,30 +21,25 @@ export const useGlobalStore = defineStore("database", {
   }),
   actions: {
     async carregarStore() {
-      console.log(
-        "import.meta.env.NUXT_PUBLIC_STORE_VERSION",
-        import.meta.env.NUXT_PUBLIC_STORE_VERSION
-      );
       const savedVersion = localStorage.getItem("global_store_version");
       if (savedVersion !== STORE_VERSION) {
         this.$reset();
         localStorage.setItem("global_store_version", STORE_VERSION);
-        this.novaVersao = true; // <-- sinaliza que tem nova versão
+        this.novaVersao = true;
       } else {
         this.novaVersao = false;
       }
 
-      // Já tem dados? Evita o fetch
       if (
-        this.paises.length &&
-        this.estados.length &&
-        this.cidades.length &&
-        this.usuarios.length &&
-        this.produtos.length &&
-        this.localizacoes.length &&
-        this.atividades.length &&
-        this.aventuras.length &&
-        this.experiencias.length
+          this.paises.length &&
+          this.estados.length &&
+          this.cidades.length &&
+          this.usuarios.length &&
+          this.produtos.length &&
+          this.localizacoes.length &&
+          this.atividades.length &&
+          this.aventuras.length &&
+          this.experiencias.length
       ) {
         return;
       }
@@ -60,8 +57,8 @@ export const useGlobalStore = defineStore("database", {
       this.atividades = data.atividades;
       this.aventuras = data.aventuras;
       this.experiencias = data.experiencias;
-      if (data.categorias) {
-        this.classificacoes = data.categorias.flatMap((pai) =>
+
+      this.classificacoes = data.categorias.flatMap((pai) =>
           pai.categorias.map((filha) => ({
             id: filha.id,
             legenda: filha.legenda,
@@ -70,204 +67,110 @@ export const useGlobalStore = defineStore("database", {
               legenda: pai.legenda,
             },
           }))
-        );
-      }
+      );
     },
-    // Função privada dentro do contexto da store
-    normalizeId(id, isString) {
-      return isString ? String(id) : Number(id);
-    },
+
     enriquecerClassificacoes(arrIds) {
       if (!Array.isArray(arrIds)) return [];
-      return arrIds.map((id) => this.getClassificacaoById(id)).filter(Boolean);
+      return arrIds
+          .map((id) => this.classificacoes.find((c) => c.id === id))
+          .filter(Boolean);
+    },
+
+    getById(collection, id) {
+      return this[collection].find((item) => item.id === id) || null;
+    },
+
+    getEnriched(collection, id, enrichFn) {
+      const item = this.getById(collection, id);
+      if (!item) return null;
+      if (item.enriquecido) return item;
+
+      const enriched = enrichFn(item);
+      const index = this[collection].findIndex((i) => i.id === id);
+      if (index !== -1) this[collection][index] = enriched;
+
+      return enriched;
     },
 
     getPaisById(id) {
-      return this.paises.find((p) => p.id === id);
+      return this.getById("paises", id);
     },
 
     getEstadoById(id) {
-      const estado = this.estados.find((e) => e.id === id);
-      if (!estado) return null;
-
-      if (estado.enriquecido) return estado;
-
-      const paisObject = this.getPaisById(estado.pais);
-
-      const enriched = {
+      return this.getEnriched("estados", id, (estado) => ({
         ...estado,
-        paisObject,
+        paisObject: this.getPaisById(estado.pais),
         enriquecido: true,
-      };
-
-      const index = this.estados.findIndex((e) => e.id === id);
-      if (index !== -1) this.estados[index] = enriched;
-
-      return enriched;
+      }));
     },
 
     getCidadeById(id) {
-      const cidade = this.cidades.find((c) => c.id === id);
-      if (!cidade) return null;
-
-      if (cidade.enriquecido) return cidade;
-
-      const estadoObject = this.getEstadoById(cidade.estado);
-      const paisObject = this.getPaisById(cidade.pais);
-
-      const enriched = {
+      return this.getEnriched("cidades", id, (cidade) => ({
         ...cidade,
-        estadoObject,
-        paisObject,
+        estadoObject: this.getEstadoById(cidade.estado),
+        paisObject: this.getPaisById(cidade.pais),
         enriquecido: true,
-      };
-
-      const index = this.cidades.findIndex((c) => c.id === id);
-      if (index !== -1) this.cidades[index] = enriched;
-
-      return enriched;
+      }));
     },
+
     getLocalizacaoById(id) {
-      const localizacao = this.localizacoes.find((l) => l.id === Number(id));
-      if (!localizacao) return null;
-
-      if (localizacao.enriquecido) return localizacao;
-
-      const cidadeObject = this.getCidadeById(localizacao.cidade);
-
-      const enriched = { ...localizacao, cidadeObject, enriquecido: true };
-
-      // Adiciona classificações enriquecidas, se existirem
-      if (Array.isArray(localizacao.classificacoes)) {
-        enriched.classificacoesList = this.enriquecerClassificacoes(
-          localizacao.classificacoes
-        );
-      }
-      const index = this.localizacoes.findIndex((l) => l.id === id);
-      if (index !== -1) this.localizacoes[index] = enriched;
-      return enriched;
+      return this.getEnriched("localizacoes", id, (l) => ({
+        ...l,
+        cidadeObject: this.getCidadeById(l.cidade),
+        classificacoesList: this.enriquecerClassificacoes(l.classificacoes),
+        enriquecido: true,
+      }));
     },
+
     getUsuarioById(id) {
-      const usuario = this.usuarios.find((u) => u.id === id);
-      if (!usuario) return null;
-      if (usuario.enriquecido) return usuario;
-
-      const localizacaoObject = this.getLocalizacaoById(usuario.localizacao);
-
-      const enriched = { ...usuario, localizacaoObject, enriquecido: true };
-
-      const index = this.usuarios.findIndex((u) => u.id === id);
-      if (index !== -1) this.usuarios[index] = enriched;
-      return enriched;
+      return this.getEnriched("usuarios", id, (u) => ({
+        ...u,
+        localizacaoObject: this.getLocalizacaoById(u.localizacao),
+        enriquecido: true,
+      }));
     },
-    getCategoriaById(id) {
-      return this.categorias.find((e) => e.id === id);
-    },
-    getClassificacaoById(id) {
-      return this.classificacoes.find((e) => e.id === id);
-    },
+
     getProdutoById(id) {
-      const produto = this.produtos.find((p) => p.id === id);
-      if (!produto) return null;
-      if (produto.enriquecido) return produto;
-
-      const parceiroObject = this.getUsuarioById(produto.parceiro);
-
-      const enriched = { ...produto, parceiroObject, enriquecido: true };
-
-      // Enriquecer classificações se existirem
-      if (Array.isArray(produto.classificacoes)) {
-        enriched.classificacoesList = this.enriquecerClassificacoes(produto.classificacoes)
-      }
-      const index = this.produtos.findIndex((p) => p.id === id);
-      if (index !== -1) this.produtos[index] = enriched;
-      return enriched;
+      return this.getEnriched("produtos", id, (p) => ({
+        ...p,
+        parceiroObject: this.getUsuarioById(p.parceiro),
+        classificacoesList: this.enriquecerClassificacoes(p.classificacoes),
+        enriquecido: true,
+      }));
     },
 
     getAtividadeById(id) {
-      const atividade = this.atividades.find((a) => a.id === id);
-      if (!atividade) return null;
-      if (atividade.enriquecido) return atividade;
-
-      const produtoObject = this.getProdutoById(atividade.produto);
-      const anfitriaoObject = this.getUsuarioById(atividade.anfitriao);
-
-      const enriched = {
-        ...atividade,
-        anfitriaoObject,
-        produtoObject,
+      return this.getEnriched("atividades", id, (a) => ({
+        ...a,
+        anfitriaoObject: this.getUsuarioById(a.anfitriao),
+        produtoObject: this.getProdutoById(a.produto),
+        classificacoesList: this.enriquecerClassificacoes(a.classificacoes),
         enriquecido: true,
-      };
-
-      // Adiciona classificações enriquecidas, se existirem
-      if (Array.isArray(atividade.classificacoes)) {
-        enriched.classificacoesList = this.enriquecerClassificacoes(
-          atividade.classificacoes
-        );
-      }
-      const index = this.atividades.findIndex((a) => a.id === id);
-      if (index !== -1) this.atividades[index] = enriched;
-      return enriched;
+      }));
     },
 
     getAventuraById(id) {
-      const aventura = this.aventuras.find((a) => a.id === id);
-      if (!aventura) return null;
-      if (aventura.enriquecido) return aventura;
-
-      const autorObject = this.getUsuarioById(aventura.autor);
-      const anfitriaoObject = this.getUsuarioById(aventura.anfitriao);
-      const atividadesList =
-        aventura.atividades?.map(this.getAtividadeById) || [];
-
-      const enriched = {
-        ...aventura,
-        autorObject,
-        anfitriaoObject,
-        atividadesList,
+      return this.getEnriched("aventuras", id, (a) => ({
+        ...a,
+        autorObject: this.getUsuarioById(a.autor),
+        anfitriaoObject: this.getUsuarioById(a.anfitriao),
+        atividadesList: (a.atividades || []).map(this.getAtividadeById),
+        classificacoesList: this.enriquecerClassificacoes(a.classificacoes),
         enriquecido: true,
-      };
-
-       // Adiciona classificações enriquecidas, se existirem
-      if (Array.isArray(aventura.classificacoes)) {
-        enriched.classificacoesList = this.enriquecerClassificacoes(
-          aventura.classificacoes
-        );
-      }
-      const index = this.aventuras.findIndex((a) => a.id === id);
-      if (index !== -1) this.aventuras[index] = enriched;
-      return enriched;
+      }));
     },
 
     getExperienciaById(id) {
-      const experiencia = this.experiencias.find((e) => e.id === id);
-      if (!experiencia) return null;
-      if (experiencia.enriquecido) return experiencia;
-
-      const autorObject = this.getUsuarioById(experiencia.autor);
-      const localizacaoObject = this.getLocalizacaoById(
-        experiencia.localizacao
-      );
-      const aventurasList =
-        experiencia.aventuras?.map(this.getAventuraById) || [];
-
-      const enriched = {
-        ...experiencia,
-        autorObject,
-        localizacaoObject,
-        aventurasList,
+      return this.getEnriched("experiencias", id, (e) => ({
+        ...e,
+        autorObject: this.getUsuarioById(e.autor),
+        experienciaAnfitriao: this.getUsuarioById(e.anfitriao),
+        localizacaoObject: this.getLocalizacaoById(e.localizacao),
+        aventurasList: (e.aventuras || []).map(this.getAventuraById),
+        classificacoesList: this.enriquecerClassificacoes(e.classificacoes),
         enriquecido: true,
-      };
-
-      // Adiciona classificações enriquecidas, se existirem
-      if (Array.isArray(experiencia.classificacoes)) {
-        enriched.classificacoesList = this.enriquecerClassificacoes(
-          experiencia.classificacoes
-        );
-      }
-      const index = this.experiencias.findIndex((e) => e.id === id);
-      if (index !== -1) this.experiencias[index] = enriched;
-      return enriched;
+      }));
     },
   },
 });
