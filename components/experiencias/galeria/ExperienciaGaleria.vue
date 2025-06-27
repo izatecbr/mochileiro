@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref } from "vue";
-import ImageLightBox from "./ImageLightBox";
+import ImageLightBox from "~/components/common/ImageLightBox.vue";
 
 const props = defineProps(["images"]);
 
@@ -46,7 +46,7 @@ const dummyImages = [
         @click="setActiveLightBox(true)"
       >
         <span class="button -accent-1 py-10 px-20 rounded-200 bg-dark-1 lh-16 text-white">
-          See all photos
+          Visualizar
         </span>
       </div>
     </div>
