@@ -1,11 +1,9 @@
 <template>
-  <p class="mt-10">
-    {{ overview || '-' }}
-  </p>
+  <h2 class="text-20">Preços e opções</h2>
   <ul v-for="aventura in aventuras" :key="aventura.id" class="mt-20">
     <h4 class="text-16 fw-500 mt-5">{{ aventura.legenda }}</h4>
     <div class="line mt-1 mb-1"></div>
-    <li class="d-flex flex-column mt-10" v-for="atividade in aventura.atividadesList">
+    <li class="d-flex flex-column mt-1" v-for="atividade in aventura.atividadesList">
       <NuxtLink  class="d-flex  justify-start items-center" :to="`/atividades/${atividade.id}`">
         <i v-if="atividade.escolhida"
           class="icon-check flex-center text-8 size-16 rounded-full text-green-2 bg-green-1 mr-5"></i>

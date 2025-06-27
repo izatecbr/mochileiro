@@ -1,5 +1,5 @@
 <template>
-  <section class="pt-30">
+  <section class="pt-1">
     <div class="container">
       <Main :objeto="objeto" />
       <Galeria :images="images" />
@@ -13,16 +13,21 @@
           <div class="row y-gap-20 justify-between items-center layout-pb-md">
             <OthersInformation :duracao="objeto?.duracao" />
           </div>
-
-          <Overview :overview="objeto?.descricao" :aventuras="objeto?.aventurasList" />
-
-          <div class="line mt-25 mb-25"></div>
-
+          <div class="line mt-1 mb-1"></div>
           <h2 class="text-20">Detalhes</h2>
+
+          <p class="mt-10">
+            {{ objeto?.descricao || '-' }}
+          </p>
 
           <div class="mt-10 mb-10">
             <RoadMap :aventuras="objeto?.aventurasList" />
           </div>
+          <div class="line mt-25 mb-25"></div>
+          <Overview :overview="objeto?.descricao" :aventuras="objeto?.aventurasList" />
+
+
+
 
 
           <!--<h2 class="text-30 mt-60 mb-30">Tour Map</h2>
