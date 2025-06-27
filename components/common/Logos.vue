@@ -9,7 +9,7 @@
         </div>
       </div>
 
-      <div data-aos="fade-up" data-aos-delay="" class="pt-40 sm:pt-20">
+      <div data-aos="fade-up" data-aos-delay="" class="pt-20 sm:pt-10">
         <Swiper
             :space-between="30"
             class="w-100"

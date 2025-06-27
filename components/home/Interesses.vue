@@ -1,10 +1,14 @@
 <template>
-  <section class="layout-pt-xl ">
+ <pre v-if="interesses" class="json-view">
+        {{ JSON.stringify(interesses, null, 2) }}
+      </pre>
+
+  <section class="layout-pt ">
     <div class="container">
       <div class="row y-gap-10 justify-between items-end y-gap-10">
         <div class="col-auto">
           <h2 data-aos="fade-up" data-aos-delay="" class="text-30">
-            Featured Trips
+            Interesses
           </h2>
         </div>
 
@@ -15,7 +19,7 @@
           >
             <div @click="toggleDropDown" class="dropdown__button js-button">
               <span class="js-title">{{
-                travelStyle ? travelStyle : "By Travel Style"
+                travelStyle ? travelStyle : "Interesse"
               }}</span>
               <i class="icon-chevron-down ml-10"></i>
             </div>
@@ -117,16 +121,19 @@
 </template>
 
 <script setup>
+
 import { ref, onMounted, watch } from "vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { filterTour } from "~/data/tours";
 import Stars from "~/components/common/Stars.vue";
 
+const store = useGlobalStore()
+const interesses=ref(null);
 const ddActive = ref(false);
 const travelStyle = ref("");
 const filteredTours = ref(filterTour);
 
-const travelStyles = ["Fast", "Steady", "Furious", "Grind"];
+const travelStyles = ["Experiência", "Aventura", "Atividade"];
 
 const dropDownContainer = ref(null);
 
@@ -140,6 +147,7 @@ const handleDropDownClick = (event) => {
 };
 
 onMounted(() => {
+  interesses.value = store.interesses;
   document.addEventListener("click", handleDropDownClick);
 
   return () => {
@@ -162,3 +170,33 @@ const setTravelStyle = (style) => {
   ddActive.value = false;
 };
 </script>
+
+
+<style scoped>
+.db-view {
+  padding: 1rem;
+}
+.controls {
+  margin-bottom: 1rem;
+}
+.cols {
+  display: flex;
+  gap: 2rem;
+}
+table {
+  width: 100%;
+  max-width: 600px;
+  border-collapse: collapse;
+}
+td, th {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+.json-view {
+  background: #f9f9f9;
+  padding: 1rem;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  width: 100%;
+}
+</style>
