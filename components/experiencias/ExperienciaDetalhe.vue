@@ -1,32 +1,25 @@
 <template>
-
-  <h2 class="text-20">Preços e opções</h2>
-  <ul v-for="aventura in aventuras" :key="aventura.id" class="mt-20">
-    <h4 class="text-16 fw-500 mt-5">{{ aventura.legenda }}</h4>
-
-    <li class="d-flex flex-column mt-1" v-for="atividade in aventura.atividadesList">
-      <NuxtLink  class="d-flex  justify-start items-center" :to="`/atividades/${atividade.id}`">
-        <i v-if="atividade.escolhida"
-          class="icon-check flex-center text-8 size-16 rounded-full text-green-2 bg-green-1 mr-5"></i>
-        <i v-else class="icon-cross flex-center text-8 size-16 rounded-full text-red-3 bg-red-4 mr-5"></i>
-        <p class="label-overview" >{{ atividade.legenda }} {{ atividade?.duracao ? `- (${atividade.duracao})` : '' }}</p>
-      </NuxtLink>
-      <ValorAnfitriacao :valor="atividade?.valor" :anfitriao="atividade?.anfitriaoObject"/>
-    </li>
-    <div class="line mt-1 mb-1"></div>
-  </ul>
+  <div class="roadmap">
+    <div v-for="(elm, i) in aventuras" :key="i" class="roadmap__item">
+      <div class="roadmap__icon"></div>
+      <div class="roadmap__wrap">
+        <div class="roadmap__title">{{ elm?.legenda }} - {{ Utils.formatDateToBR(elm.data.dia) }}</div>
+        <span class="text-13" >{{ elm?.descricao }}</span>
+        <br>
+        <div v-for="atividade in elm.atividadesList" >
+          <ExperienciaValorAnfitriacao v-if="atividade.escolhida" style="margin-top: 4px;" :valor="atividade?.valor" :anfitriao="atividade?.anfitriaoObject"/>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import ValorAnfitriacao from "~/components/ValorAnfitriacao";
-
-const props = defineProps(['overview', 'aventuras'])
-
+import Utils from '~/utils/Index';
+import ExperienciaValorAnfitriacao from "~/components/experiencias/ExperienciaValorAnfitriacao.vue";
+const props = defineProps(['aventuras'])
 </script>
 
-<style scoped lang="css">
-.label-overview{
-  font-size: 0.8rem;
-  text-decoration: underline;
-}
+<style scoped>
+
 </style>

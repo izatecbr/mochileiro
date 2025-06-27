@@ -21,10 +21,10 @@
           </p>
 
           <div class="mt-10 mb-10">
-            <RoadMap :aventuras="objeto?.aventurasList" />
+            <ExperienciaDetalhe :aventuras="objeto?.aventurasList" />
           </div>
           <div class="line mt-25 mb-25"></div>
-          <ExperienciaDetalhe :overview="objeto?.descricao" :aventuras="objeto?.aventurasList" />
+          <ExperienciaCotacao :overview="objeto?.descricao" :aventuras="objeto?.aventurasList" />
 
         </div>
 
@@ -43,8 +43,8 @@ import { ref, watch } from "vue";
 import Galeria from "./galeria/Galeria.vue";
 import Main from "./Main.vue";
 import ExperienciaInformacao from "./ExperienciaInformacao";
+import ExperienciaCotacao from "./ExperienciaCotacao";
 import ExperienciaDetalhe from "./ExperienciaDetalhe";
-import RoadMap from "./RoadMap";
 import Sidebar from "./Sidebar.vue";
 
 const store = useGlobalStore();
