@@ -1,8 +1,10 @@
 <template>
   <main>
-    <Topo />
-    <Banner />
-    <Depoimentos />
+    <HomeTopo />
+    <HomeBanner />
+    <HomeDepoimentos />
+    <HomeInteresses/>
+
     <Rodape />
   </main>
 </template>
@@ -12,8 +14,5 @@ useSeoMeta({
   title: "Mochileiro.tec",
   description: "Viva em todos os lugares",
 });
-import Topo from "@/components/home/Topo";
-import Banner from "@/components/home/Banner";
-import Depoimentos from "@/components/home/Depoimentos";
 import Rodape from "@/components/layout/Rodape";
 </script>
