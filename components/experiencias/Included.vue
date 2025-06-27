@@ -11,16 +11,6 @@
       </div>
     </div>
 
-    <!--<div class="col-lg-6">
-      <div class="y-gap-15">
-        <div v-for="(elm, i) in excluded" :key="i" class="d-flex">
-          <i
-            class="icon-cross flex-center text-10 size-24 rounded-full text-red-3 bg-red-4 mr-15"
-          ></i>
-          {{ elm.text }}
-        </div>
-      </div>
-    </div>-->
   </div>
 </template>
 
@@ -28,5 +18,4 @@
 
 const props = defineProps(['classificacoes'])
 
-// No need for the setup function, just import the data directly
 </script>

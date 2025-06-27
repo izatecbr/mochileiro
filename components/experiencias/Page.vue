@@ -11,7 +11,7 @@
       <div class="row y-gap-30 justify-between">
         <div class="col-lg-8">
           <div class="row y-gap-20 justify-between items-center layout-pb-md">
-            <OthersInformation :duracao="objeto?.duracao" />
+            <ExperienciaInformacao :duracao="objeto?.duracao" />
           </div>
           <div class="line mt-1 mb-1"></div>
           <h2 class="text-20">Detalhes</h2>
@@ -42,7 +42,7 @@
 import { ref, watch } from "vue";
 import Galeria from "./galeria/Galeria.vue";
 import Main from "./Main.vue";
-import OthersInformation from "./OthersInformation";
+import ExperienciaInformacao from "./ExperienciaInformacao";
 import ExperienciaDetalhe from "./ExperienciaDetalhe";
 import RoadMap from "./RoadMap";
 import Sidebar from "./Sidebar.vue";
