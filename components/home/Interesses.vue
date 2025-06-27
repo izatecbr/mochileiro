@@ -1,8 +1,4 @@
 <template>
- <pre v-if="interesses" class="json-view">
-        {{ JSON.stringify(interesses, null, 2) }}
-      </pre>
-
   <section class="layout-pt ">
     <div class="container">
       <div class="row y-gap-10 justify-between items-end y-gap-10">
