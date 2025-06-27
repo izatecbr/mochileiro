@@ -1,6 +1,7 @@
 <template>
   <main>
     <HomeTopo />
+    <CommonLogos />
     <HomeBanner />
     <HomeDepoimentos />
     <LayoutRodape />
