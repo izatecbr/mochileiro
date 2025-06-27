@@ -16,7 +16,7 @@
 
 <script setup>
 import Utils from '~/utils/Index';
-import ExperienciaValorAnfitriacao from "~/components/experiencias/ExperienciaValorAnfitriacao.vue";
+import ExperienciaValorAnfitriacao from "~/components/experiencia/ExperienciaValorAnfitriacao.vue";
 const props = defineProps(['aventuras'])
 </script>
 

@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-    <ExperienciasConteudo :objeto="objeto" />
+    <ExperienciaConteudo :objeto="objeto" />
   </main>
 </template>
 
