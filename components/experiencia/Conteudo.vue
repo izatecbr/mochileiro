@@ -30,7 +30,7 @@
 
         <div class="col-lg-4">
           <div class="d-flex justify-end js-pin-content">
-            <Sidebar :valor="objeto?.valor?.preco" :moeda="objeto?.valor?.moeda" />
+            <ExperienciaProposta :valor="objeto?.valor?.preco" :moeda="objeto?.valor?.moeda" />
           </div>
         </div>
       </div>
@@ -40,13 +40,6 @@
 
 <script setup>
 import { ref, watch } from "vue";
-import ExperienciaGaleria from "./galeria/ExperienciaGaleria";
-import ExperienciaTitulo from "./ExperienciaTitulo";
-import ExperienciaInformacao from "./ExperienciaInformacao";
-import ExperienciaCotacao from "./ExperienciaCotacao";
-import ExperienciaDetalhe from "./ExperienciaDetalhe";
-import Sidebar from "./Sidebar.vue";
-
 const store = useGlobalStore();
 const { $http } = useNuxtApp();
 const { pexels } = $http;

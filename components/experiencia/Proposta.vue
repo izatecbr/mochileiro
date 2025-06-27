@@ -259,7 +259,7 @@
     -->
 
     <button class="button -md -dark-1 col-12 bg-accent-1 text-white mt-20">
-      Book Now
+      Pedir proposta
       <i class="icon-arrow-top-right ml-10"></i>
     </button>
   </div>
