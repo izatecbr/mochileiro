@@ -978,7 +978,7 @@
         "dia": "2025-06-10",
         "hora": "09:00"
       },
-      "legenda": "Passagem aerea São Paulo / Santiago Chile + Hotel / 06 dias",
+      "legenda": "Passagem aérea São Paulo / Santiago Chile + Hotel / 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hotel para 06 dias.",
       "anuncio": true,
       "parceiro": 2,
@@ -998,7 +998,7 @@
         "dia": "2025-06-10",
         "hora": "09:00"
       },
-      "legenda": "Passagem aerea São Paulo / Santiago Chile + Hostel / 06 dias",
+      "legenda": "Passagem aérea São Paulo / Santiago Chile + Hostel / 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hostel para 06 dias.",
       "anuncio": true,
       "parceiro": 2,
@@ -1018,8 +1018,8 @@
         "dia": "2025-06-11",
         "hora": "15:00"
       },
-      "legenda": "Passagem aerea Teresina - PI à Guarulhos - SP, voô direto (3h)",
-      "descricao": "Passagem aerea Teresina - PI à Guarulhos - SP, voô direto (3h)",
+      "legenda": "Passagem aérea Teresina/PI à Guarulhos/SP, voô direto (3h)",
+      "descricao": "Passagem aérea Teresina/PI à Guarulhos/SP, voô direto (3h)",
       "anuncio": false,
       "parceiro": 5,
       "classificacoes": [
@@ -1040,7 +1040,7 @@
         "dia": "2025-06-10",
         "hora": "09:00"
       },
-      "legenda": "Passagem aerea São Paulo / Santiago Chile + Hotel 06 dias",
+      "legenda": "Passagem aérea São Paulo / Santiago Chile + Hotel 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hotel para 06 dias.",
       "produto": 1,
       "destino": 4,
@@ -1062,7 +1062,7 @@
         "dia": "2025-06-10",
         "hora": "09:00"
       },
-      "legenda": "Passagem aerea São Paulo / Santiago Chile + Hostel 06 dias",
+      "legenda": "Passagem aérea São Paulo / Santiago Chile + Hostel 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hostel para 06 dias.",
       "produto": 2,
       "destino": 4,
@@ -1087,7 +1087,7 @@
         "dia": "2025-06-11",
         "hora": "15:00"
       },
-      "legenda": "Passagem aerea Teresina - PI à Guarulhos - SP, voô direto, 04:55 às 08:10 (3h)",
+      "legenda": "Passagem aérea Teresina/PI para Guarulhos/SP, vôo direto (3h)",
       "descricao": "Viagem aérea somente ida saindo de Teresina - PI para Guarulhos - SP",
       "produto": 3,
       "anfitriao": 2,
@@ -1114,7 +1114,7 @@
         "hora": "09:00"
       },
       "duracao": "1 dia",
-      "legenda": "Propostas para o pacote de viagens",
+      "legenda": "Proposta para uma semana no Chile",
       "descricao": "A FlyMates nos envia um anúncio de viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem para 06 dias no valor de R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 6x sem juros no cartão de crédito. Devido o valor, eu solicitei uma nova proposta alterando a hospedagem de hotel para um hostel, ficando um total de R$ 2.392,70 em 5x no cartão de crédito",
       "autor": 1,
       "atividades": [
@@ -1141,7 +1141,7 @@
         "hora": "04:55"
       },
       "duracao": "3 horas",
-      "legenda": "Vôo de Teresina/PI para Guarulhos/SP",
+      "legenda": "Vôo de Teresina/PI para Guarulhos/SP, vôo direto (3h)",
       "descricao": "Dois dias antes da viagem para Santiago, embarcamos no vôo com destino a São Paulo para aproveitar essa maravilhosa cidade",
       "autor": 1,
       "atividades": [

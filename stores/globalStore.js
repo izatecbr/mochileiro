@@ -18,6 +18,7 @@ export const useGlobalStore = defineStore("database", {
     atividades: [],
     aventuras: [],
     experiencias: [],
+    interesses: [], // <-- Aqui!
   }),
   actions: {
     async carregarStore() {
@@ -68,6 +69,8 @@ export const useGlobalStore = defineStore("database", {
             },
           }))
       );
+
+      await this.gerarInteresses();
     },
 
     enriquecerClassificacoes(arrIds) {
@@ -93,6 +96,9 @@ export const useGlobalStore = defineStore("database", {
       return enriched;
     },
 
+    getIntereseById(id) {
+      return this.getById("interesses", id);
+    },
     getPaisById(id) {
       return this.getById("paises", id);
     },
@@ -159,6 +165,26 @@ export const useGlobalStore = defineStore("database", {
         classificacoesList: this.enriquecerClassificacoes(a.classificacoes),
         enriquecido: true,
       }));
+    },
+
+    gerarInteresses() {
+      const mapItem = (item, tipo, prefixo) => ({
+        id: `${prefixo}${item.id}`,
+        legenda: item.legenda,
+        descricao: item.descricao,
+        destino: item.destino,
+        anfitriao: item.anfitriao,
+        valor: item.valor,
+        tipo,
+        destinoObject: this.getLocalizacaoById(item.destino),
+        anfitriaoObject: this.getUsuarioById(item.anfitriao),
+      });
+
+      const atividades = this.atividades.map((a) => mapItem(a, "Atividade", "T"));
+      const aventuras = this.aventuras.map((a) => mapItem(a, "Aventura", "A"));
+      const experiencias = this.experiencias.map((e) => mapItem(e, "Experiência", "E"));
+
+      this.interesses = [...experiencias, ...aventuras, ...atividades];
     },
 
     getExperienciaById(id) {

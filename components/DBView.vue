@@ -20,6 +20,7 @@ const getByIdMap = {
   atividades: (id) => store.getAtividadeById(id),
   aventuras: (id) => store.getAventuraById(id),
   experiencias: (id) => store.getExperienciaById(id),
+  interesses: (id) => store.getIntereseById(id),
 }
 
 
@@ -64,6 +65,7 @@ async function verDetalhes(obj) {
         <option value="atividades">Atividades</option>
         <option value="aventuras">Aventuras</option>
         <option value="experiencias">Experiências</option>
+        <option value="interesses">Interesses</option>
       </select>
       <input v-model="legendaBusca" @input="filtrarDados" placeholder="Buscar por legenda..." />
     </div>
