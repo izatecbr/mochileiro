@@ -27,7 +27,7 @@
         </div>
 
         <!-- Cards de Classificações -->
-        <h5 class="py-20" >
+        <h5 class="py-20">
             <Icon name="mdi:star" class="social-icon" />
             Classificações
         </h5>
@@ -39,6 +39,15 @@
                 <p class="classification-category">Categoria: {{ classificacao.categoria.legenda }}</p>
             </div>
         </div>
+
+        <h5 class="py-10">
+            <Icon name="mdi:star" class="social-icon" />
+            Aventura em Destaque
+        </h5>
+
+        <div>
+            <p>Em desenvolvimento...</p>
+        </div>
     </main>
 </template>
 
@@ -49,11 +58,14 @@ const idUsuario = 2
 
 const store = useGlobalStore()
 const usuario = store.getUsuarioById(idUsuario)
+const experienciaEmDestaque = []
 
 onMounted(() => {
     console.log('Usuario:', route.params.id)
-    console.log('Usuario:', store.getUsuarioById(idUsuario))
+    console.log('Usuario:', {})
 })
+
+
 
 </script>
 
@@ -89,7 +101,9 @@ onMounted(() => {
 .social-links {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 15px;
+    padding: 10px;
     font-size: 16px;
     color: #555;
     margin-bottom: 20px;
@@ -120,6 +134,7 @@ onMounted(() => {
 
 /* Classificações */
 .classifications {
+    padding: 10px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 7px;
