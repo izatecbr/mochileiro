@@ -1053,7 +1053,7 @@
         "quantia": 4070.62,
         "preco": "R$ 4.070,62",
         "moeda": "BRL",
-        "formaPagamento": "R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 5x sem juros no cartão de crédito"
+        "formaPagamento": "R$ 4.070,62 (Pix) ou R$ 4.222,70 em até 5x sem juros no crédito"
       }
     },
     {
@@ -1078,7 +1078,7 @@
         "quantia": 2267.62,
         "preco": "R$ 2.267,62",
         "moeda": "BRL",
-        "formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"
+        "formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 em até 5x sem juros no crédito"
       }
     },
     {
@@ -1100,7 +1100,7 @@
         "quantia": 927.49,
         "preco": "R$ 927,49",
         "moeda": "BRL",
-        "formaPagamento": "R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"
+        "formaPagamento": "R$ 927,49 em até 5x sem juros no crédito"
       }
     }
   ],
@@ -1114,7 +1114,7 @@
         "hora": "09:00"
       },
       "duracao": "1 dia",
-      "legenda": "Proposta de pacote de viagens enviada pela FlyMates",
+      "legenda": "Propostas para o pacote de viagens",
       "descricao": "A FlyMates nos envia um anúncio de viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem para 06 dias no valor de R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 3x sem juros no cartão de crédito. Devido o valor, eu solicitei uma nova proposta alterando a hospedagem de hotel para um hostel, ficando um total de R$ 2.392,70 em 5x no cartão de crédito",
       "autor": 1,
       "atividades": [
@@ -1129,7 +1129,7 @@
         "quantia": 2267.62,
         "preco": "R$ 2.267,62",
         "moeda": "BRL",
-        "formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"
+        "formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 em até 5x sem juros no crédito"
       }
     },
     {
@@ -1155,7 +1155,7 @@
         "quantia": 927.49,
         "preco": "R$ 927,49",
         "moeda": "BRL",
-        "formaPagamento": "R$ R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"
+        "formaPagamento": "R$ R$ 927,49 em até 5x sem juros no crédito"
       }
     }
   ],
@@ -1176,13 +1176,13 @@
       ],
       "duracao": "7 dias",
       "legenda": "Férias de Inverno no Chile",
-      "descricao": "Durante nossa jornada ao Chile, tivemos diversas aventuras incríveis nas quais você poderá acompanhar o que rolou diariamente",
+      "descricao": "Durante nossa jornada ao Chile, tivemos diversas aventuras incríveis nas quais você poderá acompanhar o que rolou diariamente. Vamos compartilhar o que deu certo, o que poderia ter sido melhor, os lugares que nos encantaram, os valores que pagamos, as pessoas e anfitriões que nos acolheram e tornaram essa aventura possível. Tudo isso de forma sincera e prática, pra te ajudar a planejar sua própria viagem ou simplesmente se inspirar e alimentar o sonho de um dia explorar esse destino. Se você já viaja ou ainda sonha em colocar o pé na estrada, vem com a gente nessa jornada!",
       "localizacao": 1,
       "destino": 4,
       "valor": {
-        "quantia": 1200000,
-        "preco": "$ 12000.00",
-        "moeda": "CLP"
+        "quantia": 6500,
+        "preco": "R$ 6.500,00",
+        "moeda": "BRL"
       },
       "autor": 1,
       "aventuras": [

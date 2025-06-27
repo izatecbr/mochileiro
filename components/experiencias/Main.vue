@@ -35,7 +35,7 @@
         <div class="col-auto">
           <div class="d-flex items-center">
             <i class="icon-reservation text-16 mr-5"></i>
-            30K+ adquirido
+            1K+ Interesses
           </div>
         </div>
       </div>

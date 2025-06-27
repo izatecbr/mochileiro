@@ -16,14 +16,13 @@
 
           <Overview :overview="objeto?.descricao" :aventuras="objeto?.aventurasList" />
 
-          <div class="line mt-60 mb-60"></div>
+          <div class="line mt-25 mb-25"></div>
 
-          <h2 class="text-30">Linha do tempo</h2>
+          <h2 class="text-20">Detalhes</h2>
 
-          <div class="mt-30 mb-10">
+          <div class="mt-10 mb-10">
             <RoadMap :aventuras="objeto?.aventurasList" />
           </div>
-          <div class="mt-60 mb-60"></div>
 
 
           <!--<h2 class="text-30 mt-60 mb-30">Tour Map</h2>

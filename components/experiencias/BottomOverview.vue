@@ -1,11 +1,13 @@
 <template>
   <div class="card-bottom">
     <div class="anfitriao-container">
-      <NuxtLink class="anfitriao" :to="`/anfitriao/${anfitriao?.id}`">{{ anfitriao?.legenda }}</NuxtLink>
+
+    <span class="valores">
+      <span class="emoji">{{ valor?.moeda }}</span>
+      {{ valor?.formaPagamento }}
+    </span>
       <div class="container-socials">
-        <NuxtLink v-if="anfitriao?.site" :to="anfitriao?.site" target="_blank">
-          <Icon class="social-icon" name="mdi:web" />
-        </NuxtLink>
+        <NuxtLink class="anfitriao" :to="`/anfitriao/${anfitriao?.id}`">{{ anfitriao?.legenda }}</NuxtLink>
         <NuxtLink v-if="anfitriao?.instagram" target="_blank" :to="anfitriao?.instagram">
           <Icon class="social-icon" name="mdi:instagram" />
         </NuxtLink>
@@ -13,16 +15,10 @@
           :to="`https://wa.me/${anfitriao?.telefone?.numero}`">
           <Icon class="social-icon" name="mdi:whatsapp" />
         </NuxtLink>
-        <NuxtLink v-if="anfitriao?.email" :to="`mailto:${anfitriao?.email}`">
-          <Icon class="social-icon" name="mdi:email" />
-        </NuxtLink>
+
       </div>
     </div>
 
-    <span class="valores">
-      <span class="emoji">{{ valor?.moeda }}</span>
-      {{ valor?.formaPagamento }}
-    </span>
 
 
   </div>
@@ -39,7 +35,7 @@ defineProps(['valor', 'anfitriao'])
 }
 
 .valores .emoji {
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   margin-right: 0.3rem;
 }
 
@@ -61,7 +57,7 @@ defineProps(['valor', 'anfitriao'])
 
 .anfitriao {
   text-decoration: underline;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   color: var(--text-color, #333);
 }
 
