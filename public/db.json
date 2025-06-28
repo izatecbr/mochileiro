@@ -777,7 +777,7 @@
   "localizacoes": [
     {
       "id": 1,
-      "legenda": "Santiago",
+      "legenda": "Santiago - Chile",
       "endereco": "Cidade de Santiago no Chile",
       "cidade": "CL001",
       "latitude": -33.4489,
@@ -978,7 +978,7 @@
         "dia": "2025-06-10",
         "hora": "09:00"
       },
-      "legenda": "Passagem aérea São Paulo / Santiago Chile + Hotel / 06 dias",
+      "legenda": "Passagem aérea São Paulo / Chile + Hotel / 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hotel para 06 dias.",
       "anuncio": true,
       "parceiro": 2,
@@ -998,7 +998,7 @@
         "dia": "2025-06-10",
         "hora": "09:00"
       },
-      "legenda": "Passagem aérea São Paulo / Santiago Chile + Hostel / 06 dias",
+      "legenda": "Passagem aérea São Paulo / Chile + Hostel / 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hostel para 06 dias.",
       "anuncio": true,
       "parceiro": 2,
@@ -1046,10 +1046,10 @@
         "card": "/img/tourCards/1/2.png",
         "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
       },
-      "legenda": "Passagem aérea São Paulo / Santiago Chile + Hotel 06 dias",
+      "legenda": "Passagem aérea São Paulo / Chile + Hotel 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hotel para 06 dias.",
       "produto": 1,
-      "destino": 4,
+      "destino": 1,
       "escolhida": false,
       "classificacoes": [
         107
@@ -1074,10 +1074,10 @@
         "card": "/img/tourCards/1/2.png",
         "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
       },
-      "legenda": "Passagem aérea São Paulo / Santiago Chile + Hostel 06 dias",
+      "legenda": "Passagem aérea São Paulo / Chile + Hostel 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hostel para 06 dias.",
       "produto": 2,
-      "destino": 4,
+      "destino": 1,
       "escolhida": true,
       "classificacoes": [
         107
@@ -1109,7 +1109,7 @@
       "descricao": "Viagem aérea somente ida saindo de Teresina - PI para Guarulhos - SP",
       "produto": 3,
       "anfitriao": 2,
-      "destino": 4,
+      "destino": 6,
       "escolhida": true,
       "classificacoes": [
         101
@@ -1126,18 +1126,18 @@
     {
       "id": 1,
       "exclusiva": true,
-      "destino": 4,
+      "destino": 1,
       "data": {
         "dia": "2025-06-10",
         "hora": "09:00"
       },
       "imagens": {
-        "capa": "/img/tourCards/1/1.png",
-        "card": "/img/tourCards/1/2.png",
+        "capa": "/img/interesses/1.jpg",
+        "card": "/img/interesses/2.jpg",
         "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
       },
       "duracao": "1 dia",
-      "legenda": "Cotação para uma semana no Chile",
+      "legenda": "Aventura de uma semana no Chile",
       "descricao": "A FlyMates nos envia um anúncio de viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem para 06 dias no valor de R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 6x sem juros no cartão de crédito. Devido o valor, eu solicitei uma nova proposta alterando a hospedagem de hotel para um hostel, ficando um total de R$ 2.392,70 em 5x no cartão de crédito",
       "autor": 1,
       "atividades": [
@@ -1164,8 +1164,8 @@
         "hora": "04:55"
       },
       "imagens": {
-        "capa": "/img/tourCards/1/1.png",
-        "card": "/img/tourCards/1/2.png",
+        "capa": "/img/interesses/1.jpg",
+        "card": "/img/interesses/2.jpg",
         "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
       },
       "duracao": "3 horas",
@@ -1195,8 +1195,8 @@
         "hora": "08:00"
       },
       "imagens": {
-        "capa": "/img/tourCards/1/1.png",
-        "card": "/img/tourCards/1/2.png",
+        "capa": "/img/interesses/1.jpg",
+        "card": "/img/interesses/2.jpg",
         "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
       },
       "classificacoes": [
@@ -1210,8 +1210,7 @@
       "duracao": "7 dias",
       "legenda": "Férias de Inverno no Chile",
       "descricao": "Durante nossa jornada ao Chile, tivemos diversas aventuras incríveis nas quais você poderá acompanhar o que rolou diariamente. Vamos compartilhar o que deu certo, o que poderia ter sido melhor, os lugares que nos encantaram, os valores que pagamos, as pessoas e anfitriões que nos acolheram e tornaram essa aventura possível. Tudo isso de forma sincera e prática, pra te ajudar a planejar sua própria viagem ou simplesmente se inspirar e alimentar o sonho de um dia explorar esse destino. Se você já viaja ou ainda sonha em colocar o pé na estrada, vem com a gente nessa jornada!",
-      "localizacao": 1,
-      "destino": 4,
+      "destino": 1,
       "anfitriao": 2,
       "valor": {
         "quantia": 6500,
