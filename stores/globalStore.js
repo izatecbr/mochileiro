@@ -189,7 +189,7 @@ export const useGlobalStore = defineStore("database", {
               .toLowerCase()
               .normalize("NFD")
               .replace(/[\u0300-\u036f]/g, "") +  "s"},
-        destinoObject: this.getLocalizacaoById(item.destino),
+        destinoObject: this.getLocalizacaoById(item.localizacao),
         anfitriaoObject: this.getUsuarioById(item.anfitriao),
       });
 

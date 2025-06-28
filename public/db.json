@@ -777,7 +777,7 @@
   "localizacoes": [
     {
       "id": 1,
-      "legenda": "Santiago - Chile",
+      "legenda": "Santiago Chile",
       "endereco": "Cidade de Santiago no Chile",
       "cidade": "CL001",
       "latitude": -33.4489,
@@ -1049,7 +1049,7 @@
       "legenda": "Passagem aérea São Paulo / Chile + Hotel 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hotel para 06 dias.",
       "produto": 1,
-      "destino": 1,
+      "localizacao": 1,
       "escolhida": false,
       "classificacoes": [
         107
@@ -1077,7 +1077,7 @@
       "legenda": "Passagem aérea São Paulo / Chile + Hostel 06 dias",
       "descricao": "Viagem aérea ida e volta saindo de São Paulo para Santiago no Chile com direito a hospedagem em hostel para 06 dias.",
       "produto": 2,
-      "destino": 1,
+      "localizacao": 1,
       "escolhida": true,
       "classificacoes": [
         107
@@ -1109,7 +1109,7 @@
       "descricao": "Viagem aérea somente ida saindo de Teresina - PI para Guarulhos - SP",
       "produto": 3,
       "anfitriao": 2,
-      "destino": 6,
+      "localizacao": 6,
       "escolhida": true,
       "classificacoes": [
         101
@@ -1126,7 +1126,7 @@
     {
       "id": 1,
       "exclusiva": true,
-      "destino": 1,
+      "localizacao": 1,
       "data": {
         "dia": "2025-06-10",
         "hora": "09:00"
@@ -1158,7 +1158,7 @@
     {
       "id": 2,
       "exclusiva": true,
-      "destino": 6,
+      "localizacao": 6,
       "data": {
         "dia": "2025-07-09",
         "hora": "04:55"
@@ -1210,7 +1210,7 @@
       "duracao": "7 dias",
       "legenda": "Férias de Inverno no Chile",
       "descricao": "Durante nossa jornada ao Chile, tivemos diversas aventuras incríveis nas quais você poderá acompanhar o que rolou diariamente. Vamos compartilhar o que deu certo, o que poderia ter sido melhor, os lugares que nos encantaram, os valores que pagamos, as pessoas e anfitriões que nos acolheram e tornaram essa aventura possível. Tudo isso de forma sincera e prática, pra te ajudar a planejar sua própria viagem ou simplesmente se inspirar e alimentar o sonho de um dia explorar esse destino. Se você já viaja ou ainda sonha em colocar o pé na estrada, vem com a gente nessa jornada!",
-      "destino": 1,
+      "localizacao": 1,
       "anfitriao": 2,
       "valor": {
         "quantia": 6500,
