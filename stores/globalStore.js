@@ -157,6 +157,7 @@ export const useGlobalStore = defineStore("database", {
         ...a,
         anfitriaoObject: this.getUsuarioById(a.anfitriao),
         produtoObject: this.getProdutoById(a.produto),
+        localizacaoObject: this.getLocalizacaoById(a.localizacao),
         classificacoesList: this.enriquecerClassificacoes(a.classificacoes),
         enriquecido: true,
       }));
@@ -166,6 +167,7 @@ export const useGlobalStore = defineStore("database", {
       return this.getEnriched("aventuras", id, (a) => ({
         ...a,
         autorObject: this.getUsuarioById(a.autor),
+        localizacaoObject: this.getLocalizacaoById(a.localizacao),
         anfitriaoObject: this.getUsuarioById(a.anfitriao),
         atividadesList: (a.atividades || []).map(this.getAtividadeById),
         classificacoesList: this.enriquecerClassificacoes(a.classificacoes),
