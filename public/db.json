@@ -1042,8 +1042,8 @@
       },
       "duracao": "7 dias",
       "imagens": {
-        "capa": "/img/tourCards/1/1.png",
-        "card": "/img/tourCards/1/2.png",
+        "capa": "/img/interesses/2.jpg",
+        "card": "/img/interesses/1.jpg",
         "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
       },
       "legenda": "Passagem aérea São Paulo / Chile + Hotel 06 dias",
@@ -1070,8 +1070,8 @@
       },
       "duracao": "7 dias",
       "imagens": {
-        "capa": "/img/tourCards/1/1.png",
-        "card": "/img/tourCards/1/2.png",
+        "capa": "/img/interesses/2.jpg",
+        "card": "/img/interesses/1.jpg",
         "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
       },
       "legenda": "Passagem aérea São Paulo / Chile + Hostel 06 dias",
@@ -1101,8 +1101,8 @@
       },
       "duracao": "3 horas",
       "imagens": {
-        "capa": "/img/tourCards/1/1.png",
-        "card": "/img/tourCards/1/2.png",
+        "capa": "/img/interesses/2.jpg",
+        "card": "/img/interesses/1.jpg",
         "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
       },
       "legenda": "Passagem aérea Teresina/PI para Guarulhos/SP",
@@ -1132,8 +1132,8 @@
         "hora": "09:00"
       },
       "imagens": {
-        "capa": "/img/interesses/1.jpg",
-        "card": "/img/interesses/2.jpg",
+        "capa": "/img/interesses/4.jpg",
+        "card": "/img/interesses/4.jpg",
         "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
       },
       "duracao": "1 dia",
@@ -1164,8 +1164,8 @@
         "hora": "04:55"
       },
       "imagens": {
-        "capa": "/img/interesses/1.jpg",
-        "card": "/img/interesses/2.jpg",
+        "capa": "/img/interesses/3.jpg",
+        "card": "/img/interesses/3.jpg",
         "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
       },
       "duracao": "3 horas",
