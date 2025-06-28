@@ -36,7 +36,7 @@
         >
           <SwiperSlide v-for="(elm, i) in clients" :key="i">
             <div class="d-flex justify-center items-center">
-              <nuxt-img
+              <img
                   width="140"
                   height="90"
                   :src="elm"

@@ -48,17 +48,17 @@
             }"
             ref="swiper"
           >
-            <SwiperSlide v-for="(elm, index) in filteredTours" :key="index">
+            <SwiperSlide v-for="(elm, index) in interesses" :key="index">
               <nuxt-link
-                :to="'/tour-single-1/' + elm.id"
+                :to="'/exeperiencias/' + elm.id"
                 class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow"
               >
                 <div class="tourCard__header">
                   <div class="tourCard__image ratio ratio-28:20">
-                    <nuxt-img
+                    <img
                       width="421"
                       height="301"
-                      :src="elm.imageSrc"
+                      :src="elm?.imagens?.card"
                       alt="image"
                       class="img-ratio"
                     />
@@ -74,22 +74,18 @@
                     class="tourCard__location d-flex items-center text-13 text-light-2"
                   >
                     <i class="icon-pin d-flex text-16 text-light-2 mr-5"></i>
-                    {{ elm.location }}
+                    {{ elm.destinoObject.legenda }}
                   </div>
 
                   <h3 class="tourCard__title text-16 fw-500 mt-5">
-                    <span>{{ elm.title }}</span>
+                    <span>{{ elm.legenda }}</span>
                   </h3>
 
                   <div
                     class="tourCard__rating d-flex items-center text-13 mt-5"
                   >
-                    <div class="d-flex x-gap-5">
-                      <Stars :star="elm.rating" />
-                    </div>
-
                     <span class="text-dark-1 ml-10">
-                      {{ elm.rating }} ({{ elm.ratingCount }})
+                      {{ elm.anfitriaoObject.legenda }} - {{ elm.tipo }}
                     </span>
                   </div>
 
@@ -98,12 +94,11 @@
                   >
                     <div class="d-flex items-center">
                       <i class="icon-clock text-16 mr-5"></i>
-                      {{ elm.duration }}
+                      {{ elm.duracao }}
                     </div>
 
                     <div>
-                      From {{ " " }}
-                      <span class="text-16 fw-500"> ${{ elm.price }} </span>
+                      <span class="text-16 fw-500"> {{ elm.valor.preco }} </span>
                     </div>
                   </div>
                 </div>
@@ -112,8 +107,9 @@
           </Swiper>
         </div>
       </div>
-    </div>
+      </div>
   </section>
+
 </template>
 
 <script setup>
