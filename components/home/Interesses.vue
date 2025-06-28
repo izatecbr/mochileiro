@@ -50,7 +50,7 @@
           >
             <SwiperSlide v-for="(elm, index) in interesses" :key="index">
               <nuxt-link
-                :to="'/exeperiencias/' + elm.id"
+                :to="'/'+ elm.tipo.rota + '/' + elm.id"
                 class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow"
               >
                 <div class="tourCard__header">
@@ -85,7 +85,7 @@
                     class="tourCard__rating d-flex items-center text-13 mt-5"
                   >
                     <span class="text-dark-1 ml-10">
-                      {{ elm.anfitriaoObject.legenda }} - {{ elm.tipo }}
+                      {{ elm.anfitriaoObject.legenda }} - {{ elm.tipo.legenda }}
                     </span>
                   </div>
 

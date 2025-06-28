@@ -168,7 +168,7 @@ export const useGlobalStore = defineStore("database", {
     },
 
     gerarInteresses() {
-      const mapItem = (item, tipo, prefixo) => ({
+      const mapItem = (item, tipo,prefixo) => ({
         id: `${prefixo}${item.id}`,
         data:item.data,
         duracao:item.duracao,
@@ -178,14 +178,17 @@ export const useGlobalStore = defineStore("database", {
         destino: item.destino,
         anfitriao: item.anfitriao,
         valor: item.valor,
-        tipo,
+        tipo:{"legenda":tipo,"rota":tipo
+              .toLowerCase()
+              .normalize("NFD")
+              .replace(/[\u0300-\u036f]/g, "") +  "s"},
         destinoObject: this.getLocalizacaoById(item.destino),
         anfitriaoObject: this.getUsuarioById(item.anfitriao),
       });
 
       const atividades = this.atividades.map((a) => mapItem(a, "Atividade", "T"));
       const aventuras = this.aventuras.map((a) => mapItem(a, "Aventura", "A"));
-      const experiencias = this.experiencias.map((e) => mapItem(e, "Experiência", "E"));
+      const experiencias = this.experiencias.map((e) => mapItem(e, "Experiência","E"));
 
       this.interesses = [...experiencias, ...aventuras, ...atividades];
     },
