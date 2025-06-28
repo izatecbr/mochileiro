@@ -7,7 +7,7 @@
       {{ valor?.formaPagamento }}
     </span>
       <div class="container-socials">
-        <NuxtLink class="anfitriao" :to="`/anfitriao/${anfitriao?.id}`">{{ anfitriao?.legenda }}</NuxtLink>
+        <NuxtLink class="anfitriao" :to="`/perfil/${anfitriao?.id}`">{{ anfitriao?.legenda }}</NuxtLink>
         <NuxtLink v-if="anfitriao?.instagram" target="_blank" :to="anfitriao?.instagram">
           <Icon class="social-icon" name="mdi:instagram" />
         </NuxtLink>

@@ -2,9 +2,7 @@
   <div>
     <div class="xl:d-none ml-30">
       <div class="desktopNav">
-        <div class="desktopNav__item">
-          <a href="#">Home</a>
-        </div>
+
         <div class="desktopNav__item">
           <router-link to="/destinations">Experiências</router-link>
         </div>
