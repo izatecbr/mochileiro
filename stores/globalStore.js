@@ -170,6 +170,7 @@ export const useGlobalStore = defineStore("database", {
     gerarInteresses() {
       const mapItem = (item, tipo,prefixo) => ({
         id: `${prefixo}${item.id}`,
+        lid: item.id,
         data:item.data,
         duracao:item.duracao,
         imagens: item.imagens,

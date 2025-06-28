@@ -11,14 +11,14 @@
         <i v-else class="icon-cross flex-center text-8 size-16 rounded-full text-red-3 bg-red-4 mr-5"></i>
         <p class="label-overview" >{{ atividade.legenda }} {{ atividade?.duracao ? `- (${atividade.duracao})` : '' }}</p>
       </NuxtLink>
-      <ValorAnfitriacao :valor="atividade?.valor" :anfitriao="atividade?.anfitriaoObject"/>
+      <ExperienciaValorAnfitriacao :valor="atividade?.valor" :anfitriao="atividade?.anfitriaoObject"/>
     </li>
     <div class="line mt-1 mb-1"></div>
   </ul>
 </template>
 
 <script setup>
-import ValorAnfitriacao from "~/components/ValorAnfitriacao";
+
 
 const props = defineProps(['overview', 'aventuras'])
 
