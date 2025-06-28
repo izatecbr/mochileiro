@@ -10,6 +10,7 @@ export const useGlobalStore = defineStore("database", {
     paises: [],
     estados: [],
     cidades: [],
+    destinos:[],
     usuarios: [],
     categorias: [],
     classificacoes: [],
@@ -18,7 +19,7 @@ export const useGlobalStore = defineStore("database", {
     atividades: [],
     aventuras: [],
     experiencias: [],
-    interesses: [], // <-- Aqui!
+    interesses: [],
   }),
   actions: {
     async carregarStore() {
@@ -51,6 +52,7 @@ export const useGlobalStore = defineStore("database", {
       this.paises = data.paises;
       this.estados = data.estados;
       this.cidades = data.cidades;
+      this.destinos = data.cidades.filter(cidade => cidade.destino);
       this.categorias = data.categorias;
       this.produtos = data.produtos;
       this.localizacoes = data.localizacoes;
@@ -118,6 +120,10 @@ export const useGlobalStore = defineStore("database", {
         paisObject: this.getPaisById(cidade.pais),
         enriquecido: true,
       }));
+    },
+
+    getDestinoById(id) {
+      return this.getById("destinos", id);
     },
 
     getLocalizacaoById(id) {

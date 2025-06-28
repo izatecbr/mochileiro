@@ -21,6 +21,7 @@ const getByIdMap = {
   aventuras: (id) => store.getAventuraById(id),
   experiencias: (id) => store.getExperienciaById(id),
   interesses: (id) => store.getIntereseById(id),
+  destinos: (id) => store.getDestinoById(id),
 }
 
 
@@ -57,6 +58,7 @@ async function verDetalhes(obj) {
         <option value="paises">Países</option>  
         <option value="estados">Estados</option>
         <option value="cidades">Cidades</option>
+        <option value="destinos">Destinos</option>
         <option value="localizacoes">Localizações</option>
         <option value="usuarios">Usuários</option>
         <option value="categorias">Categorias</option>
