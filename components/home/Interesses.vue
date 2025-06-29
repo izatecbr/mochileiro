@@ -14,12 +14,8 @@
             </div>
 
             <div v-if="ddActive" class="dropdown__menu js-menu-items">
-              <div
-                v-for="(style, index) in travelStyles"
-                :key="index"
-                @click="setTravelStyle(style)"
-                class="dropdown__item"
-              >
+              <div v-for="(style, index) in travelStyles" :key="index" @click="setTravelStyle(style)"
+                class="dropdown__item">
                 {{ style }}
               </div>
             </div>
@@ -29,39 +25,23 @@
 
       <div class="relative pt-40 sm:pt-20">
         <div class="overflow-hidden js-section-slider">
-          <Swiper
-            :space-between="30"
-            class="w-100"
-            :navigation="{
-              prevEl: '.js-slider1-prev',
-              nextEl: '.js-slider1-next',
-            }"
-            :modules="[Navigation]"
-            :breakpoints="{
-              500: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-              1200: { slidesPerView: 4 },
-            }"
-            ref="swiper"
-          >
-            <SwiperSlide
-              v-for="(elm, index) in filteredInteresses"
-              :key="index"
-            >
-              <nuxt-link
-                :to="'/' + elm.tipo.rota + '/' + elm.lid"
-                class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow"
-              >
+          <Swiper :space-between="25" class="w-100" :navigation="{
+            prevEl: '.js-slider1-prev',
+            nextEl: '.js-slider1-next',
+          }" :modules="[Navigation]" :breakpoints="{
+              300: { slidesPerView: 1.5 },
+              500: { slidesPerView: 1.5 },
+              768: { slidesPerView: 2.5 },
+              1024: { slidesPerView: 3.5 },
+              1200: { slidesPerView: 4.5 },
+
+            }" ref="swiper">
+            <SwiperSlide v-for="(elm, index) in filteredInteresses" :key="index">
+              <nuxt-link :to="'/' + elm.tipo.rota + '/' + elm.lid"
+                class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow">
                 <div class="tourCard__header">
                   <div class="tourCard__image ratio ratio-28:20">
-                    <img
-                      width="421"
-                      height="301"
-                      :src="elm.imagens?.card"
-                      alt="image"
-                      class="img-ratio"
-                    />
+                    <img width="421" height="301" :src="elm.imagens?.card" alt="image" class="img-ratio" />
                   </div>
                   <button class="tourCard__favorite">
                     <i class="icon-heart"></i>
@@ -78,25 +58,15 @@
                     <span>{{ elm.legenda }}</span>
                   </h3>
 
-                  <div
-                    class="tourCard__rating d-flex items-center justify-between text-13 mt-5"
-                  >
+                  <div class="tourCard__rating d-flex items-center justify-between text-13 mt-5">
                     <span class="text-dark-1 ml-10">
                       {{ elm.anfitriaoObject.legenda }}
                     </span>
-                    <AppBadge
-                      class="mr-10"
-                      :label="elm.tipo.legenda"
-                      variant="ghost"
-                      padding="4px"
-                      :color="cores[elm.tipo.legenda]"
-                      radius="7px"
-                    />
+                    <AppBadge class="mr-10" :label="elm.tipo.legenda" variant="ghost" padding="4px"
+                      :color="cores[elm.tipo.legenda]" radius="7px" />
                   </div>
 
-                  <div
-                    class="d-flex justify-between items-center border-1-top text-13 text-dark-1 pt-10 mt-10"
-                  >
+                  <div class="d-flex justify-between items-center border-1-top text-13 text-dark-1 pt-10 mt-10">
                     <div class="d-flex items-center">
                       <i class="icon-clock text-16 mr-5"></i>
                       {{ elm.duracao }}
