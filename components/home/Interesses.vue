@@ -1,32 +1,25 @@
 <template>
-  <section class="layout-pt ">
+  <section class="layout-pt-xl layout-pb-xl">
     <div class="container">
       <div class="row y-gap-10 justify-between items-end y-gap-10">
         <div class="col-auto">
           <h2 data-aos="fade-up" data-aos-delay="" class="text-30">
-            Interesses
+            Featured Trips
           </h2>
         </div>
 
         <div ref="dropDownContainer" class="col-auto">
-          <div
-            :class="{ 'is-active': ddActive }"
-            class="dropdown -type-1 js-dropdown js-form-dd"
-          >
+          <div :class="{ 'is-active': ddActive }" class="dropdown -type-1 js-dropdown js-form-dd">
             <div @click="toggleDropDown" class="dropdown__button js-button">
               <span class="js-title">{{
-                travelStyle ? travelStyle : "Interesse"
+                travelStyle ? travelStyle : "By Travel Style"
               }}</span>
               <i class="icon-chevron-down ml-10"></i>
             </div>
 
             <div class="dropdown__menu js-menu-items">
-              <div
-                v-for="(style, index) in travelStyles"
-                :key="index"
-                @click="setTravelStyle(style)"
-                class="dropdown__item"
-              >
+              <div v-for="(style, index) in travelStyles" :key="index" @click="setTravelStyle(style)"
+                class="dropdown__item">
                 {{ style }}
               </div>
             </div>
@@ -36,91 +29,94 @@
 
       <div class="relative pt-40 sm:pt-20">
         <div class="overflow-hidden js-section-slider">
-          <Swiper
-            :space-between="30"
-            class="w-100"
-            :navigation="{ prevEl: '.pbp2', nextEl: '.pbn2' }"
-            :breakpoints="{
-              500: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-              1200: { slidesPerView: 4 },
-            }"
-            ref="swiper"
-          >
-            <SwiperSlide v-for="(elm, index) in interesses" :key="index">
-              <nuxt-link
-                :to="'/'+ elm.tipo.rota + '/' + elm.lid"
-                class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow"
-              >
-                <div class="tourCard__header">
-                  <div class="tourCard__image ratio ratio-28:20">
-                    <img
-                      width="421"
-                      height="301"
-                      :src="elm?.imagens?.card"
-                      alt="image"
-                      class="img-ratio"
-                    />
-                  </div>
-
-                  <button class="tourCard__favorite">
-                    <i class="icon-heart"></i>
-                  </button>
-                </div>
-
-                <div class="tourCard__content px-20 py-10">
-                  <div
-                    class="tourCard__location d-flex items-center text-13 text-light-2"
-                  >
-                    <i class="icon-pin d-flex text-16 text-light-2 mr-5"></i>
-                    {{ elm.destinoObject.legenda }}
-                  </div>
-
-                  <h3 class="tourCard__title text-14 fw-500 mt-5">
-                    <span>{{ elm.legenda }}</span>
-                  </h3>
-
-                  <div
-                    class="tourCard__rating d-flex items-center text-13 mt-5"
-                  >
-                    <span class="text-dark-1 ml-10">
-                      {{ elm.anfitriaoObject.legenda }} - {{ elm.tipo.legenda }}
-                    </span>
-                  </div>
-
-                  <div
-                    class="d-flex justify-between items-center border-1-top text-13 text-dark-1 pt-10 mt-10"
-                  >
-                    <div class="d-flex items-center">
-                      <i class="icon-clock text-16 mr-5"></i>
-                      {{ elm.duracao }}
+          <div data-aos="fade-up" data-aos-delay="" class="swiper-wrapper">
+            <Swiper 
+              :space-between="30"
+              class="w-100"
+              :navigation="{
+                prevEl: '.js-slider1-prev',
+                nextEl: '.js-slider1-next',
+              }"
+              :modules="[Navigation]"
+              :breakpoints="{
+                500: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+                1200: { slidesPerView: 4 },
+              }"
+              ref="swiper"
+            >
+              <SwiperSlide v-for="(elm, index) in interesses" :key="index">
+                <nuxt-link :to="'/' + elm.tipo.rota + '/' + elm.lid"
+                  class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow">
+                  <div class="tourCard__header">
+                    <div class="tourCard__image ratio ratio-28:20">
+                      <img width="421" height="301" :src="elm?.imagens?.card" alt="image" class="img-ratio" />
                     </div>
 
-                    <div>
-                      <span class="text-16 fw-500"> {{ elm.valor.preco }} </span>
+                    <button class="tourCard__favorite">
+                      <i class="icon-heart"></i>
+                    </button>
+                  </div>
+
+                  <div class="tourCard__content px-20 py-10">
+                    <div class="tourCard__location d-flex items-center text-13 text-light-2">
+                      <i class="icon-pin d-flex text-16 text-light-2 mr-5"></i>
+                      {{ elm.destinoObject.legenda }}
+                    </div>
+
+                    <h3 class="tourCard__title text-14 fw-500 mt-5">
+                      <span>{{ elm.legenda }}</span>
+                    </h3>
+
+                    <div class="tourCard__rating d-flex items-center text-13 mt-5">
+                      <span class="text-dark-1 ml-10">
+                        {{ elm.anfitriaoObject.legenda }} - {{ elm.tipo.legenda }}
+                      </span>
+                    </div>
+
+                    <div class="d-flex justify-between items-center border-1-top text-13 text-dark-1 pt-10 mt-10">
+                      <div class="d-flex items-center">
+                        <i class="icon-clock text-16 mr-5"></i>
+                        {{ elm.duracao }}
+                      </div>
+
+                      <div>
+                        <span class="text-16 fw-500"> {{ elm.valor.preco }} </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </nuxt-link>
-            </SwiperSlide>
-          </Swiper>
+                </nuxt-link>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+
+
+        </div>
+
+        <div class="navAbsolute">
+          <button class="navAbsolute__button bg-white js-slider1-prev">
+            <i class="icon-arrow-left text-14"></i>
+          </button>
+
+          <button class="navAbsolute__button bg-white js-slider1-next">
+            <i class="icon-arrow-right text-14"></i>
+          </button>
         </div>
       </div>
-      </div>
+    </div>
   </section>
-
 </template>
 
 <script setup>
 
-import { ref, onMounted, watch } from "vue";
+import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
+import { onMounted, ref, watch } from "vue";
 import { filterTour } from "~/data/tours";
-import Stars from "~/components/common/Stars.vue";
 
 const store = useGlobalStore()
-const interesses=ref(null);
+const interesses = ref(null);
 const ddActive = ref(false);
 const travelStyle = ref("");
 const filteredTours = ref(filterTour);
@@ -161,6 +157,9 @@ const setTravelStyle = (style) => {
   travelStyle.value = style === travelStyle.value ? "" : style;
   ddActive.value = false;
 };
+
+
+
 </script>
 
 
@@ -168,22 +167,28 @@ const setTravelStyle = (style) => {
 .db-view {
   padding: 1rem;
 }
+
 .controls {
   margin-bottom: 1rem;
 }
+
 .cols {
   display: flex;
   gap: 2rem;
 }
+
 table {
   width: 100%;
   max-width: 600px;
   border-collapse: collapse;
 }
-td, th {
+
+td,
+th {
   border: 1px solid #ddd;
   padding: 0.5rem;
 }
+
 .json-view {
   background: #f9f9f9;
   padding: 1rem;
