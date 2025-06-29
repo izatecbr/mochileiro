@@ -18,9 +18,23 @@
             <div class="desktopNavSubnav__content">
               <div v-for="(elm, i) in categorias" :key="i" class="desktopNavSubnav__item text-dark-1">
                 <div class="desktopNavSubnav__item">
-                  <router-link :to="elm.legenda">{{
-                    elm.legenda
-                  }}</router-link>
+                  <template v-if="elm?.legenda">
+                    <a href="#">
+                      {{ elm.legenda }} <i class="icon-chevron-right"></i>
+                    </a>
+                  </template>
+                  <template v-if="elm?.categorias">
+                    <div class="desktopNavSubnav">
+                      <div class="desktopNavSubnav__content">
+                        <div v-for="(elm2, i2) in elm.categorias" :key="i2" class="desktopNavSubnav__item">
+                          <router-link>{{
+                            elm2.legenda
+                          }}</router-link>
+                        </div>
+                      </div>
+                    </div>
+                  </template>
+
                 </div>
 
               </div>
