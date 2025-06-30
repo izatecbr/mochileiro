@@ -4,7 +4,7 @@
       <div class="desktopNav">
 
         <div class="desktopNav__item">
-          <router-link to="/destinations">Experiências</router-link>
+          <nuxt-link to="/destinations">Experiências</nuxt-link>
         </div>
 
         <div class="desktopNav__item">
@@ -27,9 +27,9 @@
                     <div class="desktopNavSubnav">
                       <div class="desktopNavSubnav__content">
                         <div v-for="(elm2, i2) in elm.categorias" :key="i2" class="desktopNavSubnav__item">
-                          <router-link>{{
+                          <nuxt-link>{{
                             elm2.legenda
-                          }}</router-link>
+                          }}</nuxt-link>
                         </div>
                       </div>
                     </div>
@@ -43,7 +43,7 @@
         </div>
 
         <div class="desktopNav__item">
-          <router-link to="/contact">Câmbio</router-link>
+          <nuxt-link to="/contact">Câmbio</nuxt-link>
         </div>
       </div>
     </div>
