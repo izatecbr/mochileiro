@@ -1,8 +1,8 @@
 <template>
 
-  <h2 class="text-20">Propostas</h2>
-  <ul v-for="atividade in atividades" :key="atividade.id">
-    <li class="" >
+  <h2 class="text-20">Preços e opções</h2>
+  <ul v-for="atividade in aventura.atividadesList" :key="atividade.id" class="mt-20">
+    <li class="d-flex flex-column mt-1" >
       <NuxtLink  class="d-flex  justify-start items-center" :to="`/atividades/${atividade.id}`">
         <i v-if="atividade.escolhida"
           class="icon-check flex-center text-8 size-16 rounded-full text-green-2 bg-green-1 mr-5"></i>
