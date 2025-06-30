@@ -179,33 +179,6 @@ export const useGlobalStore = defineStore("database", {
       }));
     },
 
-    gerarInteresses() {
-      const mapItem = (item, tipo,prefixo) => ({
-        id: `${prefixo}${item.id}`,
-        lid: item.id,
-        data:item.data,
-        duracao:item.duracao,
-        imagens: item.imagens,
-        legenda: item.legenda,
-        descricao: item.descricao,
-        destino: item.destino,
-        anfitriao: item.anfitriao,
-        valor: item.valor,
-        tipo:{"legenda":tipo,"rota":tipo
-              .toLowerCase()
-              .normalize("NFD")
-              .replace(/[\u0300-\u036f]/g, "") +  "s"},
-        destinoObject: this.getLocalizacaoById(item.localizacao),
-        anfitriaoObject: this.getUsuarioById(item.anfitriao),
-      });
-
-      const atividades = this.atividades.map((a) => mapItem(a, "Atividade", "T"));
-      const aventuras = this.aventuras.map((a) => mapItem(a, "Aventura", "A"));
-      const experiencias = this.experiencias.map((e) => mapItem(e, "Experiência","E"));
-
-      this.interesses = [...experiencias, ...aventuras, ...atividades];
-    },
-
     getExperienciaById(id) {
       return this.getEnriched("experiencias", id, (e) => ({
         ...e,
@@ -217,5 +190,90 @@ export const useGlobalStore = defineStore("database", {
         enriquecido: true,
       }));
     },
+
+    gerarInteresses() {
+      const mapItem = (item, tipo, prefixo) => {
+        let valor = item.valor;
+
+        // Se for Aventura, calcular valor com base nas atividades escolhidas
+        if (tipo === "Aventura") {
+          const atividadesEscolhidas = (item.atividades || [])
+              .map(this.getAtividadeById)
+              .filter((a) => a?.escolhida && a.valor?.quantia);
+
+          if (atividadesEscolhidas.length) {
+            const moedaId = atividadesEscolhidas[0].valor.moeda;
+            const total = atividadesEscolhidas.reduce((sum, a) => sum + a.valor.quantia, 0);
+
+            const moeda = this.getMoedaById(moedaId);
+            const { simbolo, locale } = moeda;
+            const { id: localeId, digitosMinimos, digitosMaximos } = locale;
+
+            valor = {
+              quantia: total,
+              preco: `${simbolo} ${total.toLocaleString(localeId, {
+                minimumFractionDigits: digitosMinimos,
+                maximumFractionDigits: digitosMaximos,
+              })}`,
+              moeda: moedaId
+            };
+          }
+        }
+
+        // Se for Experiência, calcular valor com base nas aventuras válidas
+        if (tipo === "Experiência") {
+          const aventuras = (item.aventuras || [])
+              .map(this.getAventuraById)
+              .filter((a) => a?.valor?.quantia);
+
+          if (aventuras.length) {
+            const moedaId = aventuras[0].valor.moeda;
+            const total = aventuras.reduce((sum, a) => sum + a.valor.quantia, 0);
+
+            const moeda = this.getMoedaById(moedaId);
+            const { simbolo, locale } = moeda;
+            const { id: localeId, digitosMinimos, digitosMaximos } = locale;
+
+            valor = {
+              quantia: total,
+              preco: `${simbolo} ${total.toLocaleString(localeId, {
+                minimumFractionDigits: digitosMinimos,
+                maximumFractionDigits: digitosMaximos,
+              })}`,
+              moeda: moedaId
+            };
+          }
+        }
+
+        return {
+          id: `${prefixo}${item.id}`,
+          lid: item.id,
+          data: item.data,
+          duracao: item.duracao,
+          imagens: item.imagens,
+          legenda: item.legenda,
+          descricao: item.descricao,
+          destino: item.destino,
+          anfitriao: item.anfitriao,
+          valor,
+          tipo: {
+            legenda: tipo,
+            rota: tipo
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "") + "s",
+          },
+          destinoObject: this.getLocalizacaoById(item.localizacao),
+          anfitriaoObject: this.getUsuarioById(item.anfitriao),
+        };
+      };
+
+      const atividades = this.atividades.map((a) => mapItem(a, "Atividade", "T"));
+      const aventuras = this.aventuras.map((a) => mapItem(a, "Aventura", "A"));
+      const experiencias = this.experiencias.map((e) => mapItem(e, "Experiência", "E"));
+
+      this.interesses = [...experiencias, ...aventuras, ...atividades];
+    },
+
   },
 });
