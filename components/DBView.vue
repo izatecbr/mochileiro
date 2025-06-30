@@ -22,6 +22,7 @@ const getByIdMap = {
   experiencias: (id) => store.getExperienciaById(id),
   interesses: (id) => store.getIntereseById(id),
   destinos: (id) => store.getDestinoById(id),
+  moedas: (id) => store.getMoedaById(id),
 }
 
 
@@ -55,7 +56,8 @@ async function verDetalhes(obj) {
     <div class="controls">
       <select v-model="colecaoSelecionada">
         <option value="">Selecione uma coleção</option>
-        <option value="paises">Países</option>  
+        <option value="paises">Países</option>
+        <option value="moedas">Moedas</option>
         <option value="estados">Estados</option>
         <option value="cidades">Cidades</option>
         <option value="destinos">Destinos</option>

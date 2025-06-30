@@ -7,6 +7,7 @@ export const useGlobalStore = defineStore("database", {
   state: () => ({
     _storeVersion: STORE_VERSION,
     novaVersao: false,
+    moedas:[],
     paises: [],
     estados: [],
     cidades: [],
@@ -48,7 +49,7 @@ export const useGlobalStore = defineStore("database", {
 
       const res = await fetch("/db.json");
       const data = await res.json();
-
+      this.moedas = data.moedas;
       this.paises = data.paises;
       this.estados = data.estados;
       this.cidades = data.cidades;
@@ -103,6 +104,9 @@ export const useGlobalStore = defineStore("database", {
     },
     getPaisById(id) {
       return this.getById("paises", id);
+    },
+    getMoedaById(id) {
+      return this.getById("moedas", id);
     },
 
     getEstadoById(id) {

@@ -1,4 +1,42 @@
 {
+  "moedas": [
+    {
+      "id": "USD",
+      "bandeira": "🇺🇸",
+      "legenda": "Dollar",
+      "simbolo": "$",
+      "locale": {
+        "id": "en-US",
+        "legenda": "English (US)",
+        "digitosMinimos": 2,
+        "digitosMaximos": 2
+      }
+    },
+    {
+      "id": "CLP",
+      "bandeira": "🇨🇱",
+      "legenda": "Chilean Peso",
+      "simbolo": "$",
+      "locale": {
+        "id": "es-CL",
+        "legenda": "Español (Chile)",
+        "digitosMinimos": 0,
+        "digitosMaximos": 0
+      }
+    },
+    {
+      "id": "BRL",
+      "bandeira": "🇧🇷",
+      "legenda": "Real",
+      "simbolo": "R$",
+      "locale": {
+        "id": "pt-BR",
+        "legenda": "Português (Brasil)",
+        "digitosMinimos": 2,
+        "digitosMaximos": 2
+      }
+    }
+  ],
   "meses": [
     {
       "id": "JAN",
@@ -1213,7 +1251,7 @@
       "localizacao": 1,
       "anfitriao": 2,
       "valor": {
-        "quantia": 6500,
+        "quantia": 6500.00,
         "preco": "R$ 6.500,00",
         "moeda": "BRL"
       },
