@@ -53,6 +53,5 @@
 <script setup>
 const route = useRoute();
 const store = useGlobalStore()
-const getPath = () => route.path;
 const categorias = store.categorias
 </script>

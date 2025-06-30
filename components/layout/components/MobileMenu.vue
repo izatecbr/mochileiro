@@ -93,8 +93,6 @@
 </template>
 
 <script setup>
-import { ref, watch } from "vue";
-import { useRoute } from "vue-router";
 
 const activeSub = ref("");
 const route = useRoute();
