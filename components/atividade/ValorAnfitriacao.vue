@@ -4,7 +4,7 @@
 
     <span class="valores">
       <span class="emoji">{{ valor?.moeda }}</span>
-      {{ valor?.formaPagamento }}
+      {{ valor?.condicaoPagamento }}
     </span>
       <div class="container-socials">
         <NuxtLink class="anfitriao" :to="`/perfil/${anfitriao?.id}`">{{ anfitriao?.legenda }}</NuxtLink>

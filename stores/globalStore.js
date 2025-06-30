@@ -169,21 +169,31 @@ export const useGlobalStore = defineStore("database", {
 
     calcularValorComTotal(total, moedaId) {
       const moeda = this.getMoedaById(moedaId);
-      if (!moeda || !moeda.locale) return { quantia: total, preco: total, moeda: moedaId };
+
+      if (!moeda || !moeda.locale) {
+        return {
+          quantia: total,
+          preco: total,
+          moeda: moedaId,
+          condicaoPagamento: `Preço ${total} com base na data atual, sujeito a alterações econômicas ou negociais.`
+        };
+      }
 
       const { simbolo, locale } = moeda;
       const { id: localeId, digitosMinimos, digitosMaximos } = locale;
 
+      const precoFormatado = `${simbolo} ${total.toLocaleString(localeId, {
+        minimumFractionDigits: digitosMinimos,
+        maximumFractionDigits: digitosMaximos,
+      })}`;
+
       return {
         quantia: total,
-        preco: `${simbolo} ${total.toLocaleString(localeId, {
-          minimumFractionDigits: digitosMinimos,
-          maximumFractionDigits: digitosMaximos,
-        })}`,
+        preco: precoFormatado,
         moeda: moedaId,
+        condicaoPagamento: `Preço ${precoFormatado} com base na data atual, sujeito a alterações econômicas ou negociais.`
       };
     },
-
     getAventuraById(id) {
       return this.getEnriched("aventuras", id, (a) => {
         const atividadesList = (a.atividades || []).map(this.getAtividadeById);

@@ -1027,7 +1027,7 @@
         "quantia": 4070.62,
         "preco": "R$ 4.070,62",
         "moeda": "BRL",
-        "formaPagamento": "R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 5x sem juros no cartão de crédito"
+        "condicaoPagamento": "R$ 4.070,62 (Pix) ou R$ 4.222,70 parcelado em até 5x sem juros no cartão de crédito"
       }
     },
     {
@@ -1047,7 +1047,7 @@
         "quantia": 2267.62,
         "preco": "R$ 2.267,62",
         "moeda": "BRL",
-        "formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"
+        "condicaoPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"
       }
     },
     {
@@ -1067,7 +1067,7 @@
         "quantia": 927.49,
         "preco": "R$ 927,49",
         "moeda": "BRL",
-        "formaPagamento": "R$ R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"
+        "condicaoPagamento": "R$ R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"
       }
     }
   ],
@@ -1097,7 +1097,7 @@
         "quantia": 4070.62,
         "preco": "R$ 4.070,62",
         "moeda": "BRL",
-        "formaPagamento": "R$ 4.070,62 (Pix) ou R$ 4.222,70 em até 5x sem juros no crédito"
+        "condicaoPagamento": "R$ 4.070,62 (Pix) ou R$ 4.222,70 em até 5x sem juros no crédito"
       }
     },
     {
@@ -1128,7 +1128,7 @@
         "quantia": 2267.62,
         "preco": "R$ 2.267,62",
         "moeda": "BRL",
-        "formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 em até 5x sem juros no crédito"
+        "condicaoPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 em até 5x sem juros no crédito"
       }
     },
     {
@@ -1156,7 +1156,35 @@
         "quantia": 927.49,
         "preco": "R$ 927,49",
         "moeda": "BRL",
-        "formaPagamento": "R$ 927,49 em até 5x sem juros no crédito"
+        "condicaoPagamento": "R$ 927,49 em até 5x sem juros no crédito"
+      }
+    },
+    {
+      "id": 4,
+      "data": {
+        "dia": "2025-06-11",
+        "hora": "15:00"
+      },
+      "duracao": "3 horas",
+      "imagens": {
+        "capa": "/img/interesses/2.jpg",
+        "card": "/img/interesses/1.jpg",
+        "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
+      },
+      "legenda": "Passeio na neve",
+      "descricao": "Passeio na neve",
+      "produto": 3,
+      "anfitriao": 2,
+      "localizacao": 6,
+      "escolhida": true,
+      "classificacoes": [
+        101
+      ],
+      "valor": {
+        "quantia": 100.00,
+        "preco": "R$ 100,00",
+        "moeda": "BRL",
+        "condicaoPagamento": "R$ 100,00 via pix"
       }
     }
   ],
@@ -1187,6 +1215,7 @@
       ],
       "anfitriao": 2
     },
+
     {
       "id": 2,
       "exclusiva": true,
@@ -1206,6 +1235,31 @@
       "autor": 1,
       "atividades": [
         3
+      ],
+      "classificacoes": [
+        101
+      ],
+      "anfitriao": 2
+    },
+    {
+      "id": 3,
+      "exclusiva": true,
+      "localizacao": 6,
+      "data": {
+        "dia": "2025-07-11",
+        "hora": "07:00"
+      },
+      "imagens": {
+        "capa": "/img/interesses/3.jpg",
+        "card": "/img/interesses/3.jpg",
+        "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
+      },
+      "duracao": "8 horas",
+      "legenda": "Aventuras na neve",
+      "descricao": "Fomos a um passeio na neve",
+      "autor": 1,
+      "atividades": [
+        4
       ],
       "classificacoes": [
         101
@@ -1241,7 +1295,8 @@
       "autor": 1,
       "aventuras": [
         1,
-        2
+        2,
+        3
       ]
     }
   ]
