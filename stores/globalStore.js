@@ -167,28 +167,71 @@ export const useGlobalStore = defineStore("database", {
       }));
     },
 
+    calcularValorComTotal(total, moedaId) {
+      const moeda = this.getMoedaById(moedaId);
+      if (!moeda || !moeda.locale) return { quantia: total, preco: total, moeda: moedaId };
+
+      const { simbolo, locale } = moeda;
+      const { id: localeId, digitosMinimos, digitosMaximos } = locale;
+
+      return {
+        quantia: total,
+        preco: `${simbolo} ${total.toLocaleString(localeId, {
+          minimumFractionDigits: digitosMinimos,
+          maximumFractionDigits: digitosMaximos,
+        })}`,
+        moeda: moedaId,
+      };
+    },
+
     getAventuraById(id) {
-      return this.getEnriched("aventuras", id, (a) => ({
-        ...a,
-        autorObject: this.getUsuarioById(a.autor),
-        localizacaoObject: this.getLocalizacaoById(a.localizacao),
-        anfitriaoObject: this.getUsuarioById(a.anfitriao),
-        atividadesList: (a.atividades || []).map(this.getAtividadeById),
-        classificacoesList: this.enriquecerClassificacoes(a.classificacoes),
-        enriquecido: true,
-      }));
+      return this.getEnriched("aventuras", id, (a) => {
+        const atividadesList = (a.atividades || []).map(this.getAtividadeById);
+        const atividadesEscolhidas = atividadesList.filter((act) => act?.escolhida && act.valor?.quantia);
+
+        let valor = a.valor;
+        if (atividadesEscolhidas.length) {
+          const moedaId = atividadesEscolhidas[0].valor.moeda;
+          const total = atividadesEscolhidas.reduce((sum, act) => sum + act.valor.quantia, 0);
+          valor = this.calcularValorComTotal(total, moedaId);
+        }
+
+        return {
+          ...a,
+          autorObject: this.getUsuarioById(a.autor),
+          localizacaoObject: this.getLocalizacaoById(a.localizacao),
+          anfitriaoObject: this.getUsuarioById(a.anfitriao),
+          atividadesList,
+          classificacoesList: this.enriquecerClassificacoes(a.classificacoes),
+          valor,
+          enriquecido: true,
+        };
+      });
     },
 
     getExperienciaById(id) {
-      return this.getEnriched("experiencias", id, (e) => ({
-        ...e,
-        autorObject: this.getUsuarioById(e.autor),
-        experienciaAnfitriao: this.getUsuarioById(e.anfitriao),
-        localizacaoObject: this.getLocalizacaoById(e.localizacao),
-        aventurasList: (e.aventuras || []).map(this.getAventuraById),
-        classificacoesList: this.enriquecerClassificacoes(e.classificacoes),
-        enriquecido: true,
-      }));
+      return this.getEnriched("experiencias", id, (e) => {
+        const aventurasList = (e.aventuras || []).map(this.getAventuraById);
+        const aventurasValidas = aventurasList.filter((av) => av?.valor?.quantia);
+
+        let valor = e.valor;
+        if (aventurasValidas.length) {
+          const moedaId = aventurasValidas[0].valor.moeda;
+          const total = aventurasValidas.reduce((sum, av) => sum + av.valor.quantia, 0);
+          valor = this.calcularValorComTotal(total, moedaId);
+        }
+
+        return {
+          ...e,
+          autorObject: this.getUsuarioById(e.autor),
+          experienciaAnfitriao: this.getUsuarioById(e.anfitriao),
+          localizacaoObject: this.getLocalizacaoById(e.localizacao),
+          aventurasList,
+          classificacoesList: this.enriquecerClassificacoes(e.classificacoes),
+          valor,
+          enriquecido: true,
+        };
+      });
     },
 
     gerarInteresses() {
