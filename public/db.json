@@ -1240,31 +1240,6 @@
         101
       ],
       "anfitriao": 2
-    },
-    {
-      "id": 3,
-      "exclusiva": true,
-      "localizacao": 6,
-      "data": {
-        "dia": "2025-07-11",
-        "hora": "07:00"
-      },
-      "imagens": {
-        "capa": "/img/interesses/3.jpg",
-        "card": "/img/interesses/3.jpg",
-        "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
-      },
-      "duracao": "8 horas",
-      "legenda": "Aventuras na neve",
-      "descricao": "Fomos a um passeio na neve",
-      "autor": 1,
-      "atividades": [
-        4
-      ],
-      "classificacoes": [
-        101
-      ],
-      "anfitriao": 2
     }
   ],
   "experiencias": [
@@ -1295,8 +1270,7 @@
       "autor": 1,
       "aventuras": [
         1,
-        2,
-        3
+        2
       ]
     }
   ]
