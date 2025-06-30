@@ -2,6 +2,7 @@
   <main>
     <HomeTopo />
     <CommonLogos />
+    <HomeInteresses/>
     <HomeBanner />
     <HomeDepoimentos />
     <LayoutRodape />
