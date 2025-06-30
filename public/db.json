@@ -1185,13 +1185,7 @@
       "classificacoes": [
         107,111,112,144
       ],
-      "anfitriao": 2,
-      "valor": {
-        "quantia": 2267.62,
-        "preco": "R$ 2.267,62",
-        "moeda": "BRL",
-        "formaPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 em até 5x sem juros no crédito"
-      }
+      "anfitriao": 2
     },
     {
       "id": 2,
@@ -1216,13 +1210,7 @@
       "classificacoes": [
         101
       ],
-      "anfitriao": 2,
-      "valor": {
-        "quantia": 927.49,
-        "preco": "R$ 927,49",
-        "moeda": "BRL",
-        "formaPagamento": "R$ R$ 927,49 em até 5x sem juros no crédito"
-      }
+      "anfitriao": 2
     }
   ],
   "experiencias": [
@@ -1250,11 +1238,6 @@
       "descricao": "Durante nossa jornada ao Chile, tivemos diversas aventuras incríveis nas quais você poderá acompanhar o que rolou diariamente. Vamos compartilhar o que deu certo, o que poderia ter sido melhor, os lugares que nos encantaram, os valores que pagamos, as pessoas e anfitriões que nos acolheram e tornaram essa aventura possível. Tudo isso de forma sincera e prática, pra te ajudar a planejar sua própria viagem ou simplesmente se inspirar e alimentar o sonho de um dia explorar esse destino. Se você já viaja ou ainda sonha em colocar o pé na estrada, vem com a gente nessa jornada!",
       "localizacao": 1,
       "anfitriao": 2,
-      "valor": {
-        "quantia": 6500.00,
-        "preco": "R$ 6.500,00",
-        "moeda": "BRL"
-      },
       "autor": 1,
       "aventuras": [
         1,
