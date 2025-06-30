@@ -21,7 +21,6 @@
 
         </div>
         <AventuraValorAnfitriacao style="margin-top: 4px;" :valor="objeto?.valor" :anfitriao="objeto?.anfitriaoObject"/>
-        <div class="line mt-25 mb-25"></div>
         <AventuraCotacao  :atividades="objeto?.atividadesList" />
       </div>
     </div>
