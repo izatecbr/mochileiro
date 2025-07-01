@@ -5,7 +5,7 @@
     <HomeInteresses/>
     <HomeBanner />
     <HomeDepoimentos />
-    <LayoutRodape />
+    <!--<LayoutRodape />-->
   </main>
 </template>
 

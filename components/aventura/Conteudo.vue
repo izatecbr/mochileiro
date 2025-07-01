@@ -19,16 +19,21 @@
             {{ objeto?.descricao || '-' }}
           </p>
 
+          <AventuraValorAnfitriacao style="margin-top: 4px;" :valor="objeto?.valor"
+            :anfitriao="objeto?.anfitriaoObject" />
+          <div class="line mt-25 mb-25"></div>
+          <AventuraCotacao :atividades="objeto?.atividadesList" />
+
         </div>
-        <AventuraValorAnfitriacao style="margin-top: 4px;" :valor="objeto?.valor" :anfitriao="objeto?.anfitriaoObject"/>
-        <AventuraCotacao  :atividades="objeto?.atividadesList" />
+
+        <div class="col-lg-4">
+          <div class="d-flex justify-end js-pin-content">
+            <AventuraProposta :valor="objeto?.valor?.preco" :moeda="objeto?.valor?.moeda" />
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-lg-4">
-      <div class="d-flex justify-end js-pin-content">
-        <AventuraProposta :valor="objeto?.valor?.preco" :moeda="objeto?.valor?.moeda" />
-      </div>
-    </div>
+
   </section>
 </template>
 
@@ -41,13 +46,13 @@ const props = defineProps(["objeto"]);
 const images = ref([]);
 const isLoading = ref(false);
 
-onMounted(()=>{
+onMounted(() => {
   console.log("Props objeto:", props.objeto);
 })
 
 const loadImages = async () => {
   if (!props?.objeto?.localizacaoObject?.legenda) return;
-  
+
   isLoading.value = true;
   try {
     const response = await pexels.fetchImages(props.objeto.localizacaoObject.legenda);
@@ -67,4 +72,3 @@ watch(
   { immediate: true }
 );
 </script>
-
