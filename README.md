@@ -258,3 +258,22 @@ Isso permite separação mais clara, e ainda assim usa rota dinâmica (`[id].vue
 Se quiser, posso gerar esse esqueleto de projeto Nuxt 3 com base nisso pra você testar. Quer?
 
 o que esperar e ideal para
+
+sky
+O que esperar do passeio:
+🌄 Cenários cinematográficos, com destaque para a famosa Laguna del Inca, um lago de águas azul-turquesa rodeado por montanhas nevadas – uma parada obrigatória para fotos.
+
+🏨 Visita ao charmoso e icônico Hotel Portillo, com sua fachada amarela contrastando com o branco da neve – símbolo da estação.
+
+❄️ Contato com a neve, ideal para brincar, caminhar e aproveitar a paisagem mesmo para quem não esquia.
+
+🛣️ Passeio pela impressionante Ruta de los Caracoles, uma estrada com curvas fechadas e vistas espetaculares.
+
+🍽️ Parada para almoço em restaurante de montanha (opcional), com culinária típica e vista panorâmica.
+
+Ideal para:
+Famílias, casais e grupos que desejam um passeio mais contemplativo.
+
+Turistas que querem ver a neve e conhecer os Andes sem a necessidade de esquiar.
+
+Amantes da fotografia e da natureza.
