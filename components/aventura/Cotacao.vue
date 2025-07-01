@@ -1,6 +1,6 @@
 <template>
 
-  <h2 class="text-20">Preços e opções</h2>
+  <h2 class="text-20">Programação</h2>
   <ul v-for="atividade in atividades" :key="atividade.id" class="mt-20">
     <li class="d-flex flex-column mt-1" >
       <NuxtLink  class="d-flex  justify-start items-center" :to="`/atividades/${atividade.id}`">
