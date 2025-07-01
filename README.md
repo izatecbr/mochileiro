@@ -256,3 +256,5 @@ Isso permite separação mais clara, e ainda assim usa rota dinâmica (`[id].vue
 ---
 
 Se quiser, posso gerar esse esqueleto de projeto Nuxt 3 com base nisso pra você testar. Quer?
+
+o que esperar e ideal para

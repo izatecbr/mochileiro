@@ -600,6 +600,14 @@
       "destino": false
     },
     {
+      "id": "BR029",
+      "legenda": "Campinas",
+      "gid": 3509502,
+      "estado": "BR35",
+      "pais": "BR",
+      "destino": false
+    },
+    {
       "id": "CL001",
       "legenda": "Santiago",
       "gid": 0,
@@ -898,6 +906,19 @@
         107
       ],
       "destino": true
+    },
+    {
+      "id": 7,
+      "legenda": "Bora pro Chile Viagens e Turismo LTDA",
+      "cep": "13.042-105",
+      "endereco": "AV Washington Luis, Vila Marieta - Campinas, SP - Brasil",
+      "cidade": "BR029",
+      "latitude": -33.4489,
+      "longitude": -70.6693,
+      "classificacoes": [
+        104,143,144
+      ],
+      "destino": false
     }
   ],
   "usuarios": [
@@ -970,23 +991,26 @@
     },
     {
       "id": 4,
-      "legenda": "Benjamín Turimo",
-      "localizacao": 3,
+      "legenda": "Bora Pro Chile Viagens",
+      "razaoSocial":"Bora Pro chile Viagens e Turismo LTDA",
+      "localizacao": 7,
       "telefone": {
         "ddi": "55",
-        "ddd": "11",
-        "numero": "958940362",
+        "ddd": "81",
+        "numero": "996702790",
         "whatsapp": true,
         "celular": true,
         "fixo": false
       },
       "documento": {
-        "rn": "123.456.789-00",
+        "rn": "32.290.905/0001-30",
         "passaporte": null
       },
-      "aniversario": "1990-01-01",
+      "aniversario": "2018-12-19",
       "foto": "https://supabase/foto-hotel.jpg",
-      "email": "bemtur.com.br"
+      "email": "contato@email.com.br",
+      "site": "https://site.com.br/",
+      "instagram": "https://www.instagram.com/kltouremchile/"
     },
     {
       "id": 5,
@@ -1048,8 +1072,11 @@
         "preco": "R$ 2.267,62",
         "moeda": "BRL",
         "condicaoPagamento": "R$ 2.267,62 (Pix) ou R$ 2.392,70 parcelado em até 5x sem juros no cartão de crédito"
-      }
+      },
+      "expectativa": [],
+      "publico": []
     },
+
     {
       "id": 3,
       "data": {
@@ -1069,6 +1096,50 @@
         "moeda": "BRL",
         "condicaoPagamento": "R$ R$ 927,49 parcelado em até 5x sem juros no cartão de crédito"
       }
+    },
+    {
+      "id": 4,
+      "data": {
+        "dia": "2025-07-01",
+        "hora": "09:00"
+      },
+      "legenda": "Sky Day Valle Nevado",
+      "descricao": "Uma ótima opção para quem quer ter um primeiro contato com a neve ou viver um dia cheio de aventura e natureza gelada, sem precisar organizar uma viagem mais longa",
+      "anuncio": true,
+      "parceiro": 4,
+      "classificacoes": [
+        144,141,142
+      ],
+      "valor": {
+        "quantia": 220.0,
+        "preco": "R$ 220,00",
+        "moeda": "BRL",
+        "condicaoPagamento": "R$ 220,00 (Pix) via link de cartão de crédito com 5% de acréscimo"
+      },
+      "expectativa": [],
+      "publico": []
+    },
+    {
+      "id": 5,
+      "data": {
+        "dia": "2025-07-01",
+        "hora": "09:00"
+      },
+      "legenda": "Passeio às Montas de Portillo",
+      "descricao": "O passeio a Portillo é uma experiência encantadora e tranquila pelos Andes chilenos, perfeita para quem busca paisagens de tirar o fôlego, contato com a neve e um toque de exclusividade",
+      "anuncio": true,
+      "parceiro": 4,
+      "classificacoes": [
+        132, 143
+      ],
+      "valor": {
+        "quantia": 300.0,
+        "preco": "R$ 300,00",
+        "moeda": "BRL",
+        "condicaoPagamento": "R$ 300,00 (Pix) via link de cartão de crédito com 5% de acréscimo"
+      },
+      "expectativa": [],
+      "publico": []
     }
   ],
   "atividades": [
@@ -1158,6 +1229,62 @@
         "moeda": "BRL",
         "condicaoPagamento": "R$ 927,49 em até 5x sem juros no crédito"
       }
+    },
+    {
+      "id": 4,
+      "data": {
+        "dia": "2025-07-12",
+        "hora": "05:00"
+      },
+      "duracao": "8 horas",
+      "imagens": {
+        "capa": "/img/interesses/2.jpg",
+        "card": "/img/interesses/1.jpg",
+        "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
+      },
+      "legenda": "Sky Day Valle Nevado",
+      "descricao": "Uma ótima opção para quem quer ter um primeiro contato com a neve ou viver um dia cheio de aventura e natureza gelada, sem precisar organizar uma viagem mais longa",
+      "produto": 4,
+      "anfitriao": 4,
+      "localizacao": 7,
+      "escolhida": true,
+      "classificacoes": [
+        104,141,142
+      ],
+      "valor": {
+        "quantia": 220.0,
+        "preco": "R$ 220,00",
+        "moeda": "BRL",
+        "condicaoPagamento": "R$ 220,00 (Pix) via link de cartão de crédito com 5% de acréscimo"
+      }
+    },
+    {
+      "id": 5,
+      "data": {
+        "dia": "2025-07-14",
+        "hora": "06:00"
+      },
+      "duracao": "4 horas",
+      "imagens": {
+        "capa": "/img/interesses/2.jpg",
+        "card": "/img/interesses/1.jpg",
+        "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
+      },
+      "legenda": "Passeio às Montas de Portillo",
+      "descricao": "O passeio a Portillo é uma experiência encantadora e tranquila pelos Andes chilenos, perfeita para quem busca paisagens de tirar o fôlego, contato com a neve e um toque de exclusividade",
+      "produto": 5,
+      "anfitriao": 4,
+      "localizacao": 7,
+      "escolhida": true,
+      "classificacoes": [
+        132,143
+      ],
+      "valor": {
+        "quantia": 300.0,
+        "preco": "R$ 300,00",
+        "moeda": "BRL",
+        "condicaoPagamento": "R$ 300,00 (Pix) via link de cartão de crédito com 5% de acréscimo"
+      }
     }
   ],
   "aventuras": [
@@ -1212,6 +1339,32 @@
         101
       ],
       "anfitriao": 2
+    },
+
+    {
+      "id": 3,
+      "exclusiva": true,
+      "localizacao": 6,
+      "data": {
+        "dia": "2025-07-14",
+        "hora": "07:00"
+      },
+      "imagens": {
+        "capa": "/img/interesses/3.jpg",
+        "card": "/img/interesses/3.jpg",
+        "carrossel": ["/img/tourCards/1/2.png","/img/tourCards/1/2.png"]
+      },
+      "duracao": "10 horas",
+      "legenda": "Aventura Valle Nevado + Portillo",
+      "descricao": "Uma aventura inesquecível nos Andes Chilenos. Viva a adrenalina do esqui em Valle Nevado e encante-se com as paisagens serenas e majestosas de Portillo. Neve, montanhas e momentos únicos em um só roteiro.",
+      "autor": 1,
+      "atividades": [
+        4,5
+      ],
+      "classificacoes": [
+        141,144,143,132
+      ],
+      "anfitriao": 4
     }
   ],
   "experiencias": [
@@ -1241,8 +1394,7 @@
       "anfitriao": 2,
       "autor": 1,
       "aventuras": [
-        1,
-        2
+        1, 2,3
       ]
     }
   ]
