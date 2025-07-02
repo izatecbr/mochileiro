@@ -1,7 +1,6 @@
 <template>
   <main>
     <HomeTopo />
-    <CommonLogos />
     <HomeInteresses/>
     <HomeBanner />
     <HomeDepoimentos />
