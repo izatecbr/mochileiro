@@ -8,6 +8,7 @@ export const useGlobalStore = defineStore("database", {
     _storeVersion: STORE_VERSION,
     novaVersao: false,
     moedas:[],
+    meses:[],
     paises: [],
     estados: [],
     cidades: [],
@@ -50,6 +51,7 @@ export const useGlobalStore = defineStore("database", {
       const res = await fetch("/db.json");
       const data = await res.json();
       this.moedas = data.moedas;
+      this.meses = data.meses;
       this.paises = data.paises;
       this.estados = data.estados;
       this.cidades = data.cidades;
@@ -101,6 +103,9 @@ export const useGlobalStore = defineStore("database", {
 
     getIntereseById(id) {
       return this.getById("interesses", id);
+    },
+    getMesById(id) {
+      return this.getById("meses", id);
     },
     getPaisById(id) {
       return this.getById("paises", id);
@@ -167,33 +172,7 @@ export const useGlobalStore = defineStore("database", {
       }));
     },
 
-    calcularValorComTotal(total, moedaId) {
-      const moeda = this.getMoedaById(moedaId);
 
-      if (!moeda || !moeda.locale) {
-        return {
-          quantia: total,
-          preco: total,
-          moeda: moedaId,
-          condicaoPagamento: `Preço ${total} com base na data atual, sujeito a alterações econômicas ou negociais.`
-        };
-      }
-
-      const { simbolo, locale } = moeda;
-      const { id: localeId, digitosMinimos, digitosMaximos } = locale;
-
-      const precoFormatado = `${simbolo} ${total.toLocaleString(localeId, {
-        minimumFractionDigits: digitosMinimos,
-        maximumFractionDigits: digitosMaximos,
-      })}`;
-
-      return {
-        quantia: total,
-        preco: precoFormatado,
-        moeda: moedaId,
-        condicaoPagamento: `Preço ${precoFormatado} com base na data atual, sujeito a alterações econômicas ou negociais.`
-      };
-    },
     getAventuraById(id) {
       return this.getEnriched("aventuras", id, (a) => {
         const atividadesList = (a.atividades || []).map(this.getAtividadeById);
@@ -205,7 +184,7 @@ export const useGlobalStore = defineStore("database", {
           const total = atividadesEscolhidas.reduce((sum, act) => sum + act.valor.quantia, 0);
           valor = this.calcularValorComTotal(total, moedaId);
         }
-
+        a.data= this.enriquecerData(a.data)
         return {
           ...a,
           autorObject: this.getUsuarioById(a.autor),
@@ -230,7 +209,7 @@ export const useGlobalStore = defineStore("database", {
           const total = aventurasValidas.reduce((sum, av) => sum + av.valor.quantia, 0);
           valor = this.calcularValorComTotal(total, moedaId);
         }
-
+        e.data= this.enriquecerData(e.data)
         return {
           ...e,
           autorObject: this.getUsuarioById(e.autor),
@@ -301,7 +280,7 @@ export const useGlobalStore = defineStore("database", {
         return {
           id: `${prefixo}${item.id}`,
           lid: item.id,
-          data: item.data,
+          data: this.enriquecerData(item.data),
           duracao: item.duracao,
           imagens: item.imagens,
           legenda: item.legenda,
@@ -326,7 +305,56 @@ export const useGlobalStore = defineStore("database", {
       const experiencias = this.experiencias.map((e) => mapItem(e, "Experiência", "E"));
 
       this.interesses = [...experiencias, ...aventuras, ...atividades];
-    },
 
+    },
+    calcularValorComTotal(total, moedaId) {
+      const moeda = this.getMoedaById(moedaId);
+
+      if (!moeda || !moeda.locale) {
+        return {
+          quantia: total,
+          preco: total,
+          moeda: moedaId,
+          condicaoPagamento: `Preço ${total} com base na data atual, sujeito a alterações econômicas ou negociais.`
+        };
+      }
+
+      const { simbolo, locale } = moeda;
+      const { id: localeId, digitosMinimos, digitosMaximos } = locale;
+
+      const precoFormatado = `${simbolo} ${total.toLocaleString(localeId, {
+        minimumFractionDigits: digitosMinimos,
+        maximumFractionDigits: digitosMaximos,
+      })}`;
+
+      return {
+        quantia: total,
+        preco: precoFormatado,
+        moeda: moedaId,
+        condicaoPagamento: `Preço ${precoFormatado} com base na data atual, sujeito a alterações econômicas ou negociais.`
+      };
+    },
+    enriquecerData(data) {
+      const dataObj = new Date(data.dia)
+
+      if (isNaN(dataObj.getTime())) {
+        console.warn('Data inválida:', data.dia)
+        return {
+          ...data,
+          mes: {
+            id: 'UNK',
+            legenda: 'Desconhecido',
+          },
+        }
+      }
+
+      const mesIndex = dataObj.getMonth() // 0-11
+      const mes = this.meses[mesIndex] || { id: 'UNK', legenda: 'Desconhecido' }
+
+      return {
+        ...data,
+        mes,
+      }
+    },
   },
 });

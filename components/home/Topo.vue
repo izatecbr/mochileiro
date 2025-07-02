@@ -100,7 +100,7 @@
                       <i class="text-20 icon-flag"></i>
                     </div>
                     <div class="searchFormItem__content">
-                      <h5>Categoria</h5>
+                      <h5>Destino</h5>
                       <div class="js-select-control-chosen">
                         {{ tourType ? tourType : "All tour" }}
                       </div>
