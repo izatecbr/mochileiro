@@ -43,7 +43,7 @@
 
         <nuxt-link to="#footer-home" class="ml-20"> Contato </nuxt-link>
 
-        <nuxt-link to="#footer-home" class="ml-30"> Ajuda </nuxt-link>
+        <nuxt-link to="#register" class="ml-30"> Ajuda </nuxt-link>
 
         <!--<nuxt-link
           to="/login"
