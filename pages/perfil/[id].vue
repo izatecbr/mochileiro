@@ -1,54 +1,18 @@
 <template>
-    <main class="profile-container">
-        <!-- Título e Breadcrumb -->
-        <div class="breadcrumb ">
-            <div class="breadcrumb-text">Mochileiro > Perfil</div>
-            <h1 class="profile-title">{{ objeto?.legenda }}</h1>
-        </div>
+  <main>
+  <div class="container">
+    <div class="row justify-between py-30 mt-80">
+      <div class="col-auto">
+        <div class="text-14">Mochileiro {{ ">" }} Perfil</div>
+      </div>
 
-        <!-- Links Sociais -->
-        <div class="social-links">
-            <div class="social-item">
-                <Icon name="mdi:phone" class="social-icon" /> {{ objeto?.telefone?.numero }}
-            </div>
-            <span class="divider">|</span>
-            <NuxtLink v-if="objeto?.email" :to="`mailto:${objeto?.email}`" class="social-item link">
-                <Icon name="mdi:email" class="social-icon" /> {{ objeto?.email }}
-            </NuxtLink>
-            <span class="divider">|</span>
-            <NuxtLink v-if="objeto?.instagram" :to="objeto?.instagram" target="_blank" class="social-item link">
-                <Icon name="mdi:instagram" class="social-icon" /> Instagram
-            </NuxtLink>
-            <span class="divider">|</span>
-            <div class="social-item">
-                <Icon name="mdi:map-marker" class="social-icon" />
-                {{ objeto?.localizacaoObject?.endereco }} - {{ objeto?.localizacaoObject?.cidadeObject?.legenda }}
-            </div>
-        </div>
-
-        <!-- Cards de Classificações -->
-        <h5 class="py-20">
-            <Icon name="mdi:star" class="social-icon" />
-            Classificações
-        </h5>
-        <div class="classifications">
-
-            <div v-for="classificacao in objeto?.localizacaoObject?.classificacoesList" :key="classificacao.id"
-                class="classification-card">
-                <h3 class="classification-title">{{ classificacao.legenda }}</h3>
-                <p class="classification-category">Categoria: {{ classificacao.categoria.legenda }}</p>
-            </div>
-        </div>
-
-        <h5 class="py-10">
-            <Icon name="mdi:star" class="social-icon" />
-            Aventura em Destaque
-        </h5>
-
-        <div>
-            <p>Em desenvolvimento...</p>
-        </div>
-    </main>
+      <div class="col-auto">
+        <div class="text-14">Amplie suas conexões</div>
+      </div>
+    </div>
+  </div>
+    <PerfilConteudo :objeto="objeto" />
+  </main>
 </template>
 
 
