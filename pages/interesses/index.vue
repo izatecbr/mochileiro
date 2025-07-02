@@ -3,11 +3,11 @@
     <h1 class="text-center mb-15">Interesses em destaque</h1>
     <div class="container">
       <div class="filters-container">
-        <div class="search-box">
-          <Icon name="mdi:search" class="search-icon" />
-          <input class="search-input" type="text" placeholder="Pesquisar interesses" />
-        </div>
-        <div ref="dropDownContainer" class="dropdown-container">
+        <AppInput placeholder="Pesquisar interesses" icon="mdi:search" />
+              <AppDrowdown v-model="categoriaSelecionada" :items="travelStyles"  placeholder="Escolha uma categoria"
+        @onSelect="item => setTravelStyle(item)" />
+
+       <!-- <div ref="dropDownContainer" class="dropdown-container">
           <div :class="{ 'is-active': ddActive }" class="dropdown">
             <div @click="toggleDropDown" class="dropdown__button">
               <span class="dropdown__text">{{ travelStyle || "Escolha uma categoria" }}</span>
@@ -20,20 +20,16 @@
               </div>
             </div>
           </div>
-        </div>
+        </div>-->
       </div>
+
+
 
       <!-- Grid Responsivo -->
       <div class="grid-container">
-        <div
-          v-for="(elm, index) in filteredInteresses"
-          :key="index"
-          class="grid-item"
-        >
-          <nuxt-link
-            :to="'/' + elm.tipo.rota + '/' + elm.lid"
-            class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow"
-          >
+        <div v-for="(elm, index) in filteredInteresses" :key="index" class="grid-item">
+          <nuxt-link :to="'/' + elm.tipo.rota + '/' + elm.lid"
+            class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow">
             <InteressesCard :elm="elm" />
           </nuxt-link>
         </div>
@@ -50,6 +46,7 @@ const interesses = ref([]);
 const ddActive = ref(false);
 const travelStyle = ref("");
 
+const categoriaSelecionada = ref(null);
 const travelStyles = ["Escolha uma categoria", "Experiência", "Aventura", "Atividade"];
 
 const toggleDropDown = () => {
@@ -74,7 +71,6 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
 .filters-container {
   display: flex;
   justify-content: center;
@@ -141,7 +137,8 @@ onMounted(() => {
 /* Grid container */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* 5 colunas fixas */
+  grid-template-columns: repeat(5, 1fr);
+  /* 5 colunas fixas */
   gap: 1.5rem;
 }
 

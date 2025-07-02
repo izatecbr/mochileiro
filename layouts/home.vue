@@ -2,7 +2,7 @@
   <Cabecalho />
   <slot />
   <ScrollToTop />
-  <LayoutRodapeClean/>
+  <LayoutRodape />
 </template>
 <script setup>
 import Cabecalho from "@/components/layout/Cabecalho";

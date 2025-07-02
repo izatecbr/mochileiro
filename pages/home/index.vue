@@ -5,7 +5,6 @@
     <HomeBanner />
     <CommonLogos />
     <HomeDepoimentos />
-    <LayoutRodape />
   </main>
 </template>
 
