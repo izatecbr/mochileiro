@@ -34,50 +34,22 @@
               768: { slidesPerView: 2.5 },
               1024: { slidesPerView: 3.5 },
               1200: { slidesPerView: 4.5 },
-
             }" ref="swiper">
-            <SwiperSlide v-for="(elm, index) in filteredInteresses" :key="index">
-              <nuxt-link :to="'/' + elm.tipo.rota + '/' + elm.lid"
-                class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow">
-                <div class="tourCard__header">
-                  <div class="tourCard__image ratio ratio-28:20">
-                    <img width="421" height="301" :src="elm.imagens?.card" alt="image" class="img-ratio" />
-                  </div>
-                  <button class="tourCard__favorite">
-                    <i class="icon-heart"></i>
-                  </button>
-                </div>
-
-                <div class="tourCard__content px-20 py-10">
-                  <div class="tourCard__location d-flex items-center text-13 text-light-2">
-                    <i class="icon-pin d-flex text-16 text-light-2 mr-5"></i>
-                    {{ elm.destinoObject.legenda }}
-                  </div>
-
-                  <h3 class="tourCard__title text-14 fw-500 mt-5">
-                    <span>{{ elm.legenda }}</span>
-                  </h3>
-
-                  <div class="tourCard__rating d-flex items-center justify-between text-13 mt-5">
-                    <span class="text-dark-1 ml-10">
-                      {{ elm.anfitriaoObject.legenda }}
-                    </span>
-                    <AppBadge class="mr-10" :label="elm.tipo.legenda" variant="ghost" padding="4px"
-                      :color="cores[elm.tipo.legenda]" radius="7px" />
-                  </div>
-
-                  <div class="d-flex justify-between items-center border-1-top text-13 text-dark-1 pt-10 mt-10">
-                    <div class="d-flex items-center">
-                      <i class="icon-clock text-16 mr-5"></i>
-                      {{ elm.duracao }}
-                    </div>
-
-                    <div>
-                      <span class="text-16 fw-500">{{ elm.valor.preco }}</span>
-                    </div>
-                  </div>
-                </div>
+            <SwiperSlide v-for="(elm, index) in filteredInteresses.slice(0, 7)" :key="index">
+              <nuxt-link :to="'/' + elm.tipo.rota + '/' + elm.lid" class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow">
+                <InteressesCard :elm="elm" />
               </nuxt-link>
+            </SwiperSlide>
+
+            <SwiperSlide style="height: 45dvh;" class="d-flex justify-center items-center ">
+              <div class="d-flex flex-column " >
+               <p class="mb-5" >Em busca de mais conteudo?</p>
+              <div class="d-flex justify-center items-center " style="height: 100%;">
+                <button @click="verMais()" class="button -accent-1 text-14 py-5 px-15 bg-light-1 rounded-200">
+                  Ver mais
+                </button>
+              </div>
+              </div>
             </SwiperSlide>
           </Swiper>
         </div>
@@ -101,6 +73,7 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { computed, onMounted, ref } from "vue";
 
 const store = useGlobalStore();
+const router = useRouter();
 const interesses = ref([]);
 const ddActive = ref(false);
 const travelStyle = ref("");
@@ -129,6 +102,10 @@ const filteredInteresses = computed(() => {
     (item) => item.tipo.legenda === travelStyle.value
   );
 });
+
+const verMais = () => {
+  router.push("/interesses");
+};
 
 onMounted(() => {
   interesses.value = store.interesses;
@@ -170,4 +147,12 @@ th {
   white-space: pre-wrap;
   width: 100%;
 }
+
+.ver-mais-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%; /* Garante que ocupa toda a altura do slide */
+}
+
 </style>
