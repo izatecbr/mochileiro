@@ -3,26 +3,26 @@
         <!-- Título e Breadcrumb -->
         <div class="breadcrumb ">
             <div class="breadcrumb-text">Mochileiro > Perfil</div>
-            <h1 class="profile-title">{{ usuario?.legenda }}</h1>
+            <h1 class="profile-title">{{ objeto?.legenda }}</h1>
         </div>
 
         <!-- Links Sociais -->
         <div class="social-links">
             <div class="social-item">
-                <Icon name="mdi:phone" class="social-icon" /> {{ usuario?.telefone?.numero }}
+                <Icon name="mdi:phone" class="social-icon" /> {{ objeto?.telefone?.numero }}
             </div>
             <span class="divider">|</span>
-            <NuxtLink v-if="usuario?.email" :to="`mailto:${usuario?.email}`" class="social-item link">
-                <Icon name="mdi:email" class="social-icon" /> {{ usuario?.email }}
+            <NuxtLink v-if="objeto?.email" :to="`mailto:${objeto?.email}`" class="social-item link">
+                <Icon name="mdi:email" class="social-icon" /> {{ objeto?.email }}
             </NuxtLink>
             <span class="divider">|</span>
-            <NuxtLink v-if="usuario?.instagram" :to="usuario?.instagram" target="_blank" class="social-item link">
+            <NuxtLink v-if="objeto?.instagram" :to="objeto?.instagram" target="_blank" class="social-item link">
                 <Icon name="mdi:instagram" class="social-icon" /> Instagram
             </NuxtLink>
             <span class="divider">|</span>
             <div class="social-item">
                 <Icon name="mdi:map-marker" class="social-icon" />
-                {{ usuario?.localizacaoObject?.endereco }} - {{ usuario?.localizacaoObject?.cidadeObject?.legenda }}
+                {{ objeto?.localizacaoObject?.endereco }} - {{ objeto?.localizacaoObject?.cidadeObject?.legenda }}
             </div>
         </div>
 
@@ -33,7 +33,7 @@
         </h5>
         <div class="classifications">
 
-            <div v-for="classificacao in usuario?.localizacaoObject?.classificacoesList" :key="classificacao.id"
+            <div v-for="classificacao in objeto?.localizacaoObject?.classificacoesList" :key="classificacao.id"
                 class="classification-card">
                 <h3 class="classification-title">{{ classificacao.legenda }}</h3>
                 <p class="classification-category">Categoria: {{ classificacao.categoria.legenda }}</p>
@@ -54,15 +54,11 @@
 
 <script setup>
 const route = useRoute()
-const idUsuario = 2
-
 const store = useGlobalStore()
-const usuario = store.getUsuarioById(idUsuario)
-const experienciaEmDestaque = []
-
+const objeto = ref(null)
+const id = route.params.id;
 onMounted(() => {
-    console.log('Usuario:', route.params.id)
-    console.log('Usuario:', {})
+  objeto.value = store.getUsuarioById(Number(id))
 })
 
 
