@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer -type-1">
+  <footer class="footer -type-1" id="footer-home">
     <div class="footer__main">
       <div class="container">
         <div class="footer__info">
