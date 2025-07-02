@@ -213,7 +213,7 @@ export const useGlobalStore = defineStore("database", {
         return {
           ...e,
           autorObject: this.getUsuarioById(e.autor),
-          experienciaAnfitriao: this.getUsuarioById(e.anfitriao),
+          anfitriaoObject: this.getUsuarioById(e.anfitriao),
           localizacaoObject: this.getLocalizacaoById(e.localizacao),
           aventurasList,
           classificacoesList: this.enriquecerClassificacoes(e.classificacoes),

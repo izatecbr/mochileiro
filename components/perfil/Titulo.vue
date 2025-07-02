@@ -44,12 +44,12 @@
       <div class="d-flex x-gap-30 y-gap-10">
         <a href="#" class="d-flex items-center">
           <i class="icon-share flex-center text-16 mr-10"></i>
-          Indicar
+          ({{ objeto?.telefone?.ddd}}) {{ objeto?.telefone?.numero}}
         </a>
 
         <a href="#" class="d-flex items-center">
           <i class="icon-heart flex-center text-16 mr-10"></i>
-          Adorei
+          @{{ objeto?.instagram}}
         </a>
       </div>
     </div>
