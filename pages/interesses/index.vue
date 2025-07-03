@@ -71,7 +71,7 @@ const filteredInteresses = computed(() => {
 
     const matchDestino =
       !destinoSelecionado.value ||
-      item.destinoObject?.legenda === destinoSelecionado.value;
+      item.destinoObject?.cidadeObject?.legenda?.toLowerCase() === destinoSelecionado.value.toLowerCase();
 
     const matchPeriodo =
       !periodoSelecionado.value ||
@@ -82,7 +82,7 @@ const filteredInteresses = computed(() => {
       item.legenda?.toLowerCase().includes(searchTerm) ||
       item.descricao?.toLowerCase().includes(searchTerm) ||
       item.tipo?.legenda?.toLowerCase().includes(searchTerm) ||
-      item.destinoObject?.legenda?.toLowerCase().includes(searchTerm);
+      item.destinoObject?.cidadeObject?.legenda?.toLowerCase().includes(searchTerm);
 
     return matchTipo && matchDestino && matchPeriodo && matchSearch && matchCategoria;
   });
@@ -138,6 +138,9 @@ const setPeriodo = (periodo) => {
 
 onMounted(() => {
   interesses.value = store.interesses;
+
+  console.log("Interesses:", interesses.value[0]?.destinoObject?.cidadeObject?.legenda);
+  console.log(destinoSelecionado.value)
 
   const { categoria, destino, periodo } = route.query
 
