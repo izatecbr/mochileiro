@@ -99,7 +99,6 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .iz-dropdown-wrapper {
-  margin-top: 10px;
   background-color: bluered;
   width: 100%;
 
