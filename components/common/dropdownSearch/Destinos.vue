@@ -22,12 +22,13 @@
 
 defineProps(["active"]);
 
+const router = useRouter();
 const store = useGlobalStore();
 const destinos = [...store.destinos.map((destino) => destino.legenda)]
 
 const emits = defineEmits(["setDestino"]);
 
 const handleLocationClick = (elm) => {
-  emits("setLocation", elm.choice);
+  emits("setDestino", elm);
 };
 </script>

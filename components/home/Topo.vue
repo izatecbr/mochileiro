@@ -132,10 +132,19 @@ const handleClick = (event) => {
   }
 };
 
-const setDestino = (locat) => {
-  destino.value = destino.value == locat ? "" : locat;
+const setDestino = (value) => {
+  router.push({
+    name: "interesses",
+    query: { destino: value },
+  })
+  destino.value = destino.value == value ? "" : value;
 };
+
 const setCategorias = (value) => {
+    router.push({
+    name: "categoria",
+    query: { destino: value },
+  })
   categoria.value = categoria.value == value ? "" : value;
 };
 
