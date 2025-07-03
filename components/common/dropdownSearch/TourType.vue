@@ -13,7 +13,7 @@
           class="searchFormItemDropdown__item"
         >
           <button class="js-select-control-button">
-            <span class="js-select-control-choice">{{ option }}</span>
+            <span class="js-select-control-choice option-interesse">{{ option }}</span>
           </button>
         </div>
       </div>
@@ -22,14 +22,9 @@
 </template>
 
 <script setup>
-const options = ref([
-  "City Tour",
-  "Hiking",
-  "Food Tour",
-  "Cultural Tours",
-  "Museums Tours",
-  "Beach Tours",
-]);
+
+const store = useGlobalStore();
+const options = store.categorias.map((categoria) => categoria.legenda);
 defineProps(["active"]);
 const emits = defineEmits(["setTourType"]);
 
@@ -37,3 +32,9 @@ const handleTourTypeClick = (option) => {
   emits("setTourType", option);
 };
 </script>
+
+<style scoped>
+.option-interesse{
+  text-align: start;
+}
+</style>

@@ -3,14 +3,14 @@
     <div class="searchFormItemDropdown__container">
       <div class="searchFormItemDropdown__list sroll-bar-1">
         <div
-          v-for="(elm, i) in locations"
+          v-for="(elm, i) in destinos"
           :key="i"
           @click="handleLocationClick(elm)"
           class="searchFormItemDropdown__item"
         >
           <button class="js-select-control-button">
-            <span class="js-select-control-choice">{{ elm.choice }}</span>
-            <span>{{ elm.type }}</span>
+            <span class="js-select-control-choice">{{ elm }}</span>
+         <!--   <span>{{ elm.type }}</span>-->
           </button>
         </div>
       </div>
@@ -19,12 +19,13 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
 
 defineProps(["active"]);
 
+const store = useGlobalStore();
+const destinos = [...store.destinos.map((destino) => destino.legenda)]
+
 const emits = defineEmits(["setLocation"]);
-import { locations } from "@/data/searchDDLocations";
 
 const handleLocationClick = (elm) => {
   emits("setLocation", elm.choice);
