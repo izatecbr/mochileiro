@@ -101,7 +101,7 @@ onBeforeUnmount(() => {
 .iz-dropdown-wrapper {
   margin-top: 10px;
   background-color: bluered;
-  /**width: 100%; */
+  width: 100%;
 
 }
 
@@ -115,13 +115,14 @@ onBeforeUnmount(() => {
 
 .dropdown-container {
   position: relative;
-  width: fit-content;
+    width: 100%;
+ 
 }
 
 .dropdown {
+  width: 100%;
   position: relative;
 
-   width: 16rem;
   border: 1px solid var(--Border, #E7E6E6);
   border-radius: 12px;
   background-color: white;
