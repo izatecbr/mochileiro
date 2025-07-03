@@ -40,7 +40,7 @@
                 </div>
 
                 <div class="searchFormItem js-select-control js-form-dd js-calendar">
-                  <div class="searchFormItem__button" @click="toggleDropdown('calender')">
+                  <div class="searchFormItem__button" @click="toggleDropdown('periodo')">
                     <div class="searchFormItem__icon size-50 rounded-12 border-1 flex-center">
                       <i class="text-20 icon-calendar"></i>
                     </div>
@@ -51,7 +51,7 @@
                       </div>
                       <div>
                         <span class="js-first-date">
-                          <Calender :active="currentActiveDD === 'calender'" />
+                          <Periodo :active="currentActiveDD === 'periodo'" />
                         </span>
                         <span class="js-last-date"></span>
                       </div>
@@ -103,10 +103,10 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from "vue";
 
-import Calender from "~/components/common/dropdownSearch/Calender.vue";
 import TourType from "~/components/common/dropdownSearch/TourType.vue";
 
 import { useRouter } from "vue-router";
+import Periodo from "~/components/common/dropdownSearch/Periodo.vue";
 import Destinos from "../common/dropdownSearch/Destinos.vue";
 const router = useRouter();
 
