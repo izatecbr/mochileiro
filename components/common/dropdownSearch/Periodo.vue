@@ -25,9 +25,9 @@ defineProps(["active"]);
 const store = useGlobalStore();
 const periodos = [...store.meses.map((periodo) => periodo.legenda)];
 
-const emits = defineEmits(["setLocation"]);
+const emits = defineEmits(["setPeriodo"]);
 
 const handleLocationClick = (elm) => {
-  emits("setLocation", elm.choice);
+  emits("setPeriodo", elm);
 };
 </script>

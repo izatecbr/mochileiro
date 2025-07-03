@@ -51,7 +51,7 @@
                       </div>
                       <div>
                         <span class="js-first-date">
-                          <Periodo :active="currentActiveDD === 'periodo'" />
+                          <Periodo @setPeriodo="setPeriodo" :active="currentActiveDD === 'periodo'" />
                         </span>
                         <span class="js-last-date"></span>
                       </div>
@@ -113,6 +113,7 @@ const router = useRouter();
 const currentActiveDD = ref("");
 const destino = ref("");
 const categoria = ref("");
+const periodo = ref("");
 const dropDownContainer = ref(null);
 
 watch([destino, categoria], () => {
@@ -140,10 +141,19 @@ const setDestino = (value) => {
   destino.value = destino.value == value ? "" : value;
 };
 
+const setPeriodo = (value) => {
+  router.push({
+    name: "interesses",
+    query: { periodo: value },
+  })
+  periodo.value = periodo.value == value ? "" : value;
+};
+
+
 const setCategorias = (value) => {
     router.push({
-    name: "categoria",
-    query: { destino: value },
+    name: "interesses",
+    query: { categoria: value },
   })
   categoria.value = categoria.value == value ? "" : value;
 };

@@ -7,14 +7,17 @@ div<template>
           <AppInput v-model="inputBuscaInteresses" style="width: 80dvw;" placeholder="Pesquisar interesses"
             icon="mdi:search" />
           <div style="display: flex; gap: 10px;">
-            <AppDrowdown style="flex: 1;" v-model="categoriaSelecionada" :items="travelStyles"
-              placeholder="Escolha uma categoria" @onSelect="item => setTravelStyle(item)" />
+            <AppDrowdown style="flex: 1;" v-model="tipoInteresseSelecionado" :items="tiposInteresse"
+              placeholder="Escolha um tipo" @onSelect="item => setTipoInteresse(item)" />
 
             <AppDrowdown style="flex: 1;" v-model="destinoSelecionado" :items="destinos" placeholder="Escolher Destino"
               @onSelect="item => setDestino(item)" />
 
             <AppDrowdown style="flex: 1;" v-model="periodoSelecionado" :items="periodos" placeholder="Escolher Perído"
               @onSelect="item => setPeriodo(item)" />
+
+            <AppDrowdown style="flex: 1;" v-model="categoriaSelecionada" :items="categorias" placeholder="Escolher Categoria"
+              @onSelect="item => setCategoria(item)" />
           </div>
         </div>
       </div>
@@ -37,26 +40,34 @@ div<template>
 <script setup>
 import { computed, onMounted, ref } from "vue";
 
+const route = useRoute()
+const router = useRouter()
 const store = useGlobalStore();
 const interesses = ref([]);
 const ddActive = ref(false);
-const travelStyle = ref("");
 
 const inputBuscaInteresses = ref("");
-const categoriaSelecionada = ref(null);
+const tipoInteresseSelecionado = ref(null);
 const destinoSelecionado = ref(null);
 const periodoSelecionado = ref(null);
+const categoriaSelecionada = ref(null);
 
+const categorias = ["Escolha uma categoria", ...store.categorias.map((categoria) => categoria.legenda)];
 const periodos = ["Escolher Perído", ...store.meses.map((periodo) => periodo.legenda)];
 const destinos = ["Escolher Destino", ...store.destinos.map((destino) => destino.legenda)]
-const travelStyles = ["Escolha uma categoria", "Experiência", "Aventura", "Atividade"];
+
+//nomeclatura categrias ou tipo ?
+const tiposInteresse = ["Escolha um tipo", "Experiência", "Aventura", "Atividade"];
 
 const filteredInteresses = computed(() => {
   const searchTerm = inputBuscaInteresses.value.toLowerCase();
 
   return interesses.value.filter((item) => {
+
     const matchCategoria =
-      !travelStyle.value || item.tipo.legenda === travelStyle.value;
+      !categoriaSelecionada.value || item.categoria?.legenda === categoriaSelecionada.value;
+    const matchTipo =
+      !tipoInteresseSelecionado.value || item.tipo.legenda === tipoInteresseSelecionado.value;
 
     const matchDestino =
       !destinoSelecionado.value ||
@@ -73,7 +84,7 @@ const filteredInteresses = computed(() => {
       item.tipo?.legenda?.toLowerCase().includes(searchTerm) ||
       item.destinoObject?.legenda?.toLowerCase().includes(searchTerm);
 
-    return matchCategoria && matchDestino && matchPeriodo && matchSearch;
+    return matchTipo && matchDestino && matchPeriodo && matchSearch && matchCategoria;
   });
 });
 
@@ -83,7 +94,7 @@ definePageMeta({
 
 
 watch(
-  [travelStyle, destinoSelecionado, periodoSelecionado, inputBuscaInteresses],
+  [tipoInteresseSelecionado, destinoSelecionado, periodoSelecionado, inputBuscaInteresses],
   () => {
     currentPage.value = 1;
   }
@@ -108,9 +119,12 @@ const toggleDropDown = () => {
   ddActive.value = !ddActive.value;
 };
 
-const setTravelStyle = (style) => {
-  travelStyle.value = style === "Escolha uma categoria" ? "" : style;
+const setTipoInteresse = (value) => {
+  tipoInteresseSelecionado.value = value === "Escolha um tipo" ? "" : value;
+};
 
+const setCategoria = (categoria) => {
+  categoriaSelecionada.value = categoria === "Escolha uma categoria" ? "" : categoria;
 };
 
 const setDestino = (destino) => {
@@ -124,7 +138,24 @@ const setPeriodo = (periodo) => {
 
 onMounted(() => {
   interesses.value = store.interesses;
-});
+
+  const { categoria, destino, periodo } = route.query
+
+  if (categoria && categoria !== 'Escolha uma categoria') {
+    categoriaSelecionada.value = decodeURIComponent(categoria)
+  }
+
+  if (destino && destino !== 'Escolher Destino') {
+    destinoSelecionado.value = decodeURIComponent(destino)
+  }
+
+  if (periodo && periodo !== 'Escolher Perído') {
+    periodoSelecionado.value = decodeURIComponent(periodo)
+  }
+
+
+})
+
 </script>
 
 <style scoped>
