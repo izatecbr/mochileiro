@@ -37,8 +37,6 @@ div<template>
         <p >Nenhum interesse encontrado.</p>
       </div>
 
-
-
       <AppPagination v-if="filteredInteresses.length > itemsPerPage" v-model="currentPage" :totalPages="totalPages" />
     </div>
   </section>
