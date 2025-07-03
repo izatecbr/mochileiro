@@ -11,7 +11,7 @@
       <div class="row y-gap-30 justify-between">
         <div class="col-lg-8">
           <div class="row y-gap-20 justify-between items-center layout-pb-md">
-            <ExperienciaInformacao :duracao="objeto?.duracao" />
+            <ExperienciaInformacao :duracao="objeto?.duracao" :data="objeto?.data" />
           </div>
           <div class="line mt-1 mb-1"></div>
           <h2 class="text-20">Detalhes</h2>

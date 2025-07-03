@@ -5,18 +5,18 @@
     {"id":"BRL","bandeira":"🇧🇷","legenda":"Real","simbolo":"R$","locale":{"id":"pt-BR","legenda":"Português (Brasil)","digitosMinimos":2,"digitosMaximos":2}}
   ],
   "meses": [
-    {"id":"JAN","legenda":"Janeiro"},
-    {"id":"FEV","legenda":"Fevereiro"},
-    {"id":"MAR","legenda":"Março"},
-    {"id":"ABR","legenda":"Abril"},
-    {"id":"MAI","legenda":"Maio"},
-    {"id":"JUN","legenda":"Junho"},
-    {"id":"JUL","legenda":"Julho"},
-    {"id":"AGO","legenda":"Agosto"},
-    {"id":"SET","legenda":"Setembro"},
-    {"id":"OUT","legenda":"Outubro"},
-    {"id":"NOV","legenda":"Novembro"},
-    {"id":"DEZ","legenda":"Dezembro"}
+    {"id":"JAN","legenda":"Janeiro","sigla": "Jan"},
+    {"id":"FEV","legenda":"Fevereiro","sigla": "Fev"},
+    {"id":"MAR","legenda":"Março","sigla": "Mar"},
+    {"id":"ABR","legenda":"Abril","sigla": "Abr"},
+    {"id":"MAI","legenda":"Maio","sigla": "Mai"},
+    {"id":"JUN","legenda":"Junho","sigla": "Jun"},
+    {"id":"JUL","legenda":"Julho","sigla": "Jul"},
+    {"id":"AGO","legenda":"Agosto","sigla": "Ago"},
+    {"id":"SET","legenda":"Setembro","sigla": "Set"},
+    {"id":"OUT","legenda":"Outubro","sigla": "Out"},
+    {"id":"NOV","legenda":"Novembro","sigla": "Nov"},
+    {"id":"DEZ","legenda":"Dezembro","sigla": "Dez"}
   ],
   "continentes": [
     {"id":"AF","nome":"África","codigoUN":"002"},

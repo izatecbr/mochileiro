@@ -162,14 +162,17 @@ export const useGlobalStore = defineStore("database", {
     },
 
     getAtividadeById(id) {
-      return this.getEnriched("atividades", id, (a) => ({
-        ...a,
-        anfitriaoObject: this.getUsuarioById(a.anfitriao),
-        produtoObject: this.getProdutoById(a.produto),
-        localizacaoObject: this.getLocalizacaoById(a.localizacao),
-        classificacoesList: this.enriquecerClassificacoes(a.classificacoes),
-        enriquecido: true,
-      }));
+      return this.getEnriched("atividades", id, (a) => {
+        a.data= this.enriquecerData(a.data)
+        return {
+          ...a,
+          anfitriaoObject: this.getUsuarioById(a.anfitriao),
+          produtoObject: this.getProdutoById(a.produto),
+          localizacaoObject: this.getLocalizacaoById(a.localizacao),
+          classificacoesList: this.enriquecerClassificacoes(a.classificacoes),
+          enriquecido: true
+        };
+      });
     },
 
 
@@ -343,14 +346,14 @@ export const useGlobalStore = defineStore("database", {
           ...data,
           mes: {
             id: 'UNK',
-            legenda: 'Desconhecido',
+            legenda: 'Desconhecido'
           },
         }
       }
 
       const mesIndex = dataObj.getMonth() // 0-11
       const mes = this.meses[mesIndex] || { id: 'UNK', legenda: 'Desconhecido' }
-
+      mes.ano = dataObj.getFullYear() % 100
       return {
         ...data,
         mes,
