@@ -13,7 +13,7 @@
 
     <div class="menu__container">
       <div class="menu__header">
-        <h4>Main Menu</h4>
+        <h4>Menu</h4>
         <button @click="closeMobileMenu" class="js-menu-button">
           <i class="icon-cross text-10"></i>
         </button>
@@ -24,48 +24,12 @@
           class="menuNav js-navList -is-active"
           :style="{ maxHeight: 'calc(100vh - 262px)', overflowY: 'auto' }"
         >
-          <li
-            v-for="(item, index) in menuData"
-            :key="index"
-            class="menuNav__item -has-submenu js-has-submenu"
-          >
-            <a @click="toggleSubMenu(item.label)">
-              <span :class="{ activeMenu: hasActiveSubMenu(item.submenu) }">{{
-                item.label
-              }}</span>
-              <i
-                :style="{
-                  transform:
-                    activeSub === item.label ? 'rotate(90deg)' : 'rotate(0deg)',
-                  transition: '0.3s',
-                }"
-                class="icon-chevron-right"
-              ></i>
-            </a>
-
-            <ul
-              :style="{
-                maxHeight: activeSub === item.label ? '1200px' : '0px',
-                transition: '0.6s',
-              }"
-            >
-              <li
-                v-for="(submenuItem, submenuIndex) in item.submenu"
-                :key="submenuIndex"
-              >
-                <router-link
-                  :class="{ activeMenu: isActiveMenuItem(submenuItem.href) }"
-                  style="padding-left: 15px; font-size: 17px"
-                  :to="submenuItem.href"
-                >
-                  {{ submenuItem.label }}
-                </router-link>
-              </li>
-            </ul>
-          </li>
 
           <li class="menuNav__item">
-            <router-link to="/contact">Contact</router-link>
+            <router-link to="/">Home</router-link>
+          </li>
+          <li class="menuNav__item">
+            <router-link to="/interesses">Interesses</router-link>
           </li>
         </ul>
       </div>
@@ -73,8 +37,8 @@
       <div class="menu__footer">
         <i class="icon-headphone text-50"></i>
         <div class="text-20 lh-12 fw-500 mt-20">
-          <div>Speak to our expert at</div>
-          <div class="text-accent-1">1-800-453-6744</div>
+          <div>Fale conosco</div>
+          <div class="text-accent-1">(86) 9 9942-2032</div>
         </div>
 
         <div class="d-flex items-center x-gap-10 pt-30">
@@ -99,10 +63,8 @@ const route = useRoute();
 
 import { menuData } from "@/data/mobileMenu";
 const socialMediaLinks = [
-  { id: 1, class: "icon-facebook", href: "#" },
-  { id: 2, class: "icon-twitter", href: "#" },
-  { id: 3, class: "icon-instagram", href: "#" },
-  { id: 4, class: "icon-linkedin", href: "#" },
+  { id: 3, class: "icon-instagram", href: "https://www.instagram.com/glysns" },
+  { id: 4, class: "icon-linkedin", href: "https://www.linkedin.com/in/glysns/" },
 ];
 
 const props = defineProps(["mobileMenuOpen"]);
