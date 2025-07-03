@@ -3,7 +3,6 @@
     <HomeTopo />
     <HomeInteresses/>
     <HomeBanner />
-    <CommonLogos />
     <HomeDepoimentos />
   </main>
 </template>
