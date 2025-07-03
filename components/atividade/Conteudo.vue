@@ -18,9 +18,9 @@
           <p class="mt-10">
             {{ objeto?.descricao || '-' }}
           </p>
-
+          <AtividadeValorAnfitriacao style="margin-top: 4px;" :valor="objeto?.valor" :anfitriao="objeto?.anfitriaoObject"/>
         </div>
-        <AtividadeValorAnfitriacao style="margin-top: 4px;" :valor="objeto?.valor" :anfitriao="objeto?.anfitriaoObject"/>
+
       </div>
     </div>
   </section>

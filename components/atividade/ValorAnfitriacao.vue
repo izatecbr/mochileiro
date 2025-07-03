@@ -27,8 +27,9 @@ defineProps(['valor', 'anfitriao'])
 
 <style scoped lang="css">
 .valores {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   text-align: start;
+  font-weight:revert;
 }
 
 .valores .emoji {

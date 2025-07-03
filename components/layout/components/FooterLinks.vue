@@ -30,8 +30,9 @@ const sections = [
   {
     title: "Time",
     links: [
-      { id: 9, text: "Gleyson Sampaio", href: "https://www.linkedin.com/in/glysns/" },
-      { id: 10, text: "João Pedro", href: "https://www.linkedin.com/in/joao-psv/" }
+      { id: 1, text: "Gleyson Sampaio", href: "https://www.linkedin.com/in/glysns/" },
+      { id: 2, text: "João Pedro", href: "https://www.linkedin.com/in/joao-psv/" },
+      { id: 2, text: "Eberte Sampaio", href: "https://www.linkedin.com/in/eberte-sampaio-bb7791265/" }
     ],
   },
 ];
