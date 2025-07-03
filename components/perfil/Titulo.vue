@@ -47,7 +47,7 @@
           @{{ objeto?.instagram}}
         </NuxtLink>
         <NuxtLink v-if="objeto?.telefone?.whatsapp" target="_blank"
-          :to="`https://wa.me/${anfitriao?.telefone?.ddd}${anfitriao?.telefone?.numero}`">
+          :to="`https://wa.me/${anfitriao?.telefone?.ddi}${anfitriao?.telefone?.ddd}${anfitriao?.telefone?.numero}`">
           <Icon class="social-icon" name="mdi:whatsapp" />
           ({{ objeto?.telefone?.ddd}}) {{ objeto?.telefone?.numero}}
         </NuxtLink>

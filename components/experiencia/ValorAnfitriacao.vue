@@ -12,7 +12,7 @@
           <Icon class="social-icon" name="mdi:instagram" />
         </NuxtLink>
         <NuxtLink v-if="anfitriao?.telefone?.whatsapp" target="_blank"
-                  :to="`https://wa.me/${anfitriao?.telefone?.ddd}${anfitriao?.telefone?.numero}`">
+         :to="`https://wa.me/${anfitriao?.telefone?.ddi}${anfitriao?.telefone?.ddd}${anfitriao?.telefone?.numero}`">
           <Icon class="social-icon" name="mdi:whatsapp" />
         </NuxtLink>
 
