@@ -25,7 +25,7 @@ defineProps(["active"]);
 const store = useGlobalStore();
 const destinos = [...store.destinos.map((destino) => destino.legenda)]
 
-const emits = defineEmits(["setLocation"]);
+const emits = defineEmits(["setDestino"]);
 
 const handleLocationClick = (elm) => {
   emits("setLocation", elm.choice);

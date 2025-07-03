@@ -24,19 +24,19 @@
             <div ref="dropDownContainer" class="searchForm -type-1 shadow-1">
               <div class="searchForm__form">
                 <div class="searchFormItem js-select-control js-form-dd">
-                  <div class="searchFormItem__button" @click="toggleDropdown('location')">
+                  <div class="searchFormItem__button" @click="toggleDropdown('destinos')">
                     <div class="searchFormItem__icon size-50 rounded-12 border-1 flex-center">
                       <i class="text-20 icon-pin"></i>
                     </div>
                     <div class="searchFormItem__content">
                       <h5>Destino</h5>
                       <div class="js-select-control-chosen">
-                        {{ location ? location : "Destinos mais populares" }}
+                        {{ destino ? destino : "Destinos mais populares" }}
                       </div>
                     </div>
                   </div>
 
-                  <Location @setLocation="setLocation" :active="currentActiveDD === 'location'" />
+                  <Destinos @setDestino="setDestino" :active="currentActiveDD === 'destinos'" />
                 </div>
 
                 <div class="searchFormItem js-select-control js-form-dd js-calendar">
@@ -104,18 +104,18 @@
 import { onMounted, onUnmounted, ref } from "vue";
 
 import Calender from "~/components/common/dropdownSearch/Calender.vue";
-import Location from "~/components/common/dropdownSearch/Location.vue";
 import TourType from "~/components/common/dropdownSearch/TourType.vue";
 
 import { useRouter } from "vue-router";
+import Destinos from "../common/dropdownSearch/Destinos.vue";
 const router = useRouter();
 
 const currentActiveDD = ref("");
-const location = ref("");
+const destino = ref("");
 const tourType = ref("");
 const dropDownContainer = ref(null);
 
-watch([location, tourType], () => {
+watch([destino, tourType], () => {
   currentActiveDD.value = "";
 });
 
@@ -132,8 +132,8 @@ const handleClick = (event) => {
   }
 };
 
-const setLocation = (locat) => {
-  location.value = location.value == locat ? "" : locat;
+const setDestino = (locat) => {
+  destino.value = destino.value == locat ? "" : locat;
 };
 const setTourType = (value) => {
   tourType.value = tourType.value == value ? "" : value;
