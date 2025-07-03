@@ -25,7 +25,6 @@
 
         </nuxt-link>
 
-        <Menu />
       </div>
 
       <div class="headerMobile__right">
@@ -54,18 +53,13 @@
       </div>
     </div>
   </header>
-  <MobileMenu
-    :mobileMenuOpen="mobileMenuOpen"
-    @setMobileMenuOpen="setMobileMenuOpen"
-  />
+
 </template>
 
 <script setup>
 import { onBeforeUnmount, onMounted, ref } from "vue";
 
 import { useRouter } from "vue-router";
-import Menu from "./components/Menu.vue";
-import MobileMenu from "./components/MobileMenu.vue";
 
 const addClass = ref(false);
 const mobileMenuOpen = ref(false);

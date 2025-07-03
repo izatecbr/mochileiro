@@ -77,6 +77,10 @@ const filteredInteresses = computed(() => {
   });
 });
 
+definePageMeta({
+  layout: 'interesses'
+})
+
 
 watch(
   [travelStyle, destinoSelecionado, periodoSelecionado, inputBuscaInteresses],
