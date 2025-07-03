@@ -4,11 +4,11 @@
       <div class="desktopNav">
 
         <div class="desktopNav__item">
-          <nuxt-link to="/destinations">Experiências</nuxt-link>
+          <a href="/interesses">Experiências</a>
         </div>
 
         <div class="desktopNav__item">
-          <a href="#">Aventuras</a>
+          <a href="/interesses">Aventuras</a>
         </div>
 
         <div class="desktopNav__item">

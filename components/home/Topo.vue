@@ -47,7 +47,7 @@
                     <div class="searchFormItem__content">
                       <h5>Quando</h5>
                       <div class="js-select-control-chosen">
-                        {{ "Selecionar Periodo" }}
+                        {{ "Melhores temporadas" }}
                       </div>
                       <div>
                         <span class="js-first-date">
@@ -67,7 +67,7 @@
                     <div class="searchFormItem__content">
                       <h5>Categorias</h5>
                       <div class="js-select-control-chosen">
-                        {{  "All tour" }}
+                        {{  "Para cada estilo" }}
                       </div>
                     </div>
                   </div>

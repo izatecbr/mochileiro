@@ -29,7 +29,7 @@
       </div>
 
       <div class="headerMobile__right">
-        <button @click="() => pageNavigate('/tour-list-1')" class="d-flex">
+        <button @click="() => pageNavigate('/')" class="d-flex">
           <i class="icon-search text-18"></i>
         </button>
 
