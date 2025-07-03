@@ -9,7 +9,7 @@
         <div
           v-for="(option, i) in options"
           :key="i"
-          @click="handleTourTypeClick(option)"
+          @click="handleSetCategorias(option)"
           class="searchFormItemDropdown__item"
         >
           <button class="js-select-control-button">
@@ -26,10 +26,10 @@
 const store = useGlobalStore();
 const options = store.categorias.map((categoria) => categoria.legenda);
 defineProps(["active"]);
-const emits = defineEmits(["setTourType"]);
+const emits = defineEmits(["setCategorias", ]);
 
-const handleTourTypeClick = (option) => {
-  emits("setTourType", option);
+const handleSetCategorias = (option) => {
+  emits("setCategorias", option);
 };
 </script>
 

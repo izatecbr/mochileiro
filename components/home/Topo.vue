@@ -60,7 +60,7 @@
                 </div>
 
                 <div class="searchFormItem js-select-control js-form-dd">
-                  <div class="searchFormItem__button" @click="toggleDropdown('tourType')">
+                  <div class="searchFormItem__button" @click="toggleDropdown('categoria')">
                     <div class="searchFormItem__icon size-50 rounded-12 border-1 flex-center">
                       <i class="text-20 icon-flag"></i>
                     </div>
@@ -72,7 +72,7 @@
                     </div>
                   </div>
 
-                  <TourType @setTourType="setTourType" :active="currentActiveDD === 'tourType'" />
+                  <Categorias @setCategorias="setCategorias" :active="currentActiveDD === 'categoria'" />
                 </div>
               </div>
 
@@ -103,19 +103,19 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from "vue";
 
-import TourType from "~/components/common/dropdownSearch/TourType.vue";
 
 import { useRouter } from "vue-router";
+import Categorias from "~/components/common/dropdownSearch/Categorias.vue";
 import Periodo from "~/components/common/dropdownSearch/Periodo.vue";
 import Destinos from "../common/dropdownSearch/Destinos.vue";
 const router = useRouter();
 
 const currentActiveDD = ref("");
 const destino = ref("");
-const tourType = ref("");
+const categoria = ref("");
 const dropDownContainer = ref(null);
 
-watch([destino, tourType], () => {
+watch([destino, categoria], () => {
   currentActiveDD.value = "";
 });
 
@@ -135,8 +135,8 @@ const handleClick = (event) => {
 const setDestino = (locat) => {
   destino.value = destino.value == locat ? "" : locat;
 };
-const setTourType = (value) => {
-  tourType.value = tourType.value == value ? "" : value;
+const setCategorias = (value) => {
+  categoria.value = categoria.value == value ? "" : value;
 };
 
 onMounted(() => {
