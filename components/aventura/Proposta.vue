@@ -16,7 +16,7 @@
               <h5>From</h5>
               <div>
                 <span class="js-first-date">
-                  <Calender />
+                  <Periodo />
                 </span>
                 <span class="js-last-date"></span>
               </div>
@@ -77,9 +77,9 @@
 <script setup>
 import { ref, watchEffect } from "vue";
 
-import Calender from "../common/dropdownSearch/Calender";
 
 import { times } from "@/data/tourSingleContent";
+import Periodo from "../common/dropdownSearch/Periodo.vue";
 
 const props = defineProps(['valor', 'moeda'])
 
