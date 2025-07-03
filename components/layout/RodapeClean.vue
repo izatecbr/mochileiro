@@ -23,6 +23,8 @@
 </template>
 
 <script setup>
+import Socials from './components/Socials.vue';
+
 
 
 </script>
