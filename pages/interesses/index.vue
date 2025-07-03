@@ -1,19 +1,20 @@
-<template>
+div<template>
   <section class="layout-pt-xl layout-pb-xl">
     <h1 class="text-center mb-15">Interesses em destaque</h1>
     <div class="container">
       <div class="filters-container">
         <div style="display: flex; flex-direction: column;">
-          <AppInput style="width: 80dvw;" placeholder="Pesquisar interesses" icon="mdi:search" />
+          <AppInput v-model="inputBuscaInteresses" style="width: 80dvw;" placeholder="Pesquisar interesses"
+            icon="mdi:search" />
           <div style="display: flex; gap: 10px;">
             <AppDrowdown style="flex: 1;" v-model="categoriaSelecionada" :items="travelStyles"
               placeholder="Escolha uma categoria" @onSelect="item => setTravelStyle(item)" />
 
-            <AppDrowdown style="flex: 1;" v-model="categoriaSelecionada" placeholder="Destino"
-              @onSelect="item => setTravelStyle(item)" />
+            <AppDrowdown style="flex: 1;" v-model="destinoSelecionado" :items="destinos" placeholder="Escolher Destino"
+              @onSelect="item => setDestino(item)" />
 
-            <AppDrowdown style="flex: 1;" v-model="categoriaSelecionada" placeholder="Perído"
-              @onSelect="item => setTravelStyle(item)" />
+            <AppDrowdown style="flex: 1;" v-model="periodoSelecionado" :items="periodos" placeholder="Escolher Perído"
+              @onSelect="item => setPeriodo(item)" />
           </div>
         </div>
       </div>
@@ -41,15 +42,49 @@ const interesses = ref([]);
 const ddActive = ref(false);
 const travelStyle = ref("");
 
+const inputBuscaInteresses = ref("");
 const categoriaSelecionada = ref(null);
+const destinoSelecionado = ref(null);
+const periodoSelecionado = ref(null);
+
+const periodos = ["Escolher Perído", ...store.meses.map((periodo) => periodo.legenda)];
+const destinos = ["Escolher Destino", ...store.destinos.map((destino) => destino.legenda)]
 const travelStyles = ["Escolha uma categoria", "Experiência", "Aventura", "Atividade"];
 
 const filteredInteresses = computed(() => {
-  if (!travelStyle.value) return interesses.value;
-  return interesses.value.filter(
-    (item) => item.tipo.legenda === travelStyle.value
-  );
+  const searchTerm = inputBuscaInteresses.value.toLowerCase();
+
+  return interesses.value.filter((item) => {
+    const matchCategoria =
+      !travelStyle.value || item.tipo.legenda === travelStyle.value;
+
+    const matchDestino =
+      !destinoSelecionado.value ||
+      item.destinoObject?.legenda === destinoSelecionado.value;
+
+    const matchPeriodo =
+      !periodoSelecionado.value ||
+      item.data?.mes?.legenda === periodoSelecionado.value;
+
+    const matchSearch =
+      !searchTerm ||
+      item.legenda?.toLowerCase().includes(searchTerm) ||
+      item.descricao?.toLowerCase().includes(searchTerm) ||
+      item.tipo?.legenda?.toLowerCase().includes(searchTerm) ||
+      item.destinoObject?.legenda?.toLowerCase().includes(searchTerm);
+
+    return matchCategoria && matchDestino && matchPeriodo && matchSearch;
+  });
 });
+
+
+watch(
+  [travelStyle, destinoSelecionado, periodoSelecionado, inputBuscaInteresses],
+  () => {
+    currentPage.value = 1;
+  }
+);
+
 
 const currentPage = ref(1)
 const itemsPerPage = 8
@@ -71,7 +106,15 @@ const toggleDropDown = () => {
 
 const setTravelStyle = (style) => {
   travelStyle.value = style === "Escolha uma categoria" ? "" : style;
-  ddActive.value = false;
+
+};
+
+const setDestino = (destino) => {
+  destinoSelecionado.value = destino === "Escolher Destino" ? "" : destino;
+};
+
+const setPeriodo = (periodo) => {
+  periodoSelecionado.value = periodo === "Escolher Perído" ? "" : periodo;
 };
 
 
