@@ -30,7 +30,7 @@
 
         <div class="col-lg-4">
           <div class="d-flex justify-end js-pin-content">
-            <ExperienciaProposta :valor="objeto?.valor?.preco" :moeda="objeto?.valor?.moeda" />
+            <ExperienciaProposta :valor="objeto?.valor?.preco" :moeda="objeto?.valor?.moeda" :anfitriao="objeto?.anfitriaoObject" />
           </div>
         </div>
       </div>
