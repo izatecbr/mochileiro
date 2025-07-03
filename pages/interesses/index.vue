@@ -3,37 +3,32 @@
     <h1 class="text-center mb-15">Interesses em destaque</h1>
     <div class="container">
       <div class="filters-container">
-        <AppInput placeholder="Pesquisar interesses" icon="mdi:search" />
-              <AppDrowdown v-model="categoriaSelecionada" :items="travelStyles"  placeholder="Escolha uma categoria"
-        @onSelect="item => setTravelStyle(item)" />
+        <div style="display: flex; flex-direction: column;">
+          <AppInput style="width: 80dvw;" placeholder="Pesquisar interesses" icon="mdi:search" />
+          <div style="display: flex; gap: 10px;">
+            <AppDrowdown style="flex: 1;" v-model="categoriaSelecionada" :items="travelStyles"
+              placeholder="Escolha uma categoria" @onSelect="item => setTravelStyle(item)" />
 
-       <!-- <div ref="dropDownContainer" class="dropdown-container">
-          <div :class="{ 'is-active': ddActive }" class="dropdown">
-            <div @click="toggleDropDown" class="dropdown__button">
-              <span class="dropdown__text">{{ travelStyle || "Escolha uma categoria" }}</span>
-              <i class="icon-chevron-down ml-10"></i>
-            </div>
-            <div v-if="ddActive" class="dropdown__menu">
-              <div v-for="(style, index) in travelStyles" :key="index" @click="setTravelStyle(style)"
-                class="dropdown__item">
-                {{ style }}
-              </div>
-            </div>
+            <AppDrowdown style="flex: 1;" v-model="categoriaSelecionada" placeholder="Destino"
+              @onSelect="item => setTravelStyle(item)" />
+
+            <AppDrowdown style="flex: 1;" v-model="categoriaSelecionada" placeholder="Perído"
+              @onSelect="item => setTravelStyle(item)" />
           </div>
-        </div>-->
+        </div>
       </div>
-
-
 
       <!-- Grid Responsivo -->
       <div class="grid-container">
-        <div v-for="(elm, index) in filteredInteresses" :key="index" class="grid-item">
+        <div v-for="(elm, index) in paginatedInteresses" :key="index" class="grid-item">
           <nuxt-link :to="'/' + elm.tipo.rota + '/' + elm.lid"
             class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow">
             <InteressesCard :elm="elm" />
           </nuxt-link>
         </div>
       </div>
+
+      <AppPagination v-if="filteredInteresses.length > itemsPerPage" v-model="currentPage" :totalPages="totalPages" />
     </div>
   </section>
 </template>
@@ -49,6 +44,27 @@ const travelStyle = ref("");
 const categoriaSelecionada = ref(null);
 const travelStyles = ["Escolha uma categoria", "Experiência", "Aventura", "Atividade"];
 
+const filteredInteresses = computed(() => {
+  if (!travelStyle.value) return interesses.value;
+  return interesses.value.filter(
+    (item) => item.tipo.legenda === travelStyle.value
+  );
+});
+
+const currentPage = ref(1)
+const itemsPerPage = 8
+
+const paginatedInteresses = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage
+  const end = start + itemsPerPage
+  return filteredInteresses.value.slice(start, end)
+})
+
+const totalPages = computed(() => {
+  return Math.ceil(filteredInteresses.value.length / itemsPerPage)
+})
+
+
 const toggleDropDown = () => {
   ddActive.value = !ddActive.value;
 };
@@ -58,12 +74,6 @@ const setTravelStyle = (style) => {
   ddActive.value = false;
 };
 
-const filteredInteresses = computed(() => {
-  if (!travelStyle.value) return interesses.value;
-  return interesses.value.filter(
-    (item) => item.tipo.legenda === travelStyle.value
-  );
-});
 
 onMounted(() => {
   interesses.value = store.interesses;
@@ -137,9 +147,9 @@ onMounted(() => {
 /* Grid container */
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   /* 5 colunas fixas */
-  gap: 1.5rem;
+  gap: 1.2rem;
 }
 
 /* Responsividade */
