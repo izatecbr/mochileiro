@@ -8,7 +8,7 @@
     </span>
       <div class="container-socials">
         <NuxtLink class="anfitriao" :to="`/perfil/${anfitriao?.id}`">{{ anfitriao?.legenda }}</NuxtLink>
-        <NuxtLink v-if="anfitriao?.instagram" target="_blank" :to="anfitriao?.instagram">
+        <NuxtLink v-if="anfitriao?.instagram" target="_blank" :to="`https://www.instagram.com/${anfitriao?.instagram}`">
           <Icon class="social-icon" name="mdi:instagram" />
         </NuxtLink>
         <NuxtLink v-if="anfitriao?.telefone?.whatsapp" target="_blank"

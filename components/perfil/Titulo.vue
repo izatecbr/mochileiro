@@ -42,15 +42,15 @@
     </div>
     <div class="col-auto">
       <div class="d-flex x-gap-30 y-gap-10">
-        <a href="#" class="d-flex items-center">
-          <i class="icon-share flex-center text-16 mr-10"></i>
-          ({{ objeto?.telefone?.ddd}}) {{ objeto?.telefone?.numero}}
-        </a>
-
-        <a href="#" class="d-flex items-center">
-          <i class="icon-heart flex-center text-16 mr-10"></i>
+        <NuxtLink v-if="objeto?.instagram" target="_blank" :to="`https://www.instagram.com/${objeto?.instagram}`">
+          <Icon class="social-icon" name="mdi:instagram" />
           @{{ objeto?.instagram}}
-        </a>
+        </NuxtLink>
+        <NuxtLink v-if="objeto?.telefone?.whatsapp" target="_blank"
+                  :to="`https://wa.me/${objeto?.telefone?.numero}`">
+          <Icon class="social-icon" name="mdi:whatsapp" />
+          ({{ objeto?.telefone?.ddd}}) {{ objeto?.telefone?.numero}}
+        </NuxtLink>
       </div>
     </div>
   </div>
