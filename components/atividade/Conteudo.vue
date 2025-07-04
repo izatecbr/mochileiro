@@ -21,6 +21,12 @@
           <AtividadeValorAnfitriacao style="margin-top: 4px;" :valor="objeto?.valor" :anfitriao="objeto?.anfitriaoObject"/>
         </div>
 
+        <div class="col-lg-4">
+          <div class="d-flex justify-end js-pin-content">
+            <CommonContatoInteresse :legenda="objeto?.legenda" :valor="objeto?.valor?.preco" :moeda="objeto?.valor?.moeda" :anfitriao="objeto?.anfitriaoObject" />
+          </div>
+        </div>
+        
       </div>
     </div>
   </section>
