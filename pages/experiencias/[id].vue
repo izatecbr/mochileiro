@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-    <ExperienciaConteudo :objeto="objeto" />
+    <ExperienciaConteudo :objeto="objeto" :interesse="interesse" />
   </main>
 </template>
 
@@ -24,18 +24,14 @@ import { allTour } from '~/data/tours'
 const route = useRoute()
 const store = useGlobalStore()
 const objeto = ref(null)
-const idExperiencia = route.params.id
-const id = route.params.id;
-const tour = allTour.find((item) => item.id == id) || allTour[0];
+const interesse = ref(null)
+const objectId = route.params.id;
 onMounted(() => {
-  objeto.value = store.getExperienciaById(Number(idExperiencia))
+  objeto.value = store.getExperienciaById(Number(objectId))
+  const id = `X${objeto.value.id}`
+  interesse.value = store.getIntereseById(id)
 })
 
-function formatarData(dataString) {
-  if (!dataString) return ''
-  const data = new Date(dataString)
-  return format(data, "dd 'de' MMMM 'de' yyyy", { locale: ptBR })
-}
 
 function atividadeEscolhida(atividades) {
   return atividades.filter(a => a.escolhida)

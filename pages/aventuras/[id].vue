@@ -11,17 +11,22 @@
         </div>
       </div>
     </div>
-    <AventuraConteudo :objeto="objeto" />
+    <AventuraConteudo :objeto="objeto" :interesse="interesse" />
   </main>
 </template>
 
 <script setup>
+import {useRoute} from "#imports";
+
 const route = useRoute()
 const store = useGlobalStore()
 const objeto = ref(null)
-const id = route.params.id;
+const interesse = ref(null)
+const objectId = route.params.id;
 onMounted(() => {
-  objeto.value = store.getAventuraById(Number(id))
+  objeto.value = store.getAventuraById(Number(objectId))
+  const id = `V${objeto.value.id}`
+  interesse.value = store.getIntereseById(id)
 })
 
 </script>

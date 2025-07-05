@@ -28,7 +28,7 @@
 
         <div class="col-lg-4">
           <div class="d-flex justify-end js-pin-content">
-            <CommonContatoInteresse :legenda="objeto?.legenda" :valor="objeto?.valor?.preco" :moeda="objeto?.valor?.moeda" :anfitriao="objeto?.anfitriaoObject" />
+            <CommonContatoInteresse :interesse="interesse" />
           </div>
         </div>
       </div>
@@ -42,7 +42,7 @@ import { ref, watch } from "vue";
 const { $http } = useNuxtApp();
 const { pexels } = $http;
 
-const props = defineProps(["objeto"]);
+const props = defineProps(['objeto','interesse']);
 const images = ref([]);
 const isLoading = ref(false);
 

@@ -292,6 +292,7 @@ export const useGlobalStore = defineStore("database", {
           anfitriao: item.anfitriao,
           valor,
           tipo: {
+            sigla:prefixo,
             legenda: tipo,
             rota: tipo
                 .toLowerCase()
@@ -304,8 +305,8 @@ export const useGlobalStore = defineStore("database", {
       };
 
       const atividades = this.atividades.map((a) => mapItem(a, "Atividade", "T"));
-      const aventuras = this.aventuras.map((a) => mapItem(a, "Aventura", "A"));
-      const experiencias = this.experiencias.map((e) => mapItem(e, "Experiência", "E"));
+      const aventuras = this.aventuras.map((a) => mapItem(a, "Aventura", "V"));
+      const experiencias = this.experiencias.map((e) => mapItem(e, "Experiência", "X"));
 
       this.interesses = [...experiencias, ...aventuras, ...atividades];
 
