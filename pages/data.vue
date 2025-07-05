@@ -2,6 +2,7 @@
 <template>
   <section class="hero -type-3">
   <div >
+    <NewsletterCard />
     <DBView v-for="n in 1" :key="n" />
   </div>
     </section>/

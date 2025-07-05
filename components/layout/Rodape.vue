@@ -52,8 +52,10 @@
               </p>
 
               <div class="footer__newsletter">
-                <input type="Email" placeholder="Seu endereço de e-mail" />
-                <button>Enviar</button>
+                <form @submit.prevent="handleSubscribe">
+                  <input v-model="email" type="Email" placeholder="Seu endereço de e-mail" />
+                  <button type="submit">Enviar</button>
+                </form>
               </div>
             </div>
           </div>
@@ -78,4 +80,12 @@
 <script setup>
 import FooterLinks from "./components/FooterLinks";
 import Socials from "./components/Socials";
+const { $supabase } = useNuxtApp()
+const email = ref('')
+const handleSubscribe = async () => {
+  const { error } = await $supabase
+      .from('tab_email') // nome da sua tabela
+      .insert([{ email: email.value,cancelado:false }])
+
+}
 </script>
