@@ -41,7 +41,6 @@ defineProps(['atividade'])
   position: relative;
   display: flex;
   flex-direction: column;
-  padding: 0.3rem;
   border-radius: 10px;
 
 }
