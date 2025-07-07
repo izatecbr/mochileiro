@@ -4,7 +4,9 @@ export default defineNuxtConfig({
   modules: ['@pinia/nuxt', '@nuxt/image', '@nuxt/icon'],
   runtimeConfig: {
     public: {
-      pexelsKey: ''
+      pexelsKey: '',
+      supabaseStorageUrl: '',
+      supabaseKey: ''
     },
   },
   image: {
