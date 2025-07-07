@@ -2,7 +2,7 @@
   <section class="pt-1">
     <div class="container">
       <ExperienciaTitulo :objeto="objeto" />
-      <ExperienciaGaleria />
+      <CommonGaleria :contexto="'experiencias'" />
     </div>
   </section>
 

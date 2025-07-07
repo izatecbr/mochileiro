@@ -279,3 +279,5 @@ Turistas que querem ver a neve e conhecer os Andes sem a necessidade de esquiar.
 Amantes da fotografia e da natureza.
 
 panda-1426cf46-7261-4db3-8be4-09ed2bfd93ba
+
+NUXT_PUBLIC_SUPABASE_STORAGE_URL=https://bvnupbtbbaobfnmoidoc.supabase.co/storage/v1/object/public
