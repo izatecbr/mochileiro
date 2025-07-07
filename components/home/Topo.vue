@@ -31,7 +31,7 @@
                     <div class="searchFormItem__content">
                       <h5>Destino</h5>
                       <div class="js-select-control-chosen">
-                        {{ destino ? destino : "Destinos mais populares" }}
+                        {{ destino ?? "Destinos mais populares" }}
                       </div>
                     </div>
                   </div>
@@ -47,7 +47,7 @@
                     <div class="searchFormItem__content">
                       <h5>Quando</h5>
                       <div class="js-select-control-chosen">
-                        {{ "Melhores temporadas" }}
+                        {{ periodo ?? "Melhores temporadas" }}
                       </div>
                       <div>
                         <span class="js-first-date">
@@ -67,7 +67,7 @@
                     <div class="searchFormItem__content">
                       <h5>Categorias</h5>
                       <div class="js-select-control-chosen">
-                        {{  "Para cada estilo" }}
+                        {{ categoria ?? "Para cada estilo" }}
                       </div>
                     </div>
                   </div>
@@ -77,7 +77,7 @@
               </div>
 
               <div class="searchForm__button">
-                <button @click="searchTour" class="button -dark-1 bg-accent-1 rounded-200 text-white">
+                <button @click="montarQueryInteresses" class="button -dark-1 bg-accent-1 rounded-200 text-white">
                   <i class="icon-search text-16 mr-10"></i>
                   Buscar
                 </button>
@@ -111,9 +111,9 @@ import Destinos from "../common/dropdownSearch/Destinos.vue";
 const router = useRouter();
 
 const currentActiveDD = ref("");
-const destino = ref("");
-const categoria = ref("");
-const periodo = ref("");
+const destino = ref(null);
+const categoria = ref(null);
+const periodo = ref(null);
 const dropDownContainer = ref(null);
 
 watch([destino, categoria], () => {
@@ -133,28 +133,16 @@ const handleClick = (event) => {
   }
 };
 
+//todo, refatorar
 const setDestino = (value) => {
-  router.push({
-    name: "interesses",
-    query: { destino: value },
-  })
   destino.value = destino.value == value ? "" : value;
 };
 
 const setPeriodo = (value) => {
-  router.push({
-    name: "interesses",
-    query: { periodo: value },
-  })
   periodo.value = periodo.value == value ? "" : value;
 };
 
-
 const setCategorias = (value) => {
-    router.push({
-    name: "interesses",
-    query: { categoria: value },
-  })
   categoria.value = categoria.value == value ? "" : value;
 };
 
@@ -166,8 +154,10 @@ onUnmounted(() => {
   document.removeEventListener("click", handleClick);
 });
 
-const searchTour = () => {
-  // Your logic for searching tour here
-  router.push("/tour-list-1");
+const montarQueryInteresses = () => {
+  router.push({
+    name: "interesses",
+    query: { categoria: categoria.value, destino: destino.value, periodo: periodo.value },
+  })
 };
 </script>
