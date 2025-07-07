@@ -2,6 +2,7 @@
   <section class="pt-1">
     <div class="container">
       <AtividadeTitulo :objeto="objeto" />
+      <CommonGaleria :contexto="'atividades'" />
     </div>
   </section>
 
