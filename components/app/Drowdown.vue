@@ -135,7 +135,7 @@ onBeforeUnmount(() => {
 }
 
 .dropdown__button {
-  height: 60px;
+  height: 50px;
   padding: 0 20px;
   display: flex;
   align-items: center;

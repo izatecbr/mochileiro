@@ -16,8 +16,8 @@ div<template>
             <AppDrowdown style="flex: 1;" v-model="periodoSelecionado" :items="periodos" placeholder="Escolher Perído"
               @onSelect="item => setPeriodo(item)" />
 
-            <AppDrowdown style="flex: 1;" v-model="categoriaSelecionada" :items="categorias" placeholder="Escolher Categoria"
-              @onSelect="item => setCategoria(item)" />
+            <AppDrowdown style="flex: 1;" v-model="categoriaSelecionada" :items="categorias"
+              placeholder="Escolher Categoria" @onSelect="item => setCategoria(item)" />
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@ div<template>
 
       <div v-else class="text-center">
         <Icon style="font-size: x-large; margin-top: 1.8rem;" name="lucide:inbox" />
-        <p >Nenhum interesse encontrado.</p>
+        <p>Nenhum interesse encontrado.</p>
       </div>
 
       <AppPagination v-if="filteredInteresses.length > itemsPerPage" v-model="currentPage" :totalPages="totalPages" />
@@ -68,11 +68,18 @@ const filteredInteresses = computed(() => {
   const searchTerm = inputBuscaInteresses.value.toLowerCase();
 
   return interesses.value.filter((item) => {
-
     const matchCategoria =
-      !categoriaSelecionada.value || item.categoria?.legenda === categoriaSelecionada.value;
+      !categoriaSelecionada.value ||
+      (item.destinoObject?.classificacoesList?.some((c) => {
+        return c => c.categoria?.legenda === categoriaSelecionada.value
+      }
+      ));
+
+    console.log(matchCategoria)
+
     const matchTipo =
-      !tipoInteresseSelecionado.value || item.tipo.legenda === tipoInteresseSelecionado.value;
+      !tipoInteresseSelecionado.value ||
+      item.tipo?.legenda === tipoInteresseSelecionado.value;
 
     const matchDestino =
       !destinoSelecionado.value ||
@@ -89,9 +96,10 @@ const filteredInteresses = computed(() => {
       item.tipo?.legenda?.toLowerCase().includes(searchTerm) ||
       item.destinoObject?.cidadeObject?.legenda?.toLowerCase().includes(searchTerm);
 
-    return matchTipo && matchDestino && matchPeriodo && matchSearch && matchCategoria;
+    return matchCategoria && matchTipo && matchDestino && matchPeriodo && matchSearch;
   });
 });
+
 
 definePageMeta({
   layout: 'interesses'

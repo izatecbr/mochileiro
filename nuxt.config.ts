@@ -1,15 +1,12 @@
 export default defineNuxtConfig({
   ssr: false,
-  runtimeConfig: {
-    public: {
-      SUPABASE_STORAGE_URL: process.env.NUXT_PUBLIC_SUPABASE_STORAGE_URL
-    }
-  },
   compatibilityDate: '2025-05-15',
   modules: ['@pinia/nuxt', '@nuxt/image', '@nuxt/icon'],
   runtimeConfig: {
     public: {
-      pexelsKey: ''
+      pexelsKey: '',
+      supabaseStorageUrl: '',
+      supabaseKey: ''
     },
   },
   image: {

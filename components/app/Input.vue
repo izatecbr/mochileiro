@@ -144,7 +144,7 @@ const radiusClass = computed(() => ({
 }
 
 .iz-size-md {
-  height: 60px;
+  height: 50px;
 }
 
 .iz-size-lg {
