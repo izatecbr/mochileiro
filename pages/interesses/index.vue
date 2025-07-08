@@ -3,7 +3,7 @@ div<template>
     <h1 class="text-center mb-15">Interesses em destaque</h1>
     <div class="container">
       <div class="filters-container">
-        <div style="display: flex; flex-direction: column;">
+        <div style="display: flex; flex-direction: column; width: 84dvw;">
           <AppInput v-model="inputBuscaInteresses" style="width: 84dvw;" placeholder="Pesquisar interesses"
             icon="mdi:search" />
           <div style="display: flex; gap: 5px;  margin-top: 10px; flex-wrap: wrap;">
@@ -104,11 +104,12 @@ definePageMeta({
 
 
 watch(
-  [tipoInteresseSelecionado, destinoSelecionado, periodoSelecionado, inputBuscaInteresses],
+  [tipoInteresseSelecionado, destinoSelecionado, periodoSelecionado, categoriaSelecionada],
   () => {
     currentPage.value = 1;
   }
 );
+
 
 
 const currentPage = ref(1)
