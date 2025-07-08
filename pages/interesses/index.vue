@@ -6,7 +6,7 @@ div<template>
         <div style="display: flex; flex-direction: column;">
           <AppInput v-model="inputBuscaInteresses" style="width: 80dvw;" placeholder="Pesquisar interesses"
             icon="mdi:search" />
-          <div style="display: flex; gap: 5px;   margin-top: 10px; flex-wrap: wrap;">
+          <div style="display: flex; gap: 5px;  margin-top: 10px; flex-wrap: wrap;">
             <AppDrowdown style="flex: 1;" v-model="tipoInteresseSelecionado" :items="tiposInteresse"
               placeholder="Escolha um tipo" @onSelect="item => setTipoInteresse(item)" />
 
