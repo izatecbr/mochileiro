@@ -4,21 +4,31 @@ div<template>
     <div class="container">
       <div class="filters-container">
         <div style="display: flex; flex-direction: column; width: 84dvw;">
-          <AppInput v-model="inputBuscaInteresses" style="width: 84dvw;" placeholder="Pesquisar interesses"
-            icon="mdi:search" />
-          <div style="display: flex; gap: 5px;  margin-top: 10px; flex-wrap: wrap;">
-            <AppDrowdown style="flex: 1;" v-model="tipoInteresseSelecionado" :items="tiposInteresse"
-              placeholder="Escolha um tipo" @onSelect="item => setTipoInteresse(item)" />
 
-            <AppDrowdown style="flex: 1;" v-model="destinoSelecionado" :items="destinos" placeholder="Escolher Destino"
-              @onSelect="item => setDestino(item)" />
+          <div class="search-filtro-row">
+            <AppInput v-model="inputBuscaInteresses" class="search-input" placeholder="Pesquisar interesses"
+              icon="mdi:search" />
 
-            <AppDrowdown style="flex: 1;" v-model="periodoSelecionado" :items="periodos" placeholder="Escolher Perído"
-              @onSelect="item => setPeriodo(item)" />
-
-            <AppDrowdown style="flex: 1;" v-model="categoriaSelecionada" :items="categorias"
-              placeholder="Escolher Categoria" @onSelect="item => setCategoria(item)" />
+            <button class="button-filtro" @click="toggleFiltros">
+              <Icon name="lucide:sliders-horizontal" />
+            </button>
           </div>
+
+          <transition name="fade-height">
+            <div v-show="filtrosVisiveis" class="dropdowns-container">
+              <AppDrowdown style="flex: 1;" v-model="tipoInteresseSelecionado" :items="tiposInteresse"
+                placeholder="Escolha um tipo" @onSelect="item => setTipoInteresse(item)" />
+
+              <AppDrowdown style="flex: 1;" v-model="destinoSelecionado" :items="destinos"
+                placeholder="Escolher Destino" @onSelect="item => setDestino(item)" />
+
+              <AppDrowdown style="flex: 1;" v-model="periodoSelecionado" :items="periodos" placeholder="Escolher Perído"
+                @onSelect="item => setPeriodo(item)" />
+
+              <AppDrowdown style="flex: 1;" v-model="categoriaSelecionada" :items="categorias"
+                placeholder="Escolher Categoria" @onSelect="item => setCategoria(item)" />
+            </div>
+          </transition>
         </div>
       </div>
 
@@ -56,6 +66,7 @@ const tipoInteresseSelecionado = ref(null);
 const destinoSelecionado = ref(null);
 const periodoSelecionado = ref(null);
 const categoriaSelecionada = ref(null);
+const filtrosVisiveis = ref(true);
 
 const categorias = ["Escolha uma categoria", ...store.categorias.map((categoria) => categoria.legenda)];
 const periodos = ["Escolher Perído", ...store.meses.map((periodo) => periodo.legenda)];
@@ -97,11 +108,13 @@ const filteredInteresses = computed(() => {
   });
 });
 
+const toggleFiltros = () => {
+  filtrosVisiveis.value = !filtrosVisiveis.value;
+};
 
 definePageMeta({
   layout: 'interesses'
 })
-
 
 watch(
   [tipoInteresseSelecionado, destinoSelecionado, periodoSelecionado, categoriaSelecionada],
@@ -109,8 +122,6 @@ watch(
     currentPage.value = 1;
   }
 );
-
-
 
 const currentPage = ref(1)
 const itemsPerPage = 8
@@ -124,7 +135,6 @@ const paginatedInteresses = computed(() => {
 const totalPages = computed(() => {
   return Math.ceil(filteredInteresses.value.length / itemsPerPage)
 })
-
 
 const toggleDropDown = () => {
   ddActive.value = !ddActive.value;
@@ -145,7 +155,6 @@ const setDestino = (destino) => {
 const setPeriodo = (periodo) => {
   periodoSelecionado.value = periodo === "Escolher Perído" ? "" : periodo;
 };
-
 
 onMounted(() => {
   interesses.value = store.interesses;
@@ -193,16 +202,90 @@ onMounted(() => {
   color: #555;
 }
 
-.search-input {
-  padding: 0.5rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  font-size: 1rem;
+.search-filtro-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* centraliza verticalmente */
+  gap: 5px;
+  width: 100%;
 }
 
-.dropdown-container {
-  position: relative;
+.search-input {
+  flex: 1;
+  height: 40px;
+  /* ou a mesma altura do botão */
 }
+
+.button-filtro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  margin-top: 10px;
+  height: 40px;
+  background-color: white;
+  border: 1px solid #E7E6E6;
+  border-radius: 10px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.button-filtro:focus {
+  outline: 1.5px solid #E7E6E6;
+}
+
+/* Botão toggle só aparece no mobile */
+.toggle-filtros-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 28px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+}
+
+.toggle-filtros-btn .rotated {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+
+.toggle-filtros-btn .icon {
+  transition: transform 0.3s ease;
+}
+
+/* animação suave para abrir/fechar */
+.fade-height-enter-active,
+.fade-height-leave-active {
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+}
+
+.fade-height-enter-from,
+.fade-height-leave-to {
+  max-height: 0;
+  opacity: 0;
+}
+
+.fade-height-enter-to,
+.fade-height-leave-from {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* Container dos dropdowns no mobile em colunas */
+.dropdowns-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
 
 .dropdown {
   position: relative;
@@ -245,6 +328,7 @@ onMounted(() => {
   gap: 1.2rem;
 }
 
+
 /* Responsividade */
 @media (max-width: 1200px) {
   .grid-container {
@@ -258,9 +342,33 @@ onMounted(() => {
   }
 }
 
+@media (min-width: 767px) {
+  .toggle-filtros-btn {
+    display: none;
+  }
+}
+
+
 @media (max-width: 768px) {
+  .dropdowns-container {
+    flex-direction: column;
+  }
+
+  .dropdowns-container>* {
+    flex: unset;
+    width: 100%;
+  }
+
+  .toggle-filtros-btn {
+    display: flex;
+  }
+
   .grid-container {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-input {
+    width: 84dvw
   }
 }
 
