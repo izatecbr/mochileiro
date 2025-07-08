@@ -78,14 +78,33 @@
 </template>
 
 <script setup>
-import FooterLinks from "./components/FooterLinks";
-import Socials from "./components/Socials";
-const { $supabase } = useNuxtApp()
-const email = ref('')
-const handleSubscribe = async () => {
-  const { error } = await $supabase
-      .from('tab_email') // nome da sua tabela
-      .insert([{ email: email.value,cancelado:false }])
+import FooterLinks from './components/FooterLinks.vue'
+import Socials from './components/Socials.vue'
 
+const email = ref('')
+const message = ref('')
+const success = ref(false)
+const loading = ref(false)
+
+const handleSubscribe = async () => {
+  loading.value = true
+  message.value = ''
+  success.value = false
+
+  try {
+    const res = await $fetch('/api/newsletter', {
+      method: 'POST',
+      body: { email: email.value }
+    })
+    message.value = res.message
+    success.value = true
+    email.value = ''
+  } catch (err) {
+    message.value = err?.data?.message || 'Erro ao cadastrar. Tente novamente.'
+    success.value = false
+  } finally {
+    loading.value = false
+  }
 }
 </script>
+

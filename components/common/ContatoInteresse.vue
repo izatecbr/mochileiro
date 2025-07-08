@@ -21,23 +21,18 @@ const props = defineProps(['interesse'])
 const { $supabase } = useNuxtApp()
 
 const handleWhatsClick = async () => {
-  const { $supabase } = useNuxtApp()
-  const interesse = props.interesse;
-  await $supabase
-      .from('tab_interesse')
-      .insert([
-        {
-          anfitriao_id: interesse.anfitriaoObject.id,
-          interesse_tipo: interesse.tipo.sigla,
-          interesse_id: interesse.lid,
-          legenda: interesse.legenda,
-          valor: interesse.valor.quantia
-        }
-      ])
+const res = await $fetch('/api/whatsapp', {
+  method: 'POST',
+  body: { interesse: props.interesse }
+})
 
-  const anfitriao = interesse.anfitriaoObject;
-  const whats =''+anfitriao.telefone.ddi+anfitriao.telefone.ddd+anfitriao.telefone.numero;
-  // Redirecionar pro WhatsApp (sem recarregar a página)
-  window.open(`https://wa.me/${whats}?text=Olá, descobri você pelo site Mochileiro.tec e gostaria de saber um pouco mais sobre esta ${interesse.tipo.legenda} - ${interesse.legenda}`, '_blank')
+console.log(res)
+
+if (res?.whatsappUrl) {
+  window.open(res.whatsappUrl, '_blank')
+} else {
+  alert(res?.message || 'Erro ao registrar interesse')
+}
+
 }
 </script>
