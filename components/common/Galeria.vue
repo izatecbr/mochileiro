@@ -6,6 +6,8 @@ const props = defineProps(["contexto"]);
 const activeLightBox = ref(false)
 const route = useRoute()
 const baseUrl = 'https://bvnupbtbbaobfnmoidoc.supabase.co/storage/v1/object/public';
+const bucket = 'mochileiro'
+const path = `${props.contexto}/${route.params.id}`
 
 const imagens = [1, 2, 3, 4].map((num) => ({
   id: num,
