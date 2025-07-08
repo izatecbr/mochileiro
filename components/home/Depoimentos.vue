@@ -8,7 +8,6 @@
           </h2>
         </div>
       </div>
-
       <div class="row justify-center pt-60 md:pt-30">
         <div class="col-xl-7 col-md-8 col-sm-10">
           <div class="overflow-hidden js-testimonialsSlider_1">
@@ -60,7 +59,7 @@
             class="testimonialsPagination -type-1 pt-60 md:pt-40 testimonialsSlider_1-pagination js-testimonialsSlider_1-pagination"
           >
             <div
-              v-for="(elm, i) in testimonialsTwo"
+              v-for="(elm, i) in imagens"
               :key="i"
               @click="handlePaginationClick(i)"
               :class="{ 'is-active': currentSlideIndex === i }"
@@ -86,10 +85,34 @@
 </template>
 
 <script setup>
-import { testimonialsTwo } from "@/data/testimonials";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination } from "swiper/modules";
 import { ref, onMounted } from "vue";
+
+const baseUrl = 'https://bvnupbtbbaobfnmoidoc.supabase.co/storage/v1/object/public/mochileiro/usuarios';
+const imagens = [{
+  id:6,
+  name: "Kayla Deodato",
+  role: "Analista LowCode",
+  comment: `O blog traz informações importantes sobre o pré-planejamento da viagem, detalhando preços e indicando os estabelecimentos que oferecem os serviços e suporte necessários. Isso ajuda muito a organizar tudo com mais segurança e clareza.`,
+},
+  {
+    id:7,
+    name: "Eberte Sampaio",
+    role: "Programador Java Júnior",
+    comment: `O site explica bem cada etapa das aventuras, facilitando o planejamento e evitando surpresas. Os detalhes sobre preparo e desafios tornam o conteúdo confiável e útil para quem quer viver experiências parecidas.`,
+  },
+  {
+    id:8,
+    name: "Evandro Lima",
+    role: "Programador Java Pleno",
+    comment: `Adoro acompanhar esse blog! As histórias são super inspiradoras e me ajudam muito a planejar minhas viagens. Sempre encontro dicas valiosas e relatos reais que parecem um convite para a aventura. A comunidade também é muito ativa, adoro ler os comentários e trocar experiências. Recomendo para todo mundo que ama viajar!`,
+  },].map((user) => ({
+  image: `${baseUrl}/${user.id}/6.jpg`,
+  name:user.name,
+  role: user.role,
+  comment: user.comment,
+}))
 
 const swiperRef = ref(null);
 const currentSlideIndex = ref(0);
