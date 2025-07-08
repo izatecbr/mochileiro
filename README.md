@@ -1,3 +1,16 @@
+| ID | Resolução | Rotas                                                 | Descrição                                                              |
+|----|-----------|-------------------------------------------------------|------------------------------------------------------------------------|
+| 1  | 1155x765  | Contexto(experiencias, aventuras, atividades, perfis) | Imagem principal e de destaque do contexto                             |
+| 2  | 765x375   | Contexto(experiencias, aventuras, atividades, perfis) | Imagem secundária e de destaque do contexto                            |
+| 3  | 375x375   | Contexto(experiencias, aventuras, atividades, perfis) | Terceira imagem de destaque do contexto                                |
+| 4  | 375x375   | Contexto(experiencias, aventuras, atividades, perfis) | Quarta imagem de destaque do contexto                                  |
+| 5  | 421x301   | Interesses nas rotas home e interesses                | Imagem aplicada em um card                                             |
+| 6  | 105x106   | Perfil small de usuários                              | Pequena imagem circular com a foto de perfil do usuário                |
+| 7  | ???       | Perfil de usuários                                    | Imagem retangular estilo Profile Foto  com a foto de perfil do usuário |
+
+
+
+
 Produtos -> Anuncios
 
 Experiencias, Aventuras, Atividades -> Interesses Clasificados
