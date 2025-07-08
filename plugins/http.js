@@ -12,7 +12,7 @@ export default defineNuxtPlugin((nuxtApp) => {
     onRequest({ options }) {
       options.headers = {
         ...options.headers,
-        Authorization: config.public.pexelsKey
+        Authorization: import.meta.env.PEXELS_KEY || ''
       }
     },
     onResponse({ response }) {

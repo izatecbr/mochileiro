@@ -18,8 +18,6 @@
 <script setup>
 const props = defineProps(['interesse'])
 
-const { $supabase } = useNuxtApp()
-
 const handleWhatsClick = async () => {
 const res = await $fetch('/api/whatsapp', {
   method: 'POST',

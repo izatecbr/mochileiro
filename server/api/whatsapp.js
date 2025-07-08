@@ -11,8 +11,8 @@ export default defineEventHandler(async (event) => {
   const interesse = body.interesse
 
   const supabase = createClient(
-    config.public.supabaseUrl,
-    config.public.supabaseKey
+    import.meta.env.SUPABASE_URL,
+    import.meta.env.SUPABASE_KEY
   )
 
   const { error } = await supabase

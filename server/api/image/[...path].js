@@ -2,8 +2,9 @@ import { createError, sendStream } from 'h3'
 import { $fetch } from 'ofetch'
 
 export default defineEventHandler(async (event) => {
+
   const config = useRuntimeConfig()
-  const baseUrl = config.public.supabaseStorageUrl
+  const baseUrl =  import.meta.env.SUPABASE_STORAGE_URL
   const bucket = 'mochileiro'
 
   const rawPath = event.context.params.path
