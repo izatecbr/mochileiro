@@ -301,7 +301,7 @@ export const useGlobalStore = defineStore("database", {
           },
           destinoObject: this.getLocalizacaoById(item.localizacao),
           anfitriaoObject: this.getUsuarioById(item.anfitriao),
-          imagem:`https://bvnupbtbbaobfnmoidoc.supabase.co/storage/v1/object/public/mochileiro/${contexto}/${item.id}/5.jpg`
+          imagem:`/api/image/${contexto}/${item.id}/5.jpg`
         };
       };
 
