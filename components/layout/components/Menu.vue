@@ -4,11 +4,11 @@
       <div class="desktopNav">
 
         <div class="desktopNav__item">
-          <a href="/interesses">Experiências</a>
+          <a href="/interesses?tipo=Experiência">Experiências</a>
         </div>
 
         <div class="desktopNav__item">
-          <a href="/interesses">Aventuras</a>
+          <a href="/interesses?tipo=Aventura">Aventuras</a>
         </div>
 
         <div class="desktopNav__item">

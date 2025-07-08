@@ -4,7 +4,7 @@ div<template>
     <div class="container">
       <div class="filters-container">
         <div style="display: flex; flex-direction: column;">
-          <AppInput v-model="inputBuscaInteresses" style="width: 80dvw;" placeholder="Pesquisar interesses"
+          <AppInput v-model="inputBuscaInteresses" style="width: 84dvw;" placeholder="Pesquisar interesses"
             icon="mdi:search" />
           <div style="display: flex; gap: 5px;  margin-top: 10px; flex-wrap: wrap;">
             <AppDrowdown style="flex: 1;" v-model="tipoInteresseSelecionado" :items="tiposInteresse"
@@ -61,7 +61,6 @@ const categorias = ["Escolha uma categoria", ...store.categorias.map((categoria)
 const periodos = ["Escolher Perído", ...store.meses.map((periodo) => periodo.legenda)];
 const destinos = ["Escolher Destino", ...store.destinos.map((destino) => destino.legenda)]
 
-//nomeclatura categrias ou tipo ?
 const tiposInteresse = ["Escolha um tipo", "Experiência", "Aventura", "Atividade"];
 
 const filteredInteresses = computed(() => {
@@ -74,8 +73,6 @@ const filteredInteresses = computed(() => {
         return c => c.categoria?.legenda === categoriaSelecionada.value
       }
       ));
-
-    console.log(matchCategoria)
 
     const matchTipo =
       !tipoInteresseSelecionado.value ||
@@ -152,10 +149,11 @@ const setPeriodo = (periodo) => {
 onMounted(() => {
   interesses.value = store.interesses;
 
-  console.log("Interesses:", interesses.value[0]?.destinoObject?.cidadeObject?.legenda);
-  console.log(destinoSelecionado.value)
+  const { categoria, destino, periodo, tipo } = route.query
 
-  const { categoria, destino, periodo } = route.query
+  if (tipo && tipo !== 'Escolha um tipo') {
+    tipoInteresseSelecionado.value = decodeURIComponent(tipo)
+  }
 
   if (categoria && categoria !== 'Escolha uma categoria') {
     categoriaSelecionada.value = decodeURIComponent(categoria)
