@@ -68,7 +68,26 @@ const periodoSelecionado = ref(null);
 const categoriaSelecionada = ref(null);
 const filtrosVisiveis = ref(true);
 
-const categorias = ["Escolha uma categoria", ...store.categorias.map((categoria) => categoria.legenda)];
+const categorias = computed(() => {
+  const base = [{
+    label: "Escolha uma categoria",
+    value: null,
+    disabled: true
+  }];
+  
+  if (store.categorias) {
+    return base.concat(store.categorias.map(categoria => ({
+      label: categoria.legenda,
+      value: categoria.legenda,
+      children: categoria.categorias?.map(subCategoria => ({
+        label: subCategoria.legenda,
+        value: subCategoria.legenda
+      })) || []
+    })));
+  }
+  
+  return base;
+});
 const periodos = ["Escolher Perído", ...store.meses.map((periodo) => periodo.legenda)];
 const destinos = ["Escolher Destino", ...store.destinos.map((destino) => destino.legenda)]
 
@@ -145,7 +164,7 @@ const setTipoInteresse = (value) => {
 };
 
 const setCategoria = (categoria) => {
-  categoriaSelecionada.value = categoria === "Escolha uma categoria" ? "" : categoria;
+  categoriaSelecionada.value = categoria?.value === "Escolha uma categoria" ? "" : categoria?.value;
 };
 
 const setDestino = (destino) => {
