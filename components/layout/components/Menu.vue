@@ -43,7 +43,7 @@
         </div>
 
         <div class="desktopNav__item">
-          <nuxt-link to="/contact">Câmbio</nuxt-link>
+          <nuxt-link to="/">Câmbio</nuxt-link>
         </div>
       </div>
     </div>
