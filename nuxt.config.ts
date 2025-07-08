@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     public: {
       pexelsKey: '',
       supabaseStorageUrl: '',
+      supabaseUrl: '',
       supabaseKey: ''
     },
   },

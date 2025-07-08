@@ -23,7 +23,7 @@ const handleSubscribe = async () => {
   success.value = false
 
   try {
-    const res = await $fetch('/api/newsletter', {
+    const res = await $fetch('/api/whatsapp', {
       method: 'POST',
       body: { email: email.value }
     })

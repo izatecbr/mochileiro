@@ -10,10 +10,8 @@ export default defineEventHandler(async (event) => {
 
   const interesse = body.interesse
 
-  console.log(interesse)
-
   const supabase = createClient(
-    config.public.supabaseStorageUrl,
+    config.public.supabaseUrl,
     config.public.supabaseKey
   )
 
