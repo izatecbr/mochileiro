@@ -1,26 +1,21 @@
 <script setup>
-import { ref } from 'vue';
-import ImageLightBox from '~/components/common/ImageLightBox.vue';
+import { ref } from 'vue'
+import ImageLightBox from '~/components/common/ImageLightBox.vue'
 
-const props = defineProps(["contexto"]);
+const props = defineProps(['contexto'])
 const activeLightBox = ref(false)
 const route = useRoute()
-const baseUrl = useRuntimeConfig().public.supabaseStorageUrl;
-const bucket = 'mochileiro'
+
 const path = `${props.contexto}/${route.params.id}`
 
-const imagens = [1, 2, 3, 4].map((num) => ({
+const imagens = [1, 2, 3, 4].map(num => ({
   id: num,
-  image: `${baseUrl}/${bucket}/${path}/${num}.jpg`,
+  image: `/api/image/${path}/${num}.jpg`,
 }))
 
 const setActiveLightBox = (value) => {
   activeLightBox.value = value
 }
-
-onMounted(()=>{
-  console.log('imagens', imagens)
-})
 </script>
 
 <template>
