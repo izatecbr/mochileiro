@@ -16,10 +16,13 @@
         </div>
 
         <div v-if="isOpen" class="dropdown__menu">
-          <div v-for="(item, index) in items" :key="index" @click="selectItem(item)" class="dropdown__item"
-            :class="{ 'is-selected': isSelected(item) }">
-            {{ item?.label ?? item }}
-          </div>
+          <DropdownItem 
+            v-for="(item, index) in items" 
+            :key="index"
+            :item="item"
+            :is-selected="isSelected"
+            @select="selectItem"
+          />
         </div>
       </div>
     </div>
@@ -28,6 +31,7 @@
 
 <script setup>
 import { computed, defineEmits, defineProps, onBeforeUnmount, onMounted, ref } from 'vue'
+import DropdownItem from './DropdownItem.vue'
 
 const emit = defineEmits(['update:modelValue', 'onSelect'])
 
@@ -120,6 +124,7 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside))
 <style scoped>
 .iz-dropdown-wrapper {
   width: 100%;
+  overflow: visible;
 }
 
 .iz-dropdown-label {
@@ -156,16 +161,13 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside))
   cursor: not-allowed;
 }
 
-/* botão SEMPRE é flex para manter centralização */
 .dropdown__button {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-
 }
 
-/* md padrão */
 .iz-size-md {
   height: 40px;
 }
@@ -178,7 +180,6 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside))
   border-radius: 12px;
 }
 
-/* sm */
 .iz-size-sm {
   height: 36px;
 }
@@ -191,7 +192,6 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside))
   border-radius: 8px;
 }
 
-/* lg */
 .iz-size-lg {
   height: 80px;
 }
@@ -204,7 +204,6 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside))
   border-radius: 16px;
 }
 
-/* xs (só padding/radius se existir) */
 .iz-padding-xs {
   padding: 0 6px;
 }
@@ -217,14 +216,17 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside))
   font-size: 14px;
   color: #333;
   line-height: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
-
 
 .dropdown__icon {
   width: 20px;
   height: 20px;
   color: #555;
   transition: transform 0.2s ease;
+  flex-shrink: 0;
 }
 
 .dropdown__icon.rotated {
@@ -239,28 +241,11 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside))
   margin-top: 0.4rem;
   background-color: white;
   border: 1px solid var(--Border, #E7E6E6);
-  max-height: 220px;
+  max-height: 300px;
   overflow-y: auto;
   z-index: 20;
   width: 100%;
   border-radius: 12px;
-}
-
-.dropdown__item {
-  padding: 10px 16px;
-  cursor: pointer;
-  font-size: 14px;
-  line-height: 1;
-  color: #333;
-  transition: background 0.2s;
-}
-
-.dropdown__item:hover {
-  background-color: #f2f2f2;
-}
-
-.dropdown__item.is-selected {
-  background-color: #e8f5e9;
-  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 </style>
