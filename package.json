@@ -21,6 +21,7 @@
     "aos": "^2.3.4",
     "chart.js": "^4.4.0",
     "date-fns": "^4.1.0",
+    "lodash-es": "^4.17.21",
     "nuxt": "^3.17.5",
     "pinia-plugin-persistedstate": "^4.3.0",
     "sass": "^1.89.2",
