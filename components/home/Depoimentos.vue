@@ -85,11 +85,11 @@
 </template>
 
 <script setup>
-import { Swiper, SwiperSlide } from "swiper/vue";
 import { Pagination } from "swiper/modules";
-import { ref, onMounted } from "vue";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { onMounted, ref } from "vue";
 
-const baseUrl = 'https://bvnupbtbbaobfnmoidoc.supabase.co/storage/v1/object/public/mochileiro/usuarios';
+
 const imagens = [{
   id:6,
   name: "Kayla Deodato",
@@ -108,7 +108,7 @@ const imagens = [{
     role: "Programador Java Pleno",
     comment: `Adoro acompanhar esse blog! As histórias são super inspiradoras e me ajudam muito a planejar minhas viagens. Sempre encontro dicas valiosas e relatos reais que parecem um convite para a aventura. A comunidade também é muito ativa, adoro ler os comentários e trocar experiências. Recomendo para todo mundo que ama viajar!`,
   },].map((user) => ({
-  image: `${baseUrl}/${user.id}/6.jpg`,
+  image: `/api/image/usuarios/${user.id}/6.jpg`,
   name:user.name,
   role: user.role,
   comment: user.comment,
