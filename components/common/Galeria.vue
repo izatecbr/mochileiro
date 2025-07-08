@@ -8,7 +8,6 @@ const route = useRoute()
 const baseUrl = 'https://bvnupbtbbaobfnmoidoc.supabase.co/storage/v1/object/public';
 const bucket = 'mochileiro'
 const path = `${props.contexto}/${route.params.id}`
-//const path = `experiencias/1`
 
 const imagens = [1, 2, 3, 4].map((num) => ({
   id: num,
