@@ -214,9 +214,11 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside))
 }
 
 .dropdown__text {
-  font-size: 15px;
+  font-size: 14px;
   color: #333;
+  line-height: 1;
 }
+
 
 .dropdown__icon {
   width: 20px;
@@ -245,9 +247,10 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside))
 }
 
 .dropdown__item {
-  padding: 6px 16px;
+  padding: 10px 16px;
   cursor: pointer;
   font-size: 14px;
+  line-height: 1;
   color: #333;
   transition: background 0.2s;
 }
