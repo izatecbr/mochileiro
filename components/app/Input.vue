@@ -3,7 +3,7 @@
     <label v-if="label" class="iz-input-label">{{ label }}</label>
 
     <div class="iz-input-container">
-      <input v-bind="attrs" :disabled="disabled || loading" class="iz-input"
+      <input v-bind="attrs" v-model="model" :disabled="disabled || loading" class="iz-input"
         :class="[sizeClass, paddingClass, radiusClass, { 'is-disabled': disabled || loading }]" />
 
       <button type="button" :disabled="disabled || loading" class="iz-input-button"
@@ -45,6 +45,11 @@ const props = defineProps({
   disabled: Boolean,
   icon: String,
   trailingIcon: String
+})
+
+const model = defineModel({
+  type: String,
+  default: ''
 })
 
 const attrs = useAttrs()
