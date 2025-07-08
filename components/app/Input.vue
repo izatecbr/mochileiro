@@ -99,6 +99,11 @@ const radiusClass = computed(() => ({
   border: 1px solid var(--Border, #E7E6E6);
   box-sizing: border-box;
   font-size: 15px;
+  outline: 1px solid transparent;
+
+  &:focus {
+    outline: 1.5px solid #E7E6E6;
+  }
 }
 
 /* Botão fixo à direita */
@@ -113,6 +118,7 @@ const radiusClass = computed(() => ({
   align-items: center;
   justify-content: center;
   z-index: 1;
+
 }
 
 /* Icones */
@@ -123,7 +129,7 @@ const radiusClass = computed(() => ({
 }
 
 .iz-icon-right {
-    font-size: larger;
+  font-size: larger;
   color: var(--Border, #727272);
   margin-left: 4px;
 }
@@ -140,11 +146,11 @@ const radiusClass = computed(() => ({
 
 /* Tamanhos */
 .iz-size-sm {
-  height: 40px;
+  height: 36px;
 }
 
 .iz-size-md {
-  height: 50px;
+  height: 40px;
 }
 
 .iz-size-lg {

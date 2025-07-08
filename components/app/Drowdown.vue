@@ -3,36 +3,21 @@
     <label v-if="label" class="iz-dropdown-label">{{ label }}</label>
 
     <div ref="dropdownRef" class="dropdown-container">
-      <div
-        :class="[
-          'dropdown',
-          radiusClass,
-          { 'is-active': isOpen, 'is-disabled': disabled || loading }
-        ]"
-      >
-        <div
-          @click="toggle"
-          class="dropdown__button"
-          :class="[sizeClass, paddingClass]"
-        >
+      <div :class="[
+        'dropdown',
+        radiusClass,
+        { 'is-active': isOpen, 'is-disabled': disabled || loading }
+      ]">
+        <div @click="toggle" class="dropdown__button" :class="[sizeClass, paddingClass]">
           <span class="dropdown__text">
             {{ selectedLabel || placeholder }}
           </span>
-          <Icon
-            name="lucide:chevron-down"
-            class="dropdown__icon"
-            :class="{ rotated: isOpen }"
-          />
+          <Icon name="lucide:chevron-down" class="dropdown__icon" :class="{ rotated: isOpen }" />
         </div>
 
         <div v-if="isOpen" class="dropdown__menu">
-          <div
-            v-for="(item, index) in items"
-            :key="index"
-            @click="selectItem(item)"
-            class="dropdown__item"
-            :class="{ 'is-selected': isSelected(item) }"
-          >
+          <div v-for="(item, index) in items" :key="index" @click="selectItem(item)" class="dropdown__item"
+            :class="{ 'is-selected': isSelected(item) }">
             {{ item?.label ?? item }}
           </div>
         </div>
@@ -159,6 +144,11 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside))
   user-select: none;
   transition: all 0.2s ease;
   border-radius: 12px;
+  outline: 1px solid transparent;
+
+  &:hover {
+    outline: 1.5px solid #E7E6E6;
+  }
 }
 
 .dropdown.is-disabled {
@@ -172,26 +162,31 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside))
   align-items: center;
   justify-content: space-between;
   width: 100%;
+
 }
 
 /* md padrão */
 .iz-size-md {
-  height: 50px;
+  height: 40px;
 }
+
 .iz-padding-md {
   padding: 0 20px;
 }
+
 .iz-radius-md {
   border-radius: 12px;
 }
 
 /* sm */
 .iz-size-sm {
-  height: 40px;
+  height: 36px;
 }
+
 .iz-padding-sm {
   padding: 0 12px;
 }
+
 .iz-radius-sm {
   border-radius: 8px;
 }
@@ -200,9 +195,11 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside))
 .iz-size-lg {
   height: 80px;
 }
+
 .iz-padding-lg {
   padding: 0 28px;
 }
+
 .iz-radius-lg {
   border-radius: 16px;
 }
@@ -211,6 +208,7 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside))
 .iz-padding-xs {
   padding: 0 6px;
 }
+
 .iz-radius-xs {
   border-radius: 4px;
 }
