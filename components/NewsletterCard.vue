@@ -17,26 +17,28 @@ const message = ref('')
 const success = ref(false)
 const loading = ref(false)
 
-const { $supabase } = useNuxtApp()
-
 const handleSubscribe = async () => {
   loading.value = true
   message.value = ''
-  const { error } = await $supabase
-      .from('tab_email') // nome da sua tabela
-      .insert([{ email: email.value,cancelado:false }])
+  success.value = false
 
-  if (error) {
-    message.value = 'Erro ao cadastrar. Tente novamente.'
-    success.value = false
-  } else {
-    message.value = 'Email cadastrado com sucesso!'
+  try {
+    const res = await $fetch('/api/newsletter', {
+      method: 'POST',
+      body: { email: email.value }
+    })
+    message.value = res.message
     success.value = true
     email.value = ''
+  } catch (err) {
+    message.value = err?.data?.message || 'Erro ao cadastrar. Tente novamente.'
+    success.value = false
+  } finally {
+    loading.value = false
   }
-  loading.value = false
 }
 </script>
+
 
 <style scoped>
 .newsletter-card {
