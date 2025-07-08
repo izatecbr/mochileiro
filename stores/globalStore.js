@@ -279,7 +279,10 @@ export const useGlobalStore = defineStore("database", {
             };
           }
         }
-
+        const contexto = tipo
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "") + "s";
         return {
           id: `${prefixo}${item.id}`,
           lid: item.id,
@@ -294,13 +297,11 @@ export const useGlobalStore = defineStore("database", {
           tipo: {
             sigla:prefixo,
             legenda: tipo,
-            rota: tipo
-                .toLowerCase()
-                .normalize("NFD")
-                .replace(/[\u0300-\u036f]/g, "") + "s",
+            rota: contexto,
           },
           destinoObject: this.getLocalizacaoById(item.localizacao),
           anfitriaoObject: this.getUsuarioById(item.anfitriao),
+          imagem:`https://bvnupbtbbaobfnmoidoc.supabase.co/storage/v1/object/public/mochileiro/${contexto}/${item.id}/5.jpg`
         };
       };
 
