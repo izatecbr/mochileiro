@@ -27,7 +27,7 @@
                     <div class="desktopNavSubnav">
                       <div class="desktopNavSubnav__content">
                         <div v-for="(elm2, i2) in elm.categorias" :key="i2" class="desktopNavSubnav__item">
-                          <nuxt-link>{{
+                          <nuxt-link :to="`/interesses?categoria=${elm2.legenda}`">{{
                             elm2.legenda
                           }}</nuxt-link>
                         </div>
