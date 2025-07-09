@@ -64,10 +64,23 @@ const isOpen = ref(false)
 const dropdownRef = ref(null)
 
 const selectedLabel = computed(() => {
-  if (!props.modelValue) return null
-  const found = props.items.find(i => isEqual(i, props.modelValue))
-  return found?.label ?? found ?? null
-})
+  if (!props.modelValue) return null;
+  
+  // Encontra o item pelo valor
+  const findItem = (items) => {
+    for (const item of items) {
+      if (item.value === props.modelValue) return item;
+      if (item.children) {
+        const found = findItem(item.children);
+        if (found) return found;
+      }
+    }
+    return null;
+  };
+
+  const found = findItem(props.items);
+  return found?.label ?? props.modelValue;
+});
 
 const sizeClass = computed(() => ({
   sm: 'iz-size-sm',
@@ -106,10 +119,11 @@ const isEqual = (a, b) => {
 const isSelected = item => isEqual(item, props.modelValue)
 
 const selectItem = item => {
-  emit('update:modelValue', item)
-  emit('onSelect', item)
-  close()
-}
+  emit('update:modelValue', item.value);
+  emit('onSelect', item);
+  close();
+};
+
 
 const onClickOutside = e => {
   if (dropdownRef.value && !dropdownRef.value.contains(e.target)) {
