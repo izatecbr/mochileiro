@@ -66,7 +66,6 @@ const dropdownRef = ref(null)
 const selectedLabel = computed(() => {
   if (!props.modelValue) return null;
   
-  // Encontra o item pelo valor
   const findItem = (items) => {
     for (const item of items) {
       if (item.value === props.modelValue) return item;
@@ -261,5 +260,7 @@ onBeforeUnmount(() => document.removeEventListener('click', onClickOutside))
   width: 100%;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  scrollbar-width: thin;
 }
 </style>
