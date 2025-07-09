@@ -18,10 +18,6 @@ const props = defineProps(["objeto"]);
 const images = ref([]);
 const isLoading = ref(false);
 
-onMounted(()=>{
-  console.log("Props objeto:", props.objeto);
-})
-
 watch(
   () => props?.objeto?.localizacaoObject?.legenda,
   (newLegenda) => {

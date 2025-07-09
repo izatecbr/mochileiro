@@ -24,7 +24,6 @@ const res = await $fetch('/api/whatsapp', {
   body: { interesse: props.interesse }
 })
 
-console.log(res)
 
 if (res?.whatsappUrl) {
   window.open(res.whatsappUrl, '_blank')
