@@ -234,7 +234,7 @@ export const useGlobalStore = defineStore("database", {
         if (tipo === "Aventura") {
           const atividadesEscolhidas = (item.atividades || [])
               .map(this.getAtividadeById)
-              .filter((a) => a?.escolhida && a.valor?.quantia);
+              .filter((a) => a?.escolhida);
 
           if (atividadesEscolhidas.length) {
             const moedaId = atividadesEscolhidas[0].valor.moeda;
