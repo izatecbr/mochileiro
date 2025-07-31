@@ -6,7 +6,7 @@
     </div>
     <button class="button -md -dark-1 col-12 bg-accent-1 text-white mt-20" @click="handleWhatsClick">
         Falar com o Anfitrião
-      <i class="icon-arrow-top-right ml-10"></i>
+      <Icon name="mdi:whatsapp" class="ml-10" style="font-size: 20px;"></Icon>
     </button>
     <div class="d-flex items-center">
       <div style="font-size: 13px; margin: 6px">Anfitrião:</div>
