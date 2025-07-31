@@ -1,10 +1,13 @@
 <script setup>
 import { ref } from 'vue'
 import ImageLightBox from '~/components/common/ImageLightBox.vue'
+import dummyImg1 from '~/public/img/dummy1.png'
+import dummyImg2 from '~/public/img/dummy2.png'
 
 const props = defineProps(['contexto'])
 const activeLightBox = ref(false)
 const route = useRoute()
+
 
 const path = `${props.contexto}/${route.params.id}`
 
@@ -16,6 +19,10 @@ const imagens = [1, 2, 3, 4].map(num => ({
 const setActiveLightBox = (value) => {
   activeLightBox.value = value
 }
+
+const getImage = (index) =>{
+  return index == 0 ? dummyImg1 : dummyImg2
+}
 </script>
 
 <template>
@@ -26,8 +33,9 @@ const setActiveLightBox = (value) => {
           :key="index"
           width="375"
           height="375"
-          :src="img.image"
-          :alt="`Imagem ${img.id}`"
+          :src="img?.image"
+          :alt="`Imagem ${img?.id ?? index}`"
+          @error="event => event.target.src = getImage(index)"
       />
     </div>
 
