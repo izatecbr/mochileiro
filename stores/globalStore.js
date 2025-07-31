@@ -184,7 +184,7 @@ export const useGlobalStore = defineStore("database", {
         let valor = a.valor;
         if (atividadesEscolhidas.length) {
           const moedaId = atividadesEscolhidas[0].valor.moeda;
-          const total = atividadesEscolhidas.reduce((sum, act) => sum + act.valor.quantia, 0);
+          const total = atividadesEscolhidas.reduce((sum, a) => a.valor.isento ? sum : sum + a.valor.quantia, 0);
           valor = this.calcularValorComTotal(total, moedaId);
         }
         a.data= this.enriquecerData(a.data)
@@ -234,11 +234,11 @@ export const useGlobalStore = defineStore("database", {
         if (tipo === "Aventura") {
           const atividadesEscolhidas = (item.atividades || [])
               .map(this.getAtividadeById)
-              .filter((a) => a?.escolhida && a.valor?.quantia);
+              .filter((a) => a?.escolhida);
 
           if (atividadesEscolhidas.length) {
             const moedaId = atividadesEscolhidas[0].valor.moeda;
-            const total = atividadesEscolhidas.reduce((sum, a) => sum + a.valor.quantia, 0);
+            const total = atividadesEscolhidas.reduce((sum, a) => a.valor.isento ? sum : sum + a.valor.quantia, 0);
 
             const moeda = this.getMoedaById(moedaId);
             const { simbolo, locale } = moeda;
