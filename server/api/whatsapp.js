@@ -31,7 +31,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const anfitriao = interesse.anfitriaoObject
-  const whats = `${anfitriao.telefone.ddi}${anfitriao.telefone.ddd}${anfitriao.telefone.numero}`
+  const whats = `${anfitriao.contato.telefone?.ddi}${anfitriao.contato.telefone.ddd}${anfitriao.contato.telefone.numero}`
 
   return {
     success: true,
