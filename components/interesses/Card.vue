@@ -1,7 +1,7 @@
 <template>
   <div class="tourCard__header">
     <div class="tourCard__image ratio ratio-28:20">
-      <img width="421" height="301" :src="elm.imagem" alt="image" class="img-ratio" />
+      <img width="421" height="301" :src="elm.imagem"  @error="event => event.target.src = dummyImg2" alt="image" class="img-ratio" />
     </div>
     <button class="tourCard__favorite">
       <i class="icon-heart"></i>
@@ -35,7 +35,7 @@
 </template>
 
 <script setup>
-
+import dummyImg2 from '~/public/img/dummy2.png';
 defineProps({
   elm: {
     type: Object,
