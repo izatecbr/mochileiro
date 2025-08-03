@@ -294,3 +294,34 @@ Amantes da fotografia e da natureza.
 panda-1426cf46-7261-4db3-8be4-09ed2bfd93ba
 
 NUXT_PUBLIC_SUPABASE_STORAGE_URL=https://bvnupbtbbaobfnmoidoc.supabase.co/storage/v1/object/public
+
+
+1. Frase curta ao lado do preço
+   💵 Entrada a partir de R$ 40 (valor pode variar conforme o dia ou evento)
+
+💲 Preço sob consulta / sujeito a negociação
+
+2. Com ícones ou legenda no fim do post
+   Você pode usar símbolos e depois explicar no rodapé:
+
+R$ → Preço fixo
+
+R$* → Preço estimado (pode variar)
+
+R$? → Sob consulta
+
+Exemplo no texto:
+Entrada no bar: R$ 30*
+
+(*) Valores estimados. Consulte diretamente o local para confirmação.
+
+3. Notas explicativas simples no corpo do texto
+   Alguns valores variam conforme o dia da semana, horário ou tipo de serviço. Para informações atualizadas, recomendamos entrar em contato com o local.
+
+4. Modelo prático misturando tudo
+   Tour guiado no MASP
+   💰 A partir de R$ 50 por pessoa (valores podem variar conforme o tipo de visita ou temporada)
+
+Bar na Rua Augusta
+🍻 Couvert artístico entre R$ 15 e R$ 30
+Preços negociáveis conforme consumo e horário

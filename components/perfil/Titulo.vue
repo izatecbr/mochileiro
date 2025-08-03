@@ -42,14 +42,14 @@
     </div>
     <div class="col-auto">
       <div class="d-flex x-gap-30 y-gap-10">
-        <NuxtLink v-if="objeto?.instagram" target="_blank" :to="`https://www.instagram.com/${objeto?.instagram}`">
+        <NuxtLink v-if="objeto?.contato?.instagram" target="_blank" :to="`https://www.instagram.com/${objeto?.contato?.instagram}`">
           <Icon class="social-icon" name="mdi:instagram" />
-          @{{ objeto?.instagram}}
+          @{{ objeto?.contato?.instagram}}
         </NuxtLink>
-        <NuxtLink v-if="objeto?.telefone?.whatsapp" target="_blank"
-                  :to="`https://wa.me/${objeto?.telefone?.ddi}${objeto?.telefone?.ddd}${objeto?.telefone?.numero}?text=Oi%21%20Vi%20seu%20an%C3%BAncio%20no%20Mochileiro.tec%20e%20fiquei%20super%20interessado%28a%29%20na%20viagem.%20Pode%20me%20passar%20mais%20detalhes%3F`">
+        <NuxtLink v-if="objeto?.contato?.telefone?.whatsapp" target="_blank"
+                  :to="`https://wa.me/${objeto?.contato?.telefone?.ddi}${objeto?.contato?.telefone?.ddd}${objeto?.contato?.telefone?.numero}?text=Oi%21%20Vi%20seu%20an%C3%BAncio%20no%20Mochileiro.tec%20e%20fiquei%20super%20interessado%28a%29%20na%20viagem.%20Pode%20me%20passar%20mais%20detalhes%3F`">
         <Icon class="social-icon" name="mdi:whatsapp" />
-          ({{ objeto?.telefone?.ddd}}) {{ objeto?.telefone?.numero}}
+          ({{ objeto?.contato?.telefone?.ddd}}) {{ objeto?.contato?.telefone?.numero}}
         </NuxtLink>
       </div>
     </div>
