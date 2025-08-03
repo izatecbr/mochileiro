@@ -10,7 +10,16 @@
   "experiencias": [
     {"id":1,"legenda":"Férias de Inverno no Chile","data":{"dia":"2025-07-11","hora":"10:00"},"duracao":"6 dias","localizacao":1,"anfitriao":2,"autor":1,"aventuras":[1,2,3],"classificacoes":[107,131,132,133,144,141],"descricao":"Durante nossa jornada ao Chile, tivemos diversas aventuras incríveis nas quais você poderá acompanhar o que rolou diariamente. Vamos compartilhar o que deu certo, o que poderia ter sido melhor, os lugares que nos encantaram, os valores que pagamos, as pessoas e anfitriões que nos acolheram e tornaram essa aventura possível. Tudo isso de forma sincera e prática, pra te ajudar a planejar sua própria viagem ou simplesmente se inspirar e alimentar o sonho de um dia explorar esse destino. Se você já viaja ou ainda sonha em colocar o pé na estrada, vem com a gente nessa jornada!"}
   ],
-
+  "usuarios": [
+    {"id":1,"legenda":"Gleyson Sampaio","aniversario":"1990-01-01","documento":{"rn":"123.456.789-00","passaporte":null},"localizacao":4,"contato":{"instagram":"@glysns","facebook":"facebook.com/glysns","email":"gleyson@iza.tec.br","telefone":{"ddi":"55","ddd":"11","numero":"958940362","whatsapp":true,"celular":true,"fixo":false}}},
+    {"id":2,"legenda":"FlyMates Travel","aniversario":"1990-01-01","documento":{"rn":"123.456.789-00","passaporte":null}},
+    {"id":3,"legenda":"Hotel Boutique Casa Conde","aniversario":"1990-01-01","documento":{"rn":"123.456.789-00","passaporte":null}},
+    {"id":4,"legenda":"Bora Pro Chile Viagens","razaoSocial":"Bora Pro chile Viagens e Turismo LTDA","localizacao":7,"telefone":{"ddi":"55","ddd":"81","numero":"996702790","whatsapp":true,"celular":true,"fixo":false},"documento":{"rn":"32.290.905/0001-30","passaporte":null},"aniversario":"2018-12-19","foto":"https://supabase/foto-hotel.jpg","email":"contato@email.com.br","site":"https://site.com.br/","instagram":"kltouremchile"},
+    {"id":5,"legenda":"Voe Gol - Passagens Áereas","localizacao":2,"telefone":{"ddi":"55","ddd":"11","numero":"958940362","whatsapp":true,"celular":true,"fixo":false},"documento":{"rn":"123.456.789-00","passaporte":null},"aniversario":"1990-01-01","foto":"https://supabase/foto-hotel.jpg","email":"gol.com.br"},
+    {"id":6,"legenda":"Kayla Deodato","especialidade": "Analista LowCode"},
+    {"id":7,"legenda":"Eberte Sampaio","especialidade": "Programador Java Júnior"},
+    {"id":8,"legenda":"Evandro Lima","especialidade": "Programador Java Pleno"}
+  ]
 }
 
 
