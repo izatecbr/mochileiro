@@ -34,8 +34,8 @@
 
       <!-- Grid Responsivo -->
       <div v-if="filteredInteresses && filteredInteresses?.length > 0" class="grid-container">
-        <div v-for="(elm, index) in paginatedInteresses" :key="index" class="grid-item">
-          <nuxt-link :to="'/' + elm.tipo.rota + '/' + elm.lid"
+        <div v-for="(elm, index) in paginatedInteresses" class="grid-item">
+          <nuxt-link :key="index" :to="'/' + elm.tipo.rota + '/' + elm.lid"
             class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow">
             <InteressesCard :elm="elm" />
           </nuxt-link>

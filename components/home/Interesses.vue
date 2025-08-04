@@ -35,9 +35,9 @@
               1024: { slidesPerView: 3.5 },
               1200: { slidesPerView: 4.5 },
             }" ref="swiper">
-            <SwiperSlide v-for="(elm, index) in filteredInteresses.slice(0, 7)" :key="index">
-              <nuxt-link :to="'/' + elm.tipo.rota + '/' + elm.lid" class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow">
-                <InteressesCard :elm="elm" />
+            <SwiperSlide v-for="(elm, index) in filteredInteresses.slice(0, 7)">
+              <nuxt-link :key="index" :to="'/' + elm.tipo.rota + '/' + elm.lid" class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow">
+                <InteressesCard  :elm="elm" />
               </nuxt-link>
             </SwiperSlide>
 
