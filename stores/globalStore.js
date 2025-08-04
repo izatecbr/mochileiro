@@ -320,7 +320,7 @@ export const useGlobalStore = defineStore("database", {
           quantia: total,
           preco: total,
           moeda: moedaId,
-          condicaoPagamento: `Preço ${total} com base na data atual, sujeito a alterações econômicas ou negociais.`
+          condicaoPagamento: `Preço sob consulta sujeito alteração.`
         };
       }
 
@@ -336,7 +336,7 @@ export const useGlobalStore = defineStore("database", {
         quantia: total,
         preco: precoFormatado,
         moeda: moedaId,
-        condicaoPagamento: `Preço ${precoFormatado} com base na data atual, sujeito a alterações econômicas ou negociais.`
+        condicaoPagamento: `Preço sob consulta sujeito alteração.`
       };
     },
     enriquecerData(data) {

@@ -1,26 +1,58 @@
-{
-  "atividades": [
-    {"id":4,"legenda":"Transfer p/ Sky Day Valle Nevado","data":{"dia":"2025-07-12","hora":"05:00"},"duracao":"2 horas","produto":4,"anfitriao":4,"localizacao":7,"escolhida":true,"classificacoes":[104,141,142],"valor":{"quantia":220.0,"preco":"R$ 220,00","moeda":"BRL","condicaoPagamento":"R$ 220,00 (Pix) ou R$ 230,00 (Crédito), necessário antecipar 30% do valor total"},"descricao":"Uma ótima opção para quem quer ter um primeiro contato com a neve ou viver um dia de aventura em meio à natureza gelada, com segurança e tranquilidade, é contratar um transfer até Valle Nevado. Além do conforto, você evita preocupações com estrada e clima, aproveitando a viagem do início ao fim com muito mais leveza. Ideal para famílias, casais e amigos que querem curtir cada momento sem estresse."},
-    {"id":5,"legenda":"Passeio às Montanhas de Portillo","data":{"dia":"2025-07-14","hora":"06:00"},"duracao":"8 horas","produto":5,"anfitriao":4,"localizacao":1,"escolhida":true,"classificacoes":[132,143],"valor":{"quantia":300.0,"preco":"R$ 300,00","moeda":"BRL","condicaoPagamento":"R$ 300,00 (Pix) ou R$ 315,00 (Crédito), necessário antecipar 30% do valor total"},"descricao":"O passeio a Portillo é uma experiência encantadora e tranquila pelos Andes chilenos, perfeita para quem busca paisagens de tirar o fôlego, contato com a neve e um toque de exclusividade"}
-  ],
-  "aventuras": [
-    {"id":3,"legenda":"Transfer Valle Nevado + Passeio Portillo","exclusiva":true,"localizacao":1,"data":{"dia":"2025-06-16","hora":"07:00"},"duracao":"2+8 horas","autor":1,"atividades":[4,5],"classificacoes":[141,144,143,132],"anfitriao":4,"descricao":"Uma aventura inesquecível nos Andes Chilenos. Viva a adrenalina do esqui em Valle Nevado e encante-se com as paisagens serenas e majestosas de Portillo. Gentilmente a Lauri do grupo Bora Pro Chile custmomizou o nosso passeio incluindo o transfer para o Ski Day Valle Nevado + Um tour pelas montanhas de Potillo ."}
-
-  ],
-  "experiencias": [
-    {"id":1,"legenda":"Férias de Inverno no Chile","data":{"dia":"2025-07-11","hora":"10:00"},"duracao":"6 dias","localizacao":1,"anfitriao":2,"autor":1,"aventuras":[1,2,3],"classificacoes":[107,131,132,133,144,141],"descricao":"Durante nossa jornada ao Chile, tivemos diversas aventuras incríveis nas quais você poderá acompanhar o que rolou diariamente. Vamos compartilhar o que deu certo, o que poderia ter sido melhor, os lugares que nos encantaram, os valores que pagamos, as pessoas e anfitriões que nos acolheram e tornaram essa aventura possível. Tudo isso de forma sincera e prática, pra te ajudar a planejar sua própria viagem ou simplesmente se inspirar e alimentar o sonho de um dia explorar esse destino. Se você já viaja ou ainda sonha em colocar o pé na estrada, vem com a gente nessa jornada!"}
-  ],
-  "usuarios": [
-    {"id":1,"legenda":"Gleyson Sampaio","aniversario":"1990-01-01","documento":{"rn":"123.456.789-00","passaporte":null},"localizacao":4,"contato":{"instagram":"@glysns","facebook":"facebook.com/glysns","email":"gleyson@iza.tec.br","telefone":{"ddi":"55","ddd":"11","numero":"958940362","whatsapp":true,"celular":true,"fixo":false}}},
-    {"id":2,"legenda":"FlyMates Travel","aniversario":"1990-01-01","documento":{"rn":"123.456.789-00","passaporte":null}},
-    {"id":3,"legenda":"Hotel Boutique Casa Conde","aniversario":"1990-01-01","documento":{"rn":"123.456.789-00","passaporte":null}},
-    {"id":4,"legenda":"Bora Pro Chile Viagens","razaoSocial":"Bora Pro chile Viagens e Turismo LTDA","localizacao":7,"telefone":{"ddi":"55","ddd":"81","numero":"996702790","whatsapp":true,"celular":true,"fixo":false},"documento":{"rn":"32.290.905/0001-30","passaporte":null},"aniversario":"2018-12-19","foto":"https://supabase/foto-hotel.jpg","email":"contato@email.com.br","site":"https://site.com.br/","instagram":"kltouremchile"},
-    {"id":5,"legenda":"Voe Gol - Passagens Áereas","localizacao":2,"telefone":{"ddi":"55","ddd":"11","numero":"958940362","whatsapp":true,"celular":true,"fixo":false},"documento":{"rn":"123.456.789-00","passaporte":null},"aniversario":"1990-01-01","foto":"https://supabase/foto-hotel.jpg","email":"gol.com.br"},
-    {"id":6,"legenda":"Kayla Deodato","especialidade": "Analista LowCode"},
-    {"id":7,"legenda":"Eberte Sampaio","especialidade": "Programador Java Júnior"},
-    {"id":8,"legenda":"Evandro Lima","especialidade": "Programador Java Pleno"}
-  ]
-}
-
-
-No aeroporto do Chile, na área de imigração, PDI significa Policía de Investigaciones de Chile. A PDI é a polícia civil encarregada do controle migratório e da fiscalização de pessoas que entram ou saem do país por aeroportos, portos e fronteiras terrestres
+"categorias": [
+{"id":10,"legenda":"Transporte","categorias":[
+{"id":101,"legenda":"Vôo Nacional"},
+{"id":102,"legenda":"Rodoviário"},
+{"id":103,"legenda":"Táxi"},
+{"id":104,"legenda":"Transfer"},
+{"id":105,"legenda":"Uber/99"},
+{"id":106,"legenda":"Locação"},
+{"id":107,"legenda":"Vôo Internacional"},
+{"id":108,"legenda":"Trêm"},
+{"id":109,"legenda":"Metrô"}
+]},
+{"id":11,"legenda":"Hospedagem","categorias":[
+{"id":111,"legenda":"Hotel"},
+{"id":112,"legenda":"Hostel"},
+{"id":113,"legenda":"Pousada"},
+{"id":114,"legenda":"Airbnb"}
+]},
+{"id":12,"legenda":"Alimentação","categorias":[
+{"id":121,"legenda":"Restaurante"},
+{"id":122,"legenda":"Lanchonete"},
+{"id":123,"legenda":"Café"},
+{"id":124,"legenda":"Delivery"},
+{"id":125,"legenda":"Supermercado"}
+]},
+{"id":13,"legenda":"Nômade Digital","categorias":[
+{"id":131,"legenda":"Trabalho Remoto"},
+{"id":132,"legenda":"Aventureiro"},
+{"id":133,"legenda":"Experiências Culturais"},
+{"id":134,"legenda":"Conexões com Locais"}
+]},
+{"id":14,"legenda":"Férias de Inverno","categorias":[
+{"id":141,"legenda":"Esqui"},
+{"id":142,"legenda":"Snowboard"},
+{"id":143,"legenda":"Estação de Montanha"},
+{"id":144,"legenda":"Passeios na Neve"},
+{"id":145,"legenda":"Hotéis com Lareira"},
+{"id":146,"legenda":"Aluguel de Roupas de Neve"}
+]},
+{"id":15,"legenda":"Shopping","categorias":[
+{"id":151,"legenda":"Roupas e Acessórios"},
+{"id":152,"legenda":"Eletrônicos"},
+{"id":153,"legenda":"Artesanato"},
+{"id":154,"legenda":"Souvenirs"},
+{"id":155,"legenda":"Calçados"},
+{"id":156,"legenda":"Roupas de Frio"},
+{"id":157,"legenda":"Equipamentos para Passeios"}
+]},
+{"id":16,"legenda":"Férias de Verão","categorias":[
+{"id":161,"legenda":"Praias"},
+{"id":162,"legenda":"Passeios de Barco"},
+{"id":163,"legenda":"Esportes Aquáticos"},
+{"id":164,"legenda":"Piscinas e Resorts"},
+{"id":165,"legenda":"Parques Aquáticos"},
+{"id":166,"legenda":"Hospedagens à Beira-Mar"},
+{"id":167,"legenda":"Aluguel de Equipamentos de Praia"}
+]}
+],
