@@ -286,6 +286,7 @@ export const useGlobalStore = defineStore("database", {
         return {
           id: `${prefixo}${item.id}`,
           lid: item.id,
+          classificacoes: item.classificacoes,
           data: this.enriquecerData(item.data),
           duracao: item.duracao,
           imagens: item.imagens,
