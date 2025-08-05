@@ -35,7 +35,9 @@
 {"id":143,"legenda":"Estação de Montanha"},
 {"id":144,"legenda":"Passeios na Neve"},
 {"id":145,"legenda":"Hotéis com Lareira"},
-{"id":146,"legenda":"Aluguel de Roupas de Neve"}
+{"id":146,"legenda":"Aluguel de Roupas de Neve"},
+{"id":147,"legenda":"Piscinas Aquecidas"},
+
 ]},
 {"id":15,"legenda":"Shopping","categorias":[
 {"id":151,"legenda":"Roupas e Acessórios"},
@@ -199,7 +201,48 @@
 { "id": 276, "legenda": "Garrafas Térmicas e Squeezes Reutilizáveis" },
 { "id": 277, "legenda": "Opções para Dietas Especiais (vegana, sem glúten etc.)" }
 ]
+},
+{
+"id": 28,
+"legenda": "Aventura na Estrada",
+"categorias": [
+{ "id": 281, "legenda": "Pontos Panorâmicos e Paradas para Fotos" },
+{ "id": 282, "legenda": "Dicas de Segurança no Trajeto" },
+{ "id": 283, "legenda": "Equipamentos Essenciais para Viagem" },
+{ "id": 284, "legenda": "Melhores Rotas e Desvios" },
+{ "id": 285, "legenda": "Postos de Combustível e Serviços" },
+{ "id": 286, "legenda": "Lojas de Conveniência na Estrada" },
+{ "id": 287, "legenda": "Aplicativos e Ferramentas para Navegação" }
+]
+},
+{
+"id": 29,
+"legenda": "Curtindo a Neve",
+"categorias": [
+{ "id": 291, "legenda": "Brincadeiras na Neve (bonecos, anjos, guerras de bola)" },
+{ "id": 292, "legenda": "Escorregadores e Tobogãs" },
+{ "id": 293, "legenda": "Passeios em Família pela Neve" },
+{ "id": 294, "legenda": "Parques de Neve para Crianças" },
+{ "id": 295, "legenda": "Aulas de Esqui e Snowboard para Pequenos" },
+{ "id": 296, "legenda": "Fotos Divertidas na Neve" },
+{ "id": 297, "legenda": "Momentos de Relaxamento com Vista Branca" }
+]
 }
+,{
+"id": 30,
+"legenda": "Café e Piquenique",
+"categorias": [
+{ "id": 301, "legenda": "Sucos Naturais e Bebidas Refrescantes" },
+{ "id": 302, "legenda": "Vinhos e Bebidas para o Frio" },
+{ "id": 303, "legenda": "Queijos, Frios e Tábua de Aperitivos" },
+{ "id": 304, "legenda": "Pães, Biscoitos e Snacks Artesanais" },
+{ "id": 305, "legenda": "Doces, Bolos e Chocolates" },
+{ "id": 306, "legenda": "Cafés, Chás e Bebidas Quentes" },
+{ "id": 307, "legenda": "Cestas, Mantas e Acessórios de Piquenique" }
+]
+}
+
+
 
 
 
