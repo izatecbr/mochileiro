@@ -11,7 +11,7 @@
 
         <br>
         <div v-for="atividade in elm.atividadesList" >
-          <ExperienciaAtividadeAnfitriacao v-if="atividade.escolhida" style="margin-top: 4px;" :atividade="atividade"/>
+          <ExperienciaAtividadeAnfitriacao v-if="!atividade.proposta" style="margin-top: 4px;" :atividade="atividade"/>
         </div>
       </div>
     </div>

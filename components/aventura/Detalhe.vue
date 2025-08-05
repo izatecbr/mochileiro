@@ -7,7 +7,7 @@
         <span class="text-13" >{{ elm?.descricao }}</span>
         <br>
         <div v-for="atividade in elm.atividadesList" >
-          <ExperienciaValorAnfitriacao v-if="atividade.escolhida" style="margin-top: 4px;" :valor="atividade?.valor" :anfitriao="atividade?.anfitriaoObject"/>
+          <ExperienciaValorAnfitriacao v-if="!atividade.proposta" style="margin-top: 4px;" :valor="atividade?.valor" :anfitriao="atividade?.anfitriaoObject"/>
         </div>
       </div>
     </div>

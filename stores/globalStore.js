@@ -179,7 +179,7 @@ export const useGlobalStore = defineStore("database", {
     getAventuraById(id) {
       return this.getEnriched("aventuras", id, (a) => {
         const atividadesList = (a.atividades || []).map(this.getAtividadeById);
-        const atividadesEscolhidas = atividadesList.filter((act) => act?.escolhida && act.valor?.quantia);
+        const atividadesEscolhidas = atividadesList.filter((act) => !act?.proposta && act.valor?.quantia);
 
         let valor = a.valor;
         if (atividadesEscolhidas.length) {
@@ -234,7 +234,7 @@ export const useGlobalStore = defineStore("database", {
         if (tipo === "Aventura") {
           const atividadesEscolhidas = (item.atividades || [])
               .map(this.getAtividadeById)
-              .filter((a) => a?.escolhida);
+              .filter((a) => !a?.proposta);
 
           if (atividadesEscolhidas.length) {
             const moedaId = atividadesEscolhidas[0].valor.moeda;

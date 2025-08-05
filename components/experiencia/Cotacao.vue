@@ -6,9 +6,9 @@
 
     <li class="d-flex flex-column mt-1" v-for="atividade in aventura.atividadesList">
       <NuxtLink  class="d-flex  justify-start items-center" :to="`/atividades/${atividade.id}`">
-        <i v-if="atividade.escolhida"
-          class="icon-check flex-center text-8 size-16 rounded-full text-green-2 bg-green-1 mr-5"></i>
-        <i v-else class="icon-cross flex-center text-8 size-16 rounded-full text-red-3 bg-red-4 mr-5"></i>
+        <i v-if="atividade.proposta"
+          class="icon-cross flex-center text-8 size-16 rounded-full text-red-3 bg-red-4 mr-5"></i>
+        <i v-else class="icon-check flex-center text-8 size-16 rounded-full text-green-2 bg-green-1 mr-5"></i>
         <p class="label-overview" >{{ atividade.legenda }} {{ atividade?.duracao ? `- (${atividade.duracao})` : '' }}</p>
       </NuxtLink>
       <ExperienciaValorAnfitriacao :valor="atividade?.valor" :anfitriao="atividade?.anfitriaoObject"/>
