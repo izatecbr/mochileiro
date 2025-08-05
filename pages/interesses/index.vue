@@ -1,4 +1,4 @@
-div<template>
+<template>
   <section class="layout-pt-xl layout-pb-xl">
     <h1 class="text-center mb-15">Interesses em destaque</h1>
     <div class="container">
@@ -26,7 +26,7 @@ div<template>
                 @onSelect="item => setPeriodo(item)" />
 
               <AppDrowdown style="flex: 1;" v-model="categoriaSelecionada" :items="categorias"
-                placeholder="Escolher Categoria" @onSelect="item => setCategoria(item)" />
+                placeholder="Escolher Categoria" @update:modelValue="setCategoria" />
             </div>
           </transition>
         </div>
@@ -68,7 +68,28 @@ const periodoSelecionado = ref(null);
 const categoriaSelecionada = ref(null);
 const filtrosVisiveis = ref(true);
 
-const categorias = ["Escolha uma categoria", ...store.categorias.map((categoria) => categoria.legenda)];
+const categorias = computed(() => {
+  const base = [{
+    label: "Escolha uma categoria",
+    value: null,
+    disabled: false
+  }];
+
+  if (store.categorias) {
+    return base.concat(store.categorias.map(categoria => ({
+      label: categoria.legenda,
+      value: categoria.legenda,
+         disabled: false,
+      children: categoria.categorias?.map(subCategoria => ({
+        label: subCategoria.legenda,
+        value: subCategoria.legenda,
+           disabled: false
+      })) || []
+    })));
+  }
+
+  return base;
+});
 const periodos = ["Escolher Perído", ...store.meses.map((periodo) => periodo.legenda)];
 const destinos = ["Escolher Destino", ...store.destinos.map((destino) => destino.legenda)]
 
@@ -78,11 +99,10 @@ const filteredInteresses = computed(() => {
   const searchTerm = inputBuscaInteresses.value.toLowerCase();
 
   return interesses.value.filter((item) => {
-    const matchCategoria =
-      !categoriaSelecionada.value ||
-      (item.destinoObject?.classificacoesList?.some((c) => {
-        return c => c.categoria?.legenda === categoriaSelecionada.value
-      }
+    const matchCategoria = !categoriaSelecionada.value ||
+      (item.destinoObject?.classificacoesList?.some(c => 
+        c.legenda === categoriaSelecionada.value ||
+        c.categoria?.legenda === categoriaSelecionada.value
       ));
 
     const matchTipo =
@@ -144,8 +164,12 @@ const setTipoInteresse = (value) => {
   tipoInteresseSelecionado.value = value === "Escolha um tipo" ? "" : value;
 };
 
-const setCategoria = (categoria) => {
-  categoriaSelecionada.value = categoria === "Escolha uma categoria" ? "" : categoria;
+const setCategoria = (item) => {
+  if (item?.value === null || item?.disabled) {
+    categoriaSelecionada.value = "";
+  } else {
+    categoriaSelecionada.value = item?.value ? item?.value : item;
+  }
 };
 
 const setDestino = (destino) => {

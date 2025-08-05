@@ -44,7 +44,7 @@
             <SwiperSlide style="height: 45dvh;" class="d-flex justify-center items-center ">
               <div class="d-flex flex-column " >
                <p class="mb-5" >Novas aventuras?</p>
-              <div class="d-flex justify-center items-center " style="height: 100%;">
+              <div class="d-flex justify-center items-center " style="height: 100%; padding: auto 3rem;">
                 <button @click="verMais()" class="button -accent-1 text-14 py-5 px-15 bg-light-1 rounded-200">
                   Ver mais
                 </button>
