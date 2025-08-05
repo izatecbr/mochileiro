@@ -7,6 +7,9 @@ export default defineNuxtConfig({
     supabaseUrl: '',
     supabaseKey: '',
     pexelsKey: '',
+    public: {
+      currencyApiKey: process.env.NUXT_PUBLIC_CURRENCY_API_KEY
+    },
   },
   image: {
     quality: 80,
