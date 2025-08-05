@@ -54,5 +54,155 @@
 {"id":165,"legenda":"Parques Aquáticos"},
 {"id":166,"legenda":"Hospedagens à Beira-Mar"},
 {"id":167,"legenda":"Aluguel de Equipamentos de Praia"}
-]}
-],
+]},
+{
+"id": 17,
+"legenda": "City Tour",
+"categorias": [
+{ "id": 171, "legenda": "Patrimônios Históricos" },
+{ "id": 172, "legenda": "Museus e Galerias" },
+{ "id": 173, "legenda": "Arquitetura Urbana" },
+{ "id": 174, "legenda": "Passeios a Pé Guiados" },
+{ "id": 175, "legenda": "Feiras e Mercados Tradicionais" },
+{ "id": 176, "legenda": "Gastronomia Local" },
+{ "id": 177, "legenda": "Centros Culturais" },
+{ "id": 178, "legenda": "Teatros" }
+]
+},
+{
+"id": 18,
+"legenda": "Perfumaria e Produtos de Beleza",
+"categorias": [
+{ "id": 181, "legenda": "Perfumes e Colônias" },
+{ "id": 182, "legenda": "Maquiagem" },
+{ "id": 183, "legenda": "Cuidados com a Pele" },
+{ "id": 184, "legenda": "Cuidados com o Cabelo" },
+{ "id": 185, "legenda": "Higiene Pessoal" },
+{ "id": 186, "legenda": "Cosméticos Naturais" },
+{ "id": 187, "legenda": "Acessórios de Beleza" },
+{ "id": 187, "legenda": "Hidratantes" }
+]
+},
+{
+"id": 19,
+"legenda": "Passeios Noturnos",
+"categorias": [
+{ "id": 191, "legenda": "Bares e Botecos" },
+{ "id": 192, "legenda": "Música ao Vivo" },
+{ "id": 193, "legenda": "Casas de Show" },
+{ "id": 194, "legenda": "Roteiros de Barzinhos" },
+{ "id": 195, "legenda": "Cervejarias Artesanais" },
+{ "id": 196, "legenda": "Música ao Vivo e MPB" },
+{ "id": 197, "legenda": "Experiências Gastronômicas Noturnas" }
+]
+},
+{
+"id": 20,
+"legenda": "Proteção Solar e Cuidados com a Pele",
+"categorias": [
+{ "id": 201, "legenda": "Protetores Solares" },
+{ "id": 202, "legenda": "Hidratantes com Fator de Proteção" },
+{ "id": 203, "legenda": "Roupas com Proteção UV" },
+{ "id": 204, "legenda": "Cuidados Pós-Sol" },
+{ "id": 205, "legenda": "Protetores Labiais com FPS" },
+{ "id": 206, "legenda": "Chapéus e Acessórios de Proteção" },
+{ "id": 207, "legenda": "Produtos Naturais para Proteção da Pele" }
+]
+},
+{
+"id": 21,
+"legenda": "Esqui e Snowboard com Aula Prática",
+"categorias": [
+{ "id": 211, "legenda": "Ingresso para Estação de Esqui" },
+{ "id": 212, "legenda": "Aula Prática de Esqui" },
+{ "id": 213, "legenda": "Aula Prática de Snowboard" },
+{ "id": 214, "legenda": "Equipamentos Inclusos" },
+{ "id": 215, "legenda": "Pacote Ingresso + Aula" },
+{ "id": 216, "legenda": "Atividades para Iniciantes" },
+{ "id": 217, "legenda": "Experiências na Neve com Instrutor" }
+]
+},
+{
+"id": 22,
+"legenda": "Câmbio de Moeda",
+"categorias": [
+{ "id": 221, "legenda": "Casas de Câmbio" },
+{ "id": 222, "legenda": "Câmbio no Aeroporto" },
+{ "id": 223, "legenda": "Câmbio em Hotéis" },
+{ "id": 224, "legenda": "Cartões Pré-Pagos Internacionais" },
+{ "id": 225, "legenda": "Transferência de Moeda Digital" },
+{ "id": 226, "legenda": "Câmbio Online" },
+{ "id": 227, "legenda": "Dicas e Cotações de Moeda" }
+]
+},
+{
+"id": 23,
+"legenda": "Etapa de Imigração",
+"categorias": [
+{ "id": 231, "legenda": "Controle de Passaportes" },
+{ "id": 232, "legenda": "Documentação Necessária" },
+{ "id": 233, "legenda": "Vistos e Autorizações de Entrada" },
+{ "id": 234, "legenda": "Declaração de Bens e Alfândega" },
+{ "id": 235, "legenda": "Entrevistas e Questionamentos Comuns" },
+{ "id": 236, "legenda": "Dicas para Facilitar a Imigração" },
+{ "id": 237, "legenda": "Imigração para Conexões Internacionais" }
+]
+},
+{
+"id": 24,
+"legenda": "Supermercado e Conveniência",
+"categorias": [
+{ "id": 241, "legenda": "Supermercados" },
+{ "id": 242, "legenda": "Minimercados" },
+{ "id": 243, "legenda": "Lojas de Conveniência 24h" },
+{ "id": 244, "legenda": "Empórios e Mercearias" },
+{ "id": 245, "legenda": "Produtos Locais e Artesanais" },
+{ "id": 246, "legenda": "Seções de Produtos Naturais e Orgânicos" },
+{ "id": 247, "legenda": "Farmácias com Itens de Conveniência" }
+]
+},
+{
+"id": 25,
+"legenda": "Roupas de Inverno",
+"categorias": [
+{ "id": 251, "legenda": "Casacos e Jaquetas Térmicas" },
+{ "id": 252, "legenda": "Calças e Leggings de Frio" },
+{ "id": 253, "legenda": "Roupas Térmicas de Base (segunda pele)" },
+{ "id": 254, "legenda": "Gorros, Toucas e Protetores de Orelha" },
+{ "id": 255, "legenda": "Luvas e Mufas" },
+{ "id": 256, "legenda": "Cachecóis e Pashminas" },
+{ "id": 257, "legenda": "Botas e Calçados para Neve" }
+]
+},
+{
+"id": 26,
+"legenda": "Equipamentos de Esqui e Snowboard",
+"categorias": [
+{ "id": 261, "legenda": "Esquis e Snowboards" },
+{ "id": 262, "legenda": "Botas de Esqui e Snowboard" },
+{ "id": 263, "legenda": "Bastões de Esqui" },
+{ "id": 264, "legenda": "Capacetes e Protetores" },
+{ "id": 265, "legenda": "Óculos e Máscaras de Neve" },
+{ "id": 266, "legenda": "Roupas Técnicas (macacões, jaquetas)" },
+{ "id": 267, "legenda": "Serviços de Aluguel de Equipamentos" }
+]
+},
+{
+"id": 27,
+"legenda": "Alimentação e Hidratação",
+"categorias": [
+{ "id": 271, "legenda": "Lanches e Snacks para Viagem" },
+{ "id": 272, "legenda": "Restaurantes e Lanchonetes Próximos" },
+{ "id": 273, "legenda": "Água Mineral e Bebidas Isotônicas" },
+{ "id": 274, "legenda": "Barras Energéticas e Suplementos" },
+{ "id": 275, "legenda": "Kits de Alimentação para Trilhas e Passeios" },
+{ "id": 276, "legenda": "Garrafas Térmicas e Squeezes Reutilizáveis" },
+{ "id": 277, "legenda": "Opções para Dietas Especiais (vegana, sem glúten etc.)" }
+]
+}
+
+
+
+
+
+
