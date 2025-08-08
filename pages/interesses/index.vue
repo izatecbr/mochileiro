@@ -13,7 +13,7 @@
               <Icon name="lucide:sliders-horizontal" />
             </button>
           </div>
-                      <p>{{ destinoSelecionado ?? 'asd' }}</p>
+
 
           <transition name="fade-height">
             <div v-show="filtrosVisiveis" class="dropdowns-container">
