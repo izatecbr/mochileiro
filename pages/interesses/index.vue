@@ -13,6 +13,7 @@
               <Icon name="lucide:sliders-horizontal" />
             </button>
           </div>
+                      <p>{{ destinoSelecionado ?? 'asd' }}</p>
 
           <transition name="fade-height">
             <div v-show="filtrosVisiveis" class="dropdowns-container">
@@ -37,7 +38,7 @@
         <div v-for="(elm, index) in paginatedInteresses" class="grid-item">
           <nuxt-link :key="index" :to="'/' + elm.tipo.rota + '/' + elm.lid"
             class="tourCard -type-1 d-block border-1 bg-white hover-shadow-1 overflow-hidden rounded-12 bg-white -hover-shadow">
-            <InteressesCard :elm="elm" />
+            <InteressesCard style="flex: 1; height: 100%;" :elm="elm" />
           </nuxt-link>
         </div>
       </div>
@@ -99,6 +100,7 @@ const filteredInteresses = computed(() => {
   const searchTerm = inputBuscaInteresses.value.toLowerCase();
 
   return interesses.value.filter((item) => {
+
     const matchCategoria = !categoriaSelecionada.value ||
       (item.destinoObject?.classificacoesList?.some(c => 
         c.legenda === categoriaSelecionada.value ||

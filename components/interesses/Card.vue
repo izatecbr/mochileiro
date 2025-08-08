@@ -1,5 +1,5 @@
 <template>
-  <div class="tourCard__header">
+  <div style="flex: 1" class="tourCard__header">
     <div class="tourCard__image ratio ratio-28:20">
       <img width="421" height="301" :src="elm.imagem"  @error="event => event.target.src = dummyImg2" alt="image" class="img-ratio" />
     </div>
@@ -7,7 +7,7 @@
       <i class="icon-heart"></i>
     </button>
   </div>
-  <div class="tourCard__content px-20 py-10">
+  <div style="flex: 1" class="tourCard__content px-20 py-10">
     <div class="tourCard__location d-flex items-center text-13 text-light-2">
       <i class="icon-pin d-flex text-16 text-light-2 mr-5"></i>
       {{ elm.destinoObject.legenda }}
@@ -50,4 +50,5 @@ const cores = {
 
 </script>
 
-<style></style>
+<style>
+</style>
