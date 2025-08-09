@@ -14,7 +14,6 @@
             </button>
           </div>
 
-
           <transition name="fade-height">
             <div v-show="filtrosVisiveis" class="dropdowns-container">
               <AppDrowdown style="flex: 1;" v-model="tipoInteresseSelecionado" :items="tiposInteresse"
@@ -167,6 +166,7 @@ const setTipoInteresse = (value) => {
 };
 
 const setCategoria = (item) => {
+  console.log(item)
   if (item?.value === null || item?.disabled) {
     categoriaSelecionada.value = "";
   } else {
