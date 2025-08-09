@@ -166,7 +166,6 @@ const setTipoInteresse = (value) => {
 };
 
 const setCategoria = (item) => {
-  console.log(item)
   if (item?.value === null || item?.disabled) {
     categoriaSelecionada.value = "";
   } else {
